@@ -1,0 +1,32 @@
+=begin kwid
+
+= DESCRIPTION
+bla bla
+
+foo
+=end kwid
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "= DESCRIPTION\nbla bla\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "foo\n"
+      }
+    ],
+    "name": "kwid",
+    "text": "=begin kwid\n\n= DESCRIPTION\nbla bla\n\nfoo\n=end kwid\n",
+    "attr": []
+  }
+]

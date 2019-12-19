@@ -1,0 +1,9 @@
+=foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [],
+    "name": "foo"
+  }
+]

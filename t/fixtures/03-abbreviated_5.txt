@@ -1,0 +1,71 @@
+=begin foo
+and so,  all  of  the  villages chased
+Albi,   The   Racist  Dragon, into the
+very   cold   and  very  scary    cave
+
+and it was so cold and so scary in
+there,  that  Albi  began  to  cry
+
+    =bold Dragon Tears!
+
+Which, as we all know...
+
+    =bold Turn
+          into
+          Jelly
+          Beans!
+=end foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Dragon Tears!\n"
+          }
+        ],
+        "name": "bold"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "Which, as we all know...\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Turn\n          into\n          Jelly\n          Beans!\n"
+          }
+        ],
+        "name": "bold"
+      }
+    ],
+    "name": "foo",
+    "text": "=begin foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =bold Dragon Tears!\n\nWhich, as we all know...\n\n    =bold Turn\n          into\n          Jelly\n          Beans!\n=end foo\n",
+    "attr": []
+  }
+]

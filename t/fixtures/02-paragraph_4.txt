@@ -1,0 +1,70 @@
+=begin pod
+=begin One
+One, delimited block
+=end One
+=for Two
+Two, paragraph block
+=for Three
+Three, still a parablock
+
+=begin Four
+Four, another delimited one
+=end Four
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "One, delimited block\n"
+          }
+        ],
+        "name": "One",
+        "text": "=begin One\nOne, delimited block\n=end One\n",
+        "attr": []
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Two, paragraph block\n"
+          }
+        ],
+        "name": "Two",
+        "attr": []
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Three, still a parablock\n"
+          }
+        ],
+        "name": "Three",
+        "attr": []
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Four, another delimited one\n"
+          }
+        ],
+        "name": "Four",
+        "text": "=begin Four\nFour, another delimited one\n=end Four\n",
+        "attr": []
+      }
+    ],
+    "name": "pod",
+    "text": "=begin pod\n=begin One\nOne, delimited block\n=end One\n=for Two\nTwo, paragraph block\n=for Three\nThree, still a parablock\n\n=begin Four\nFour, another delimited one\n=end Four\n=end pod\n",
+    "attr": []
+  }
+]

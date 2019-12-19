@@ -1,0 +1,18 @@
+=begin foo
+some
+spaced   text
+=end foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "some\nspaced   text\n"
+      }
+    ],
+    "name": "foo",
+    "text": "=begin foo\nsome\nspaced   text\n=end foo\n",
+    "attr": []
+  }
+]

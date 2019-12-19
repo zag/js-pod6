@@ -1,0 +1,24 @@
+{
+  "name": "pod6",
+  "version": "0.0.1",
+  "description": "Pod6 is an easy-to-use markup language",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "perl6",
+    "pod",
+    "pod6",
+    "raku"
+  ],
+  "author": "Alexandr Zahatski",
+  "license": "MIT",
+  "devDependencies": {
+    "glob": "^7.1.6",
+    "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
+    "nodemon": "^2.0.2",
+    "pegjs": "^0.10.0"
+  }
+}

@@ -1,0 +1,16 @@
+=for Foo
+some
+spaced   text
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "some\nspaced   text\n"
+      }
+    ],
+    "name": "Foo",
+    "attr": []
+  }
+]

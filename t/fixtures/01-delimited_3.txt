@@ -1,0 +1,27 @@
+=begin foo
+paragraph one
+
+paragraph
+two
+=end foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "paragraph one\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "paragraph\ntwo\n"
+      }
+    ],
+    "name": "foo",
+    "text": "=begin foo\nparagraph one\n\nparagraph\ntwo\n=end foo\n",
+    "attr": []
+  }
+]

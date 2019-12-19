@@ -1,0 +1,54 @@
+=begin pod
+
+=got Inside
+got
+
+=bidden Inside
+bidden
+
+Outside blocks
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Inside\ngot\n"
+          }
+        ],
+        "name": "got"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Inside\nbidden\n"
+          }
+        ],
+        "name": "bidden"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "Outside blocks\n"
+      }
+    ],
+    "name": "pod",
+    "text": "=begin pod\n\n=got Inside\ngot\n\n=bidden Inside\nbidden\n\nOutside blocks\n=end pod\n",
+    "attr": []
+  }
+]

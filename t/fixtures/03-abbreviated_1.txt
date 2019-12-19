@@ -1,0 +1,13 @@
+=foo some text
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "some text\n"
+      }
+    ],
+    "name": "foo"
+  }
+]

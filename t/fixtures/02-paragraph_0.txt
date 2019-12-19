@@ -1,0 +1,10 @@
+=for Foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [],
+    "name": "Foo",
+    "attr": []
+  }
+]

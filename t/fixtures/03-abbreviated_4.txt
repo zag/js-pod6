@@ -1,0 +1,79 @@
+=begin pod
+    =begin one
+    one, delimited block
+    =end one
+    =two two,
+    paragraph block
+    =for three
+    three, still a parablock
+
+    =begin four
+    four, another delimited one
+    =end four
+    =head1 And just for the sake of having a working =head1 :)
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "one, delimited block\n"
+          }
+        ],
+        "name": "one",
+        "text": "    =begin one\n    one, delimited block\n    =end one\n",
+        "attr": []
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "two,\n    paragraph block\n"
+          }
+        ],
+        "name": "two"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "    three, still a parablock\n"
+          }
+        ],
+        "name": "three",
+        "attr": []
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "four, another delimited one\n"
+          }
+        ],
+        "name": "four",
+        "text": "    =begin four\n    four, another delimited one\n    =end four\n",
+        "attr": []
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "And just for the sake of having a working =head1 :)\n"
+          }
+        ],
+        "name": "head1"
+      }
+    ],
+    "name": "pod",
+    "text": "=begin pod\n    =begin one\n    one, delimited block\n    =end one\n    =two two,\n    paragraph block\n    =for three\n    three, still a parablock\n\n    =begin four\n    four, another delimited one\n    =end four\n    =head1 And just for the sake of having a working =head1 :)\n=end pod\n",
+    "attr": []
+  }
+]

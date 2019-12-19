@@ -1,0 +1,29 @@
+=begin pod
+
+someone accidentally left a space
+ 
+between these two paragraphs
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "someone accidentally left a space\n \nbetween these two paragraphs\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      }
+    ],
+    "name": "pod",
+    "text": "=begin pod\n\nsomeone accidentally left a space\n \nbetween these two paragraphs\n\n=end pod\n",
+    "attr": []
+  }
+]

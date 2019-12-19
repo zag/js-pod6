@@ -1,0 +1,27 @@
+=begin something
+    =begin somethingelse
+    toot tooot!
+    =end somethingelse
+=end something
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "toot tooot!\n"
+          }
+        ],
+        "name": "somethingelse",
+        "text": "    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n",
+        "attr": []
+      }
+    ],
+    "name": "something",
+    "text": "=begin something\n    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n=end something\n",
+    "attr": []
+  }
+]

@@ -1,0 +1,17 @@
+=table_not
+    Constants 1
+    Variables 10
+    Subroutines 33
+    Everything else 57
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "    Constants 1\n    Variables 10\n    Subroutines 33\n    Everything else 57\n"
+      }
+    ],
+    "name": "table_not"
+  }
+]

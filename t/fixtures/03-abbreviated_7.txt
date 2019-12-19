@@ -1,0 +1,14 @@
+=head3
+Heading level 3
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "Heading level 3\n"
+      }
+    ],
+    "name": "head3"
+  }
+]

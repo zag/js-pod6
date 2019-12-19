@@ -1,0 +1,81 @@
+=begin foo
+and so,  all  of  the  villages chased
+Albi,   The   Racist  Dragon, into the
+very   cold   and  very  scary    cave
+
+and it was so cold and so scary in
+there,  that  Albi  began  to  cry
+
+    =begin bar
+Dragon Tears!
+
+    =end bar
+
+Which, as we all know...
+
+    =begin bar
+    Turn into Jelly Beans!
+    =end bar
+=end foo
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Dragon Tears!\n"
+          },
+          {
+            "text": "\n",
+            "type": "ambient"
+          }
+        ],
+        "name": "bar",
+        "text": "    =begin bar\nDragon Tears!\n\n    =end bar\n",
+        "attr": []
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "Which, as we all know...\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Turn into Jelly Beans!\n"
+          }
+        ],
+        "name": "bar",
+        "text": "    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n",
+        "attr": []
+      }
+    ],
+    "name": "foo",
+    "text": "=begin foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =begin bar\nDragon Tears!\n\n    =end bar\n\nWhich, as we all know...\n\n    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n=end foo\n",
+    "attr": []
+  }
+]

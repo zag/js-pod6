@@ -1,0 +1,28 @@
+=begin more-discussion-needed
+
+XXX: chop(@array) should return an array of chopped strings?
+XXX: chop(%has)   should return a  hash  of chopped strings?
+
+=end more-discussion-needed
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      }
+    ],
+    "name": "more-discussion-needed",
+    "text": "=begin more-discussion-needed\n\nXXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n\n=end more-discussion-needed\n",
+    "attr": []
+  }
+]

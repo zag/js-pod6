@@ -1,0 +1,56 @@
+=begin pod
+
+=for Got
+Inside Got
+
+   =for Bidden
+   Inside Bidden
+
+Outside blocks
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Inside Got\n"
+          }
+        ],
+        "name": "Got",
+        "attr": []
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "   Inside Bidden\n"
+          }
+        ],
+        "name": "Bidden",
+        "attr": []
+      },
+      {
+        "text": "\n",
+        "type": "ambient"
+      },
+      {
+        "text": "Outside blocks\n"
+      }
+    ],
+    "name": "pod",
+    "text": "=begin pod\n\n=for Got\nInside Got\n\n   =for Bidden\n   Inside Bidden\n\nOutside blocks\n=end pod\n",
+    "attr": []
+  }
+]
