@@ -1,10 +1,23 @@
 
 Document = nodes:Element*  { return  nodes }
 
-Element =  delimitedBlockRaw / delimitedBlock / paragraphBlock / abbreviatedBlock / ambientBlock 
+Element =  delimitedBlockRaw  
+         / delimitedBlock
+         / paragraphBlockRaw 
+         / paragraphBlock 
+         / abbreviatedBlock 
+         / textBlock 
+         / blankline
+
+/**
+U+0020 SPACE
+U+00A0 NO-BREAK SPACE
+U+0009 CHARACTER TABULATION
+U+2001 EM QUAD
+*/
 
 
-hs = [ \t\u000C]
+hs = [ \u00a0\u2001\t\u000C]
 _ = [ \t\u000C]*
 Endline = $(hs* [\n\r])
 
@@ -16,12 +29,13 @@ char = [^\n\r]
 newline = '\n' / '\r' '\n'?
 EOL = newline / !.
 emptyline = $(hs* [\n\r])
+blankline = $( hs* [\n\r]) { return { type:'blankline'}}
 markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
 markerAbbreviatedBlock = '=' name:identifier  { return name }
 markers = markerBegin / markerEnd / markerFor 
-text_content = !( _ ( markers / markerAbbreviatedBlock ) ) $(Text)+ EOL { return text()}
+text_content = !( _ ( markers / markerAbbreviatedBlock ) / blankline) $(Text)+ EOL { return text()}
 /** TODO:
 boolean:          C«:key(1)»   C«key => 1»
 Hash              C«:key{a=>1, b=>2}»,  C«key => {a=>1, b=>2}»
@@ -55,36 +69,129 @@ item =  // quoted strings
 array_comma = first:item _ rest:(","_ i:(item)* {return i[0] } )+ {return [first, ...(rest.filter( (i)=> i !== null))] }/ res:item {return  [res]} / _ {return []}
 
 array_sp = all:( _ i:item _ {return i})* { return all }/ res:item {return  [res]} / _ {return []}
-delimitedBlockRaw = vmagin:$(_) markerBegin name:identifier _ attr:attributes_block &{ return name !== name.toLowerCase() && name !== name.toUpperCase() } 
-content:$(! markers Text Endline? 
+delimitedBlockRaw = 
+    vmargin:$(_) 
+    markerBegin name:identifier _ attr:attributes_block 
+    &{  
+     return ( 
+       (name === 'code')
+        || 
+       (
+        name !== name.toLowerCase() 
+            && 
+        name !== name.toUpperCase() 
+       )
+      )
+     }
+  
+content:$( 
+         !markers Text Endline? 
           / empty:emptyline + { return {text: text(), type: "ambient"}} 
-          )+
-vmagin2:$(_) res:( 
-              markerEnd ename:identifier &{ return name === ename } Endline? { return { type:'block', content, name}} 
-              ) &{return  true || vmagin === vmagin2} { return { ...res, text:text() , attr }}
+          )+ 
+vmargin2:$(_) res:( 
+                    markerEnd ename:identifier &{ return name === ename } Endline? 
+                    { 
+                      const type = ( name === 'code') ? 'block' : 'namedBlock'
+                      return {
+                              type:type,
+                              content:[{text:content}],
+                              name 
+                             }
+                    } 
+              ) &{return  true || vmargin === vmargin2} { return { ...res, text:text() , attr }}
 
 delimitedBlock = 
-  vmagin:$(_) markerBegin name:identifier  _ attr:attributes_block
+  vmargin:$(_) markerBegin name:identifier  _ attr:attributes_block
   content:( nodes:(
-          empty:emptyline + { return {text: text(), type: "ambient"}} 
-          /  delimitedBlock 
+          blankline
+          / delimitedBlockRaw
+          / delimitedBlock
+          / paragraphBlockRaw 
           / paragraphBlock 
           / abbreviatedBlock 
           ) & { return true || name == name.toUpperCase() } { return nodes} 
-  / _ text:$(text_content+) {return {text}})* 
-vmagin2:$(_) res:( 
-          markerEnd ename:identifier &{ return name === ename } Endline? { return { type:'block', content, name}} 
-          ) &{return  true || vmagin === vmagin2} { return { ...res, text:text() , attr }}
+  / tvmargin:$( hs* ) 
+    text:$(text_content+)
+    {
+      return {
+              text, 
+              margin:tvmargin,
+              type: 
+                  name.match(/pod|nested|item|code|defn/) 
+                  && 
+                  (tvmargin.length - vmargin.length) > 0 ? 'code' : 'text'
+              }
+    }
+  )* 
+  vmargin2:$(_) res:( 
+          markerEnd ename:identifier &{ return name === ename } Endline? 
+          { 
+            return { 
+                    type:'block',
+                    content,
+                    name,
+                    margin:vmargin
+                  }
+          } 
+          ) 
+          // TODO: fix this 
+          &{return  true || vmargin === vmargin2} 
+          { 
+            return { 
+                    ...res,
+                    text:text(),
+                    attr 
+                    }
+          }
 
-ambientBlock = (emptyline / [\s]+ /.+ )+ { return { text: text(), type: "ambient"}}
+textBlock = ( text_content )+ { return { text: text(), type: "text"}}
+ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { return { text: text(), type: "ambient1"}}
 
-abbreviatedBlock = _ !markers name:markerAbbreviatedBlock _ emptyline* 
-content:$(!emptyline text_content )*
-{ return { type:'block', content: content === "" ? [] : [{text:content}], name}} 
+abbreviatedBlock = 
+  vmargin:$(_) !markers 
+  name:markerAbbreviatedBlock _ emptyline* 
+  content:$(!emptyline text:text_content )*
+  { 
+    return {
+            margin:vmargin,
+            type:'block',
+            content: content === "" ? [] : [{type:'text', text:content, margin: ''}],
+            name
+          }
+  } 
+paragraphBlockRaw = 
+  vmargin:$(_) 
+  marker:markerFor  name:identifier _ attr:attributes_block
+      &{  
+     return ( 
+       name !== name.toLowerCase() 
+        && 
+        name !== name.toUpperCase() )
+     }
+  content:$(!emptyline text_content)*
+  { 
+      return { 
+              type:'blockNamed',
+              content: content === "" ? [] : [{text:content}],
+              name,
+              margin:vmargin,
+              attr
+            }
+  } 
 
-paragraphBlock = _ marker:markerFor name:identifier _ attr:attributes_block
-content:$(!emptyline text_content)*
-{ return { type:'block', content: content === "" ? [] : [{text:content}], name, attr}} 
+paragraphBlock = 
+  vmargin:$(_) 
+  marker:markerFor  name:identifier _ attr:attributes_block
+  content:$(!emptyline text_content)*
+  { 
+      return { 
+              type:'block',
+              content: content === "" ? [] : [{text:content}],
+              name,
+              margin:vmargin,
+              attr
+            }
+  } 
 
 identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
 Text "text" = $(c:char+)
