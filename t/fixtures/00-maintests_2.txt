@@ -1,0 +1,48 @@
+=begin pod
+=for Named
+  text
+=begin Named
+sdsdsdsd ssd s
+  asdasdasdasd
+
+dd
+=end Named
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "blockNamed",
+        "content": [
+          {
+            "text": "  text\n"
+          }
+        ],
+        "name": "Named",
+        "margin": "",
+        "attr": []
+      },
+      {
+        "type": "namedBlock",
+        "content": [
+          {
+            "text": "sdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n"
+          }
+        ],
+        "name": "Named",
+        "text": "=begin Named\nsdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n=end Named\n",
+        "attr": []
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=for Named\n  text\n=begin Named\nsdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n=end Named\n\n=end pod\n",
+    "attr": []
+  }
+]

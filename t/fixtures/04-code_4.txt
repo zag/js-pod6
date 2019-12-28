@@ -1,0 +1,69 @@
+=begin pod
+
+=head1 A heading
+
+This is Pod too. Specifically, this is a simple C<para> block
+
+    $this = pod('also');  # Specifically, a code block
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "blankline"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "A heading\n",
+            "margin": "",
+            "content": [
+              "A heading\n"
+            ]
+          }
+        ],
+        "name": "head1"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "This is Pod too. Specifically, this is a simple C<para> block\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "This is Pod too. Specifically, this is a simple ",
+          {
+            "content": [
+              "para"
+            ],
+            "type": "fcode",
+            "name": "C"
+          },
+          " block\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "$this = pod('also');  # Specifically, a code block\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n\n=head1 A heading\n\nThis is Pod too. Specifically, this is a simple C<para> block\n\n    $this = pod('also');  # Specifically, a code block\n\n=end pod\n",
+    "attr": []
+  }
+]

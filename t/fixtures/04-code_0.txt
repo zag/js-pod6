@@ -1,0 +1,52 @@
+=begin pod
+This ordinary paragraph introduces a code block:
+
+    $this = 1 * code('block');
+    $which.is_specified(:by<indenting>);
+
+
+    $which.spans(:newlines);
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "This ordinary paragraph introduces a code block:\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "This ordinary paragraph introduces a code block:\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "$this = 1 * code('block');\n$which.is_specified(:by<indenting>);\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "$which.spans(:newlines);\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\nThis ordinary paragraph introduces a code block:\n\n    $this = 1 * code('block');\n    $which.is_specified(:by<indenting>);\n\n\n    $which.spans(:newlines);\n\n=end pod\n",
+    "attr": []
+  }
+]

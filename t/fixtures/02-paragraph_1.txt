@@ -3,13 +3,14 @@ some text
 ~~~~~~~
 [
   {
-    "type": "block",
+    "type": "blockNamed",
     "content": [
       {
         "text": "some text\n"
       }
     ],
     "name": "Foo",
+    "margin": "",
     "attr": []
   }
 ]

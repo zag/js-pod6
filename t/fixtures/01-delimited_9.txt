@@ -22,46 +22,71 @@
     "type": "block",
     "content": [
       {
+        "margin": "    ",
         "type": "block",
         "content": [
           {
-            "text": "This is a heading block\n"
+            "type": "text",
+            "text": "This is a heading block\n",
+            "margin": "",
+            "content": [
+              "This is a heading block\n"
+            ]
           }
         ],
         "name": "head1"
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
+        "text": "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n",
+        "margin": "    ",
+        "type": "text",
+        "content": [
+          "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
+        "text": "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n",
+        "margin": "    ",
+        "type": "text",
+        "content": [
+          "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
+        ]
       },
       {
+        "margin": "        ",
         "type": "block",
         "content": [
           {
-            "text": "This is another heading block\n"
+            "type": "text",
+            "text": "This is another heading block\n",
+            "margin": "",
+            "content": [
+              "This is another heading block\n"
+            ]
           }
         ],
         "name": "head2"
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
+        "text": "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n",
+        "margin": "        ",
+        "type": "text",
+        "content": [
+          "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
+        ]
       }
     ],
     "name": "pod",
+    "margin": "",
     "text": "=begin pod\n    =head1 This is a heading block\n\n    This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n\n    This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n        =head2 This is another heading block\n\n        This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n=end pod\n",
     "attr": []
   }

@@ -2,6 +2,7 @@
 ~~~~~~~
 [
   {
+    "margin": "",
     "type": "block",
     "content": [],
     "name": "foo"

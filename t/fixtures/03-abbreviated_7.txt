@@ -3,10 +3,16 @@ Heading level 3
 ~~~~~~~
 [
   {
+    "margin": "",
     "type": "block",
     "content": [
       {
-        "text": "Heading level 3\n"
+        "type": "text",
+        "text": "Heading level 3\n",
+        "margin": "",
+        "content": [
+          "Heading level 3\n"
+        ]
       }
     ],
     "name": "head3"

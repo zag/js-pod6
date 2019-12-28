@@ -4,13 +4,14 @@ spaced   text
 ~~~~~~~
 [
   {
-    "type": "block",
+    "type": "blockNamed",
     "content": [
       {
         "text": "some\nspaced   text\n"
       }
     ],
     "name": "Foo",
+    "margin": "",
     "attr": []
   }
 ]

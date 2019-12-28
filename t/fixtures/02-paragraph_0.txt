@@ -2,9 +2,10 @@
 ~~~~~~~
 [
   {
-    "type": "block",
+    "type": "blockNamed",
     "content": [],
     "name": "Foo",
+    "margin": "",
     "attr": []
   }
 ]

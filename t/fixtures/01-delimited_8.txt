@@ -10,18 +10,22 @@ XXX: chop(%has)   should return a  hash  of chopped strings?
     "type": "block",
     "content": [
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
+        "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       }
     ],
     "name": "more-discussion-needed",
+    "margin": "",
     "text": "=begin more-discussion-needed\n\nXXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n\n=end more-discussion-needed\n",
     "attr": []
   }

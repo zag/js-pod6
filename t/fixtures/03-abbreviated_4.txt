@@ -21,18 +21,30 @@
         "type": "block",
         "content": [
           {
-            "text": "one, delimited block\n"
+            "text": "one, delimited block\n",
+            "margin": "    ",
+            "type": "text",
+            "content": [
+              "one, delimited block\n"
+            ]
           }
         ],
         "name": "one",
+        "margin": "    ",
         "text": "    =begin one\n    one, delimited block\n    =end one\n",
         "attr": []
       },
       {
+        "margin": "    ",
         "type": "block",
         "content": [
           {
-            "text": "two,\n    paragraph block\n"
+            "type": "text",
+            "text": "two,\n    paragraph block\n",
+            "margin": "",
+            "content": [
+              "two,\n    paragraph block\n"
+            ]
           }
         ],
         "name": "two"
@@ -45,34 +57,47 @@
           }
         ],
         "name": "three",
+        "margin": "    ",
         "attr": []
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
         "type": "block",
         "content": [
           {
-            "text": "four, another delimited one\n"
+            "text": "four, another delimited one\n",
+            "margin": "    ",
+            "type": "text",
+            "content": [
+              "four, another delimited one\n"
+            ]
           }
         ],
         "name": "four",
+        "margin": "    ",
         "text": "    =begin four\n    four, another delimited one\n    =end four\n",
         "attr": []
       },
       {
+        "margin": "    ",
         "type": "block",
         "content": [
           {
-            "text": "And just for the sake of having a working =head1 :)\n"
+            "type": "text",
+            "text": "And just for the sake of having a working =head1 :)\n",
+            "margin": "",
+            "content": [
+              "And just for the sake of having a working =head1 :)\n"
+            ]
           }
         ],
         "name": "head1"
       }
     ],
     "name": "pod",
+    "margin": "",
     "text": "=begin pod\n    =begin one\n    one, delimited block\n    =end one\n    =two two,\n    paragraph block\n    =for three\n    three, still a parablock\n\n    =begin four\n    four, another delimited one\n    =end four\n    =head1 And just for the sake of having a working =head1 :)\n=end pod\n",
     "attr": []
   }

@@ -6,10 +6,16 @@
 ~~~~~~~
 [
   {
+    "margin": "",
     "type": "block",
     "content": [
       {
-        "text": "    Constants 1\n    Variables 10\n    Subroutines 33\n    Everything else 57\n"
+        "type": "text",
+        "text": "    Constants 1\n    Variables 10\n    Subroutines 33\n    Everything else 57\n",
+        "margin": "",
+        "content": [
+          "    Constants 1\n    Variables 10\n    Subroutines 33\n    Everything else 57\n"
+        ]
       }
     ],
     "name": "table_not"

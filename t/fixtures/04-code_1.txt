@@ -1,0 +1,85 @@
+=begin pod
+This is an ordinary paragraph
+
+    While this is not
+    This is a code block
+
+    =head1 Mumble mumble
+
+    Suprisingly, this is not a code block
+        (with fancy indentation too)
+
+But this is just a text. Again
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "This is an ordinary paragraph\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "This is an ordinary paragraph\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "While this is not\nThis is a code block\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "margin": "    ",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Mumble mumble\n",
+            "margin": "",
+            "content": [
+              "Mumble mumble\n"
+            ]
+          }
+        ],
+        "name": "head1"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "Suprisingly, this is not a code block\n        (with fancy indentation too)\n",
+        "margin": "    ",
+        "type": "text",
+        "content": [
+          "Suprisingly, this is not a code block\n        (with fancy indentation too)\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "But this is just a text. Again\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "But this is just a text. Again\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\nThis is an ordinary paragraph\n\n    While this is not\n    This is a code block\n\n    =head1 Mumble mumble\n\n    Suprisingly, this is not a code block\n        (with fancy indentation too)\n\nBut this is just a text. Again\n\n=end pod\n",
+    "attr": []
+  }
+]

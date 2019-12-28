@@ -3,10 +3,16 @@ and some more
 ~~~~~~~
 [
   {
+    "margin": "",
     "type": "block",
     "content": [
       {
-        "text": "some text\nand some more\n"
+        "type": "text",
+        "text": "some text\nand some more\n",
+        "margin": "",
+        "content": [
+          "some text\nand some more\n"
+        ]
       }
     ],
     "name": "foo"

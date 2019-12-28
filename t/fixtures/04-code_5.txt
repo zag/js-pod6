@@ -1,0 +1,113 @@
+=begin pod
+    this is code
+
+    =for Podcast
+        this is not
+
+    this is not code either
+
+    =begin Itemization
+        this is not
+    =end Itemization
+
+    =begin Quitem
+        and this is not
+    =end Quitem
+
+    =begin item
+        and this is!
+    =end item
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "this is code\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "blockNamed",
+        "content": [
+          {
+            "text": "        this is not\n"
+          }
+        ],
+        "name": "Podcast",
+        "margin": "    ",
+        "attr": []
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "this is not code either\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "this is not\n",
+            "margin": "        ",
+            "type": "text",
+            "content": [
+              "this is not\n"
+            ]
+          }
+        ],
+        "name": "Itemization",
+        "margin": "    ",
+        "text": "    =begin Itemization\n        this is not\n    =end Itemization\n",
+        "attr": []
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "and this is not\n",
+            "margin": "        ",
+            "type": "code"
+          }
+        ],
+        "name": "Quitem",
+        "margin": "    ",
+        "text": "    =begin Quitem\n        and this is not\n    =end Quitem\n",
+        "attr": []
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "and this is!\n",
+            "margin": "        ",
+            "type": "code"
+          }
+        ],
+        "name": "item",
+        "margin": "    ",
+        "text": "    =begin item\n        and this is!\n    =end item\n",
+        "attr": []
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n    this is code\n\n    =for Podcast\n        this is not\n\n    this is not code either\n\n    =begin Itemization\n        this is not\n    =end Itemization\n\n    =begin Quitem\n        and this is not\n    =end Quitem\n\n    =begin item\n        and this is!\n    =end item\n=end pod\n",
+    "attr": []
+  }
+]

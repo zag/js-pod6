@@ -2,10 +2,16 @@
 ~~~~~~~
 [
   {
+    "margin": "",
     "type": "block",
     "content": [
       {
-        "text": "some text\n"
+        "type": "text",
+        "text": "some text\n",
+        "margin": "",
+        "content": [
+          "some text\n"
+        ]
       }
     ],
     "name": "foo"

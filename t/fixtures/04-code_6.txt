@@ -1,0 +1,19 @@
+=begin code
+    foo foo
+    =begin code
+    =end code
+=end code
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "    foo foo\n    =begin code\n    =end code\n"
+      }
+    ],
+    "name": "code",
+    "text": "=begin code\n    foo foo\n    =begin code\n    =end code\n=end code\n",
+    "attr": []
+  }
+]

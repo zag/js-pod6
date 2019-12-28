@@ -8,10 +8,16 @@ spaced   text
     "type": "block",
     "content": [
       {
-        "text": "some\nspaced   text\n"
+        "text": "some\nspaced   text\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "some\nspaced   text\n"
+        ]
       }
     ],
     "name": "foo",
+    "margin": "",
     "text": "=begin foo\nsome\nspaced   text\n=end foo\n",
     "attr": []
   }

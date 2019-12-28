@@ -6,6 +6,7 @@
     "type": "block",
     "content": [],
     "name": "foo",
+    "margin": "",
     "text": "=begin foo\n=end foo\n",
     "attr": []
   }

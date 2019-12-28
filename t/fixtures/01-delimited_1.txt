@@ -7,10 +7,16 @@ some text
     "type": "block",
     "content": [
       {
-        "text": "some text\n"
+        "text": "some text\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "some text\n"
+        ]
       }
     ],
     "name": "foo",
+    "margin": "",
     "text": "=begin foo\nsome text\n=end foo\n",
     "attr": []
   }

@@ -1,0 +1,41 @@
+=begin pod
+
+Tests for the feed operators
+
+    ==> and <==
+    
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "Tests for the feed operators\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "Tests for the feed operators\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "==> and <==\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n\nTests for the feed operators\n\n    ==> and <==\n    \n=end pod\n",
+    "attr": []
+  }
+]

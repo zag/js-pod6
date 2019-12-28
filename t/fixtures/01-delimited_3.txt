@@ -10,17 +10,27 @@ two
     "type": "block",
     "content": [
       {
-        "text": "paragraph one\n"
+        "text": "paragraph one\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "paragraph one\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "paragraph\ntwo\n"
+        "text": "paragraph\ntwo\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "paragraph\ntwo\n"
+        ]
       }
     ],
     "name": "foo",
+    "margin": "",
     "text": "=begin foo\nparagraph one\n\nparagraph\ntwo\n=end foo\n",
     "attr": []
   }

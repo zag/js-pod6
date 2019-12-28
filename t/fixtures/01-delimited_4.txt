@@ -12,15 +12,22 @@
         "type": "block",
         "content": [
           {
-            "text": "toot tooot!\n"
+            "text": "toot tooot!\n",
+            "margin": "    ",
+            "type": "text",
+            "content": [
+              "toot tooot!\n"
+            ]
           }
         ],
         "name": "somethingelse",
+        "margin": "    ",
         "text": "    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n",
         "attr": []
       }
     ],
     "name": "something",
+    "margin": "",
     "text": "=begin something\n    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n=end something\n",
     "attr": []
   }

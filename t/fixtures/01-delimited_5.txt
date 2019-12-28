@@ -23,58 +23,81 @@ Which, as we all know...
     "type": "block",
     "content": [
       {
-        "text": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n"
+        "text": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n"
+        "text": "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
         "type": "block",
         "content": [
           {
-            "text": "Dragon Tears!\n"
+            "text": "Dragon Tears!\n",
+            "margin": "",
+            "type": "text",
+            "content": [
+              "Dragon Tears!\n"
+            ]
           },
           {
-            "text": "\n",
-            "type": "ambient"
+            "type": "blankline"
           }
         ],
         "name": "bar",
+        "margin": "    ",
         "text": "    =begin bar\nDragon Tears!\n\n    =end bar\n",
         "attr": []
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "Which, as we all know...\n"
+        "text": "Which, as we all know...\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "Which, as we all know...\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
         "type": "block",
         "content": [
           {
-            "text": "Turn into Jelly Beans!\n"
+            "text": "Turn into Jelly Beans!\n",
+            "margin": "    ",
+            "type": "text",
+            "content": [
+              "Turn into Jelly Beans!\n"
+            ]
           }
         ],
         "name": "bar",
+        "margin": "    ",
         "text": "    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n",
         "attr": []
       }
     ],
     "name": "foo",
+    "margin": "",
     "text": "=begin foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =begin bar\nDragon Tears!\n\n    =end bar\n\nWhich, as we all know...\n\n    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n=end foo\n",
     "attr": []
   }

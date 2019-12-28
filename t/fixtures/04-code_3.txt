@@ -1,0 +1,46 @@
+=begin pod
+Fun comes
+
+    This is code
+  Ha, what now?
+
+ one more block of code
+ just to make sure it works
+  or better: maybe it'll break!
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "Fun comes\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "Fun comes\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "This is code\nHa, what now?\n",
+        "margin": "    ",
+        "type": "code"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "one more block of code\njust to make sure it works\n or better: maybe it'll break!\n",
+        "margin": " ",
+        "type": "code"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\nFun comes\n\n    This is code\n  Ha, what now?\n\n one more block of code\n just to make sure it works\n  or better: maybe it'll break!\n=end pod\n",
+    "attr": []
+  }
+]

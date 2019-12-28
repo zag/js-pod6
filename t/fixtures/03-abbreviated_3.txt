@@ -14,40 +14,55 @@ Outside blocks
     "type": "block",
     "content": [
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
+        "margin": "",
         "type": "block",
         "content": [
           {
-            "text": "Inside\ngot\n"
+            "type": "text",
+            "text": "Inside\ngot\n",
+            "margin": "",
+            "content": [
+              "Inside\ngot\n"
+            ]
           }
         ],
         "name": "got"
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
+        "margin": "",
         "type": "block",
         "content": [
           {
-            "text": "Inside\nbidden\n"
+            "type": "text",
+            "text": "Inside\nbidden\n",
+            "margin": "",
+            "content": [
+              "Inside\nbidden\n"
+            ]
           }
         ],
         "name": "bidden"
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "Outside blocks\n"
+        "text": "Outside blocks\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "Outside blocks\n"
+        ]
       }
     ],
     "name": "pod",
+    "margin": "",
     "text": "=begin pod\n\n=got Inside\ngot\n\n=bidden Inside\nbidden\n\nOutside blocks\n=end pod\n",
     "attr": []
   }

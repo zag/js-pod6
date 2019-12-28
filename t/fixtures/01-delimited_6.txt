@@ -11,18 +11,33 @@ between these two paragraphs
     "type": "block",
     "content": [
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
       },
       {
-        "text": "someone accidentally left a space\n \nbetween these two paragraphs\n"
+        "text": "someone accidentally left a space\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "someone accidentally left a space\n"
+        ]
       },
       {
-        "text": "\n",
-        "type": "ambient"
+        "type": "blankline"
+      },
+      {
+        "text": "between these two paragraphs\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "between these two paragraphs\n"
+        ]
+      },
+      {
+        "type": "blankline"
       }
     ],
     "name": "pod",
+    "margin": "",
     "text": "=begin pod\n\nsomeone accidentally left a space\n \nbetween these two paragraphs\n\n=end pod\n",
     "attr": []
   }
