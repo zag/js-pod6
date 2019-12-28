@@ -1,5 +1,6 @@
 {
+  "verbose": true,
   "watch": ["./"],
-  "exec": "pegjs -o src/pod6.js src/pod6.pegjs",
+  "exec": "pegjs -o src/pod6.js src/pod6.pegjs; pegjs -o src/pod6fc.js src/pod6fc.pegjs",
   "ext": "pegjs"
 }
