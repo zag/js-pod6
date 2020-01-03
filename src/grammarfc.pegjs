@@ -8,7 +8,7 @@ name:start_code &{return name === "L"}
     '|' t:(!code .+) &{console.log({t});return true }{return {text,t}}
     ) 
 end_code {return {name:'LS', type:'fcode',content:t}}
-allowed_code = ( 'C' / 'L' / 'S')
+allowed_code = ( 'I' / 'C' / 'L' / 'S')
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
 code =  name:start_code content:(  
