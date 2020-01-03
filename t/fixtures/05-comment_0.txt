@@ -1,0 +1,41 @@
+=begin pod
+=for comment
+foo foo
+bla bla    bla
+
+This isn't a comment
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "foo foo\nbla bla    bla\n"
+          }
+        ],
+        "name": "comment",
+        "margin": "",
+        "attr": []
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "This isn't a comment\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "This isn't a comment\n"
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=for comment\nfoo foo\nbla bla    bla\n\nThis isn't a comment\n=end pod\n",
+    "attr": []
+  }
+]

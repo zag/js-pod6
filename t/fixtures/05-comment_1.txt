@@ -1,0 +1,20 @@
+=comment
+This file is deliberately specified in Raku Pod format
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "type": "text",
+        "text": "This file is deliberately specified in Raku Pod format\n",
+        "margin": "",
+        "content": [
+          "This file is deliberately specified in Raku Pod format\n"
+        ]
+      }
+    ],
+    "name": "comment"
+  }
+]

@@ -1,0 +1,146 @@
+=begin pod
+The seven suspects are:
+
+=item  Happy
+=item  Dopey
+=item  Sleepy
+=item  Bashful
+=item  Sneezy
+=item  Grumpy
+=item  Keyser Soze
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "The seven suspects are:\n",
+        "margin": "",
+        "type": "text",
+        "content": [
+          "The seven suspects are:\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Happy\n",
+            "margin": "",
+            "content": [
+              "Happy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Dopey\n",
+            "margin": "",
+            "content": [
+              "Dopey\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sleepy\n",
+            "margin": "",
+            "content": [
+              "Sleepy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Bashful\n",
+            "margin": "",
+            "content": [
+              "Bashful\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Sneezy\n",
+            "margin": "",
+            "content": [
+              "Sneezy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Grumpy\n",
+            "margin": "",
+            "content": [
+              "Grumpy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Keyser Soze\n",
+            "margin": "",
+            "content": [
+              "Keyser Soze\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\nThe seven suspects are:\n\n=item  Happy\n=item  Dopey\n=item  Sleepy\n=item  Bashful\n=item  Sneezy\n=item  Grumpy\n=item  Keyser Soze\n=end pod\n",
+    "attr": []
+  }
+]

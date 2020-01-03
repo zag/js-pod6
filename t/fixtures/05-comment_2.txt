@@ -1,0 +1,20 @@
+=begin comment
+foo foo
+=begin invalid pod
+=as many invalid pod as we want
+===yay!
+=end comment
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "foo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n"
+      }
+    ],
+    "name": "comment",
+    "text": "=begin comment\nfoo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n=end comment\n",
+    "attr": []
+  }
+]

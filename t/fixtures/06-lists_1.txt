@@ -1,0 +1,154 @@
+=begin pod
+=item1  Animal
+=item2     Vertebrate
+=item2     Invertebrate
+
+=item1  Phase
+=item2     Solid
+=item2     Liquid
+=item2     Gas
+=item2     Chocolate
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Animal\n",
+            "margin": "",
+            "content": [
+              "Animal\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "1"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Vertebrate\n",
+            "margin": "",
+            "content": [
+              "Vertebrate\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Invertebrate\n",
+            "margin": "",
+            "content": [
+              "Invertebrate\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Phase\n",
+            "margin": "",
+            "content": [
+              "Phase\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "1"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Solid\n",
+            "margin": "",
+            "content": [
+              "Solid\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liquid\n",
+            "margin": "",
+            "content": [
+              "Liquid\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Gas\n",
+            "margin": "",
+            "content": [
+              "Gas\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Chocolate\n",
+            "margin": "",
+            "content": [
+              "Chocolate\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=item1  Animal\n=item2     Vertebrate\n=item2     Invertebrate\n\n=item1  Phase\n=item2     Solid\n=item2     Liquid\n=item2     Gas\n=item2     Chocolate\n=end pod\n",
+    "attr": []
+  }
+]

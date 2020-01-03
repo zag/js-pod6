@@ -1,0 +1,102 @@
+=begin pod
+=comment CORRECT...
+=begin item1
+The choices are:
+=end item1
+=item2 Liberty
+=item2 Death
+=item2 Beer
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "CORRECT...\n",
+            "margin": "",
+            "content": [
+              "CORRECT...\n"
+            ]
+          }
+        ],
+        "name": "comment"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "The choices are:\n",
+            "margin": "",
+            "type": "text",
+            "content": [
+              "The choices are:\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "margin": "",
+        "text": "=begin item1\nThe choices are:\n=end item1\n",
+        "attr": [],
+        "level": "1"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Liberty\n",
+            "margin": "",
+            "content": [
+              "Liberty\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Death\n",
+            "margin": "",
+            "content": [
+              "Death\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "text",
+            "text": "Beer\n",
+            "margin": "",
+            "content": [
+              "Beer\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=comment CORRECT...\n=begin item1\nThe choices are:\n=end item1\n=item2 Liberty\n=item2 Death\n=item2 Beer\n=end pod\n",
+    "attr": []
+  }
+]
