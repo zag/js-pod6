@@ -1,3 +1,8 @@
+# 0.0.4
+
+- add comment lock support
+- add level for items (plugin)
+
 # 0.0.3
 
 - fix npm
