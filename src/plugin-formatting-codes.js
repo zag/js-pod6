@@ -1,5 +1,5 @@
 'use strict'
-var fcparser = require("../src/pod6fc");
+var fcparser = require("../src/grammarfc");
 module.exports = () =>( tree )=>{
     const visit = (node)=>{
         if ( Array.isArray(node) ) {
