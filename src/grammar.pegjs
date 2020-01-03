@@ -1,4 +1,15 @@
 
+{
+  // the following names: MyBlock, myBlock are use for extending pod6
+  function isNamedBlock(name) {
+    return (
+        name !== name.toLowerCase() 
+            && 
+        name !== name.toUpperCase() 
+      )
+  }
+}
+
 Document = nodes:Element*  { return  nodes }
 
 Element =  delimitedBlockRaw  
@@ -74,7 +85,7 @@ delimitedBlockRaw =
     markerBegin name:identifier _ attr:attributes_block 
     &{  
      return ( 
-       (name === 'code')
+       (name.match(/code|comment/))
         || 
        (
         name !== name.toLowerCase() 
@@ -85,13 +96,14 @@ delimitedBlockRaw =
      }
   
 content:$( 
-         !markers Text Endline? 
+         !markers t:Text Endline? 
           / empty:emptyline + { return {text: text(), type: "ambient"}} 
+          / !markerEnd $(.)
           )+ 
 vmargin2:$(_) res:( 
                     markerEnd ename:identifier &{ return name === ename } Endline? 
                     { 
-                      const type = ( name === 'code') ? 'block' : 'namedBlock'
+                      const type = isNamedBlock(name) ? 'namedBlock' : 'block'
                       return {
                               type:type,
                               content:[{text:content}],

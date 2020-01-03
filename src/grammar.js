@@ -213,7 +213,7 @@ function peg$parse(input, options) {
       peg$c69 = function(all) { return all },
       peg$c70 = function(vmargin, name, attr) {  
            return ( 
-             (name === 'code')
+             (name.match(/code|comment/))
               || 
              (
               name !== name.toLowerCase() 
@@ -225,7 +225,7 @@ function peg$parse(input, options) {
       peg$c71 = function(vmargin, name, attr, empty) { return {text: text(), type: "ambient"}},
       peg$c72 = function(vmargin, name, attr, content, vmargin2, ename) { return name === ename },
       peg$c73 = function(vmargin, name, attr, content, vmargin2, ename) { 
-                            const type = ( name === 'code') ? 'block' : 'namedBlock'
+                            const type = isNamedBlock(name) ? 'namedBlock' : 'block'
                             return {
                                     type:type,
                                     content:[{text:content}],
@@ -1775,6 +1775,44 @@ function peg$parse(input, options) {
                     s10 = peg$c71(s1, s3, s5, s10);
                   }
                   s9 = s10;
+                  if (s9 === peg$FAILED) {
+                    s9 = peg$currPos;
+                    s10 = peg$currPos;
+                    peg$silentFails++;
+                    s11 = peg$parsemarkerEnd();
+                    peg$silentFails--;
+                    if (s11 === peg$FAILED) {
+                      s10 = void 0;
+                    } else {
+                      peg$currPos = s10;
+                      s10 = peg$FAILED;
+                    }
+                    if (s10 !== peg$FAILED) {
+                      s11 = peg$currPos;
+                      if (input.length > peg$currPos) {
+                        s12 = input.charAt(peg$currPos);
+                        peg$currPos++;
+                      } else {
+                        s12 = peg$FAILED;
+                        if (peg$silentFails === 0) { peg$fail(peg$c14); }
+                      }
+                      if (s12 !== peg$FAILED) {
+                        s11 = input.substring(s11, peg$currPos);
+                      } else {
+                        s11 = s12;
+                      }
+                      if (s11 !== peg$FAILED) {
+                        s10 = [s10, s11];
+                        s9 = s10;
+                      } else {
+                        peg$currPos = s9;
+                        s9 = peg$FAILED;
+                      }
+                    } else {
+                      peg$currPos = s9;
+                      s9 = peg$FAILED;
+                    }
+                  }
                 }
                 if (s9 !== peg$FAILED) {
                   while (s9 !== peg$FAILED) {
@@ -1829,6 +1867,44 @@ function peg$parse(input, options) {
                         s10 = peg$c71(s1, s3, s5, s10);
                       }
                       s9 = s10;
+                      if (s9 === peg$FAILED) {
+                        s9 = peg$currPos;
+                        s10 = peg$currPos;
+                        peg$silentFails++;
+                        s11 = peg$parsemarkerEnd();
+                        peg$silentFails--;
+                        if (s11 === peg$FAILED) {
+                          s10 = void 0;
+                        } else {
+                          peg$currPos = s10;
+                          s10 = peg$FAILED;
+                        }
+                        if (s10 !== peg$FAILED) {
+                          s11 = peg$currPos;
+                          if (input.length > peg$currPos) {
+                            s12 = input.charAt(peg$currPos);
+                            peg$currPos++;
+                          } else {
+                            s12 = peg$FAILED;
+                            if (peg$silentFails === 0) { peg$fail(peg$c14); }
+                          }
+                          if (s12 !== peg$FAILED) {
+                            s11 = input.substring(s11, peg$currPos);
+                          } else {
+                            s11 = s12;
+                          }
+                          if (s11 !== peg$FAILED) {
+                            s10 = [s10, s11];
+                            s9 = s10;
+                          } else {
+                            peg$currPos = s9;
+                            s9 = peg$FAILED;
+                          }
+                        } else {
+                          peg$currPos = s9;
+                          s9 = peg$FAILED;
+                        }
+                      }
                     }
                   }
                 } else {
@@ -2838,6 +2914,17 @@ function peg$parse(input, options) {
 
     return s0;
   }
+
+
+    // the following names: MyBlock, myBlock are use for extending pod6
+    function isNamedBlock(name) {
+      return (
+          name !== name.toLowerCase() 
+              && 
+          name !== name.toUpperCase() 
+        )
+    }
+
 
   peg$result = peg$startRuleFunction();
 
