@@ -3,6 +3,8 @@ var parser = require('./grammar')
 var vmargin_plug = require( './plugin-vmargin' )
 var formattingCodes_plug = require( './plugin-formatting-codes' )
 var items_plug = require('./plugin-items')
+var heading_plug = require('./plugin-heading')
+
 
 function makeTree () {
     var plugins = []
@@ -10,6 +12,7 @@ function makeTree () {
     chain.parse = parse
     chain.use(vmargin_plug)
     chain.use(items_plug)
+    chain.use(heading_plug)
     chain.use(formattingCodes_plug)
     return chain
     function chain() {
