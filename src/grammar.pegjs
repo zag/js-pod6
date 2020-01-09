@@ -25,10 +25,11 @@ U+0020 SPACE
 U+00A0 NO-BREAK SPACE
 U+0009 CHARACTER TABULATION
 U+2001 EM QUAD
+U+2008 PUNCTUATION SPACE
 */
 
 
-hs = [ \u00a0\u2001\t\u000C]
+hs = [ \u00a0\u2001\t\u000C\u2008]
 _ = [ \t\u000C]*
 Endline = $(hs* [\n\r])
 
@@ -46,7 +47,8 @@ markerEnd = '=end '
 markerFor = '=for '
 markerAbbreviatedBlock = '=' name:identifier  { return name }
 markers = markerBegin / markerEnd / markerFor 
-text_content = !( _ ( markers / markerAbbreviatedBlock ) / blankline) $(Text)+ EOL { return text()}
+Text "text" = $(c:char+)
+text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
 /** TODO:
 boolean:          C«:key(1)»   C«key => 1»
 Hash              C«:key{a=>1, b=>2}»,  C«key => {a=>1, b=>2}»
@@ -125,13 +127,19 @@ delimitedBlock =
   / tvmargin:$( hs* ) 
     text:$(text_content+)
     {
+      const type = name.match(/pod|nested|item|code|defn/) 
+                  && 
+                  (tvmargin.length - vmargin.length) > 0 ? 'code' : 'para'
       return {
               text, 
               margin:tvmargin,
-              type: 
-                  name.match(/pod|nested|item|code|defn/) 
-                  && 
-                  (tvmargin.length - vmargin.length) > 0 ? 'code' : 'text'
+              type,
+              content: [
+                        {
+                          type: type === 'code' ? 'verbatim' : 'text',
+                          value:text
+                        }
+                       ],
               }
     }
   )* 
@@ -167,7 +175,20 @@ abbreviatedBlock =
     return {
             margin:vmargin,
             type:'block',
-            content: content === "" ? [] : [{type:'text', text:content, margin: ''}],
+            content: content === "" ? [] 
+                                    : [
+                                        {
+                                          type:'para',
+                                          text:content,
+                                          margin: '',
+                                          content:[ 
+                                                    {
+                                                      type:'text',
+                                                      value:content
+                                                    }
+                                                  ],
+                                        }
+                                      ],
             name
           }
   } 
@@ -198,7 +219,20 @@ paragraphBlock =
   { 
       return { 
               type:'block',
-              content: content === "" ? [] : [{text:content}],
+              content: content === "" ? [] 
+                                    : [
+                                        {
+                                          type:'para',
+                                          content:[ 
+                                                    {
+                                                      type:'text',
+                                                      value:content
+                                                    }
+                                                  ],
+                                          margin:vmargin,
+                                          text:content
+                                        }
+                                      ],
               name,
               margin:vmargin,
               attr
@@ -206,7 +240,6 @@ paragraphBlock =
   } 
 
 identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
-Text "text" = $(c:char+)
 
 ___ "whitespace"
   = [\r\n \t\u000C]*

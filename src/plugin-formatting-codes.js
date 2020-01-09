@@ -7,7 +7,7 @@ module.exports = () =>( tree )=>{
         } else {
           if (node.type === 'block') {
             visit(node.content)
-          } else if (node.type === 'text') {
+          } else if (node.type === 'para') {
               node.content = fcparser.parse(node.text)
           }
         }
