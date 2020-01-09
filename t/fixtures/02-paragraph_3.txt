@@ -47,7 +47,7 @@ Outside blocks
       {
         "text": "Outside blocks\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "Outside blocks\n"
         ]

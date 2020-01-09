@@ -19,7 +19,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Animal\n",
             "margin": "",
             "content": [
@@ -35,7 +35,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Vertebrate\n",
             "margin": "",
             "content": [
@@ -51,7 +51,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Invertebrate\n",
             "margin": "",
             "content": [
@@ -70,7 +70,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Phase\n",
             "margin": "",
             "content": [
@@ -86,7 +86,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Solid\n",
             "margin": "",
             "content": [
@@ -102,7 +102,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Liquid\n",
             "margin": "",
             "content": [
@@ -118,7 +118,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Gas\n",
             "margin": "",
             "content": [
@@ -134,7 +134,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Chocolate\n",
             "margin": "",
             "content": [

@@ -20,7 +20,7 @@ This is Pod too. Specifically, this is a simple C<para> block
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "A heading\n",
             "margin": "",
             "content": [
@@ -28,7 +28,8 @@ This is Pod too. Specifically, this is a simple C<para> block
             ]
           }
         ],
-        "name": "head1"
+        "name": "head",
+        "level": "1"
       },
       {
         "type": "blankline"
@@ -36,7 +37,7 @@ This is Pod too. Specifically, this is a simple C<para> block
       {
         "text": "This is Pod too. Specifically, this is a simple C<para> block\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "This is Pod too. Specifically, this is a simple ",
           {
@@ -55,7 +56,13 @@ This is Pod too. Specifically, this is a simple C<para> block
       {
         "text": "$this = pod('also');  # Specifically, a code block\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "$this = pod('also');  # Specifically, a code block\n"
+          }
+        ]
       },
       {
         "type": "blankline"

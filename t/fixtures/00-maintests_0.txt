@@ -16,11 +16,22 @@
         "type": "block",
         "content": [
           {
-            "text": "sdsd\n   sdasd\n \n        ddsds\n  d\n",
+            "text": "sdsd\n   sdasd\n",
             "margin": "  ",
-            "type": "text",
+            "type": "para",
             "content": [
-              "sdsd\n   sdasd\n \n        ddsds\n  d\n"
+              "sdsd\n   sdasd\n"
+            ]
+          },
+          {
+            "type": "blankline"
+          },
+          {
+            "text": "ddsds\n  d\n",
+            "margin": "        ",
+            "type": "para",
+            "content": [
+              "ddsds\n  d\n"
             ]
           }
         ],

@@ -1,6 +1,11 @@
+# 0.0.5
+
+- add para/code container for paragraphs
+- add heading plugin
+
 # 0.0.4
 
-- add comment lock support
+- add comment block support
 - add level for items (plugin)
 
 # 0.0.3

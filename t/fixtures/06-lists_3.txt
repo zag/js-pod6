@@ -1,0 +1,129 @@
+=begin pod
+Let's consider two common proverbs:
+
+=begin item
+I<The rain in Spain falls mainly on the plain.>
+
+This is a common myth and an unconscionable slur on the Spanish
+people, the majority of whom are extremely attractive.
+=end item
+
+=begin item
+I<The early bird gets the worm.>
+
+In deciding whether to become an early riser, it is worth
+considering whether you would actually enjoy annelids
+for breakfast.
+=end item
+
+As you can see, folk wisdom is often of dubious value.
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "Let's consider two common proverbs:\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "Let's consider two common proverbs:\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "I<The rain in Spain falls mainly on the plain.>\n",
+            "margin": "",
+            "type": "para",
+            "content": [
+              {
+                "content": [
+                  "The rain in Spain falls mainly on the plain."
+                ],
+                "type": "fcode",
+                "name": "I"
+              },
+              "\n"
+            ]
+          },
+          {
+            "type": "blankline"
+          },
+          {
+            "text": "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n",
+            "margin": "",
+            "type": "para",
+            "content": [
+              "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "margin": "",
+        "text": "=begin item\nI<The rain in Spain falls mainly on the plain.>\n\nThis is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n=end item\n",
+        "attr": [],
+        "level": 1
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "I<The early bird gets the worm.>\n",
+            "margin": "",
+            "type": "para",
+            "content": [
+              {
+                "content": [
+                  "The early bird gets the worm."
+                ],
+                "type": "fcode",
+                "name": "I"
+              },
+              "\n"
+            ]
+          },
+          {
+            "type": "blankline"
+          },
+          {
+            "text": "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n",
+            "margin": "",
+            "type": "para",
+            "content": [
+              "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "margin": "",
+        "text": "=begin item\nI<The early bird gets the worm.>\n\nIn deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n=end item\n",
+        "attr": [],
+        "level": 1
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "As you can see, folk wisdom is often of dubious value.\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "As you can see, folk wisdom is often of dubious value.\n"
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\nLet's consider two common proverbs:\n\n=begin item\nI<The rain in Spain falls mainly on the plain.>\n\nThis is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n=end item\n\n=begin item\nI<The early bird gets the worm.>\n\nIn deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n=end item\n\nAs you can see, folk wisdom is often of dubious value.\n=end pod\n",
+    "attr": []
+  }
+]

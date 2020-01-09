@@ -17,7 +17,7 @@ The seven suspects are:
       {
         "text": "The seven suspects are:\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "The seven suspects are:\n"
         ]
@@ -30,7 +30,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Happy\n",
             "margin": "",
             "content": [
@@ -46,7 +46,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Dopey\n",
             "margin": "",
             "content": [
@@ -62,7 +62,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Sleepy\n",
             "margin": "",
             "content": [
@@ -78,7 +78,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Bashful\n",
             "margin": "",
             "content": [
@@ -94,7 +94,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Sneezy\n",
             "margin": "",
             "content": [
@@ -110,7 +110,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Grumpy\n",
             "margin": "",
             "content": [
@@ -126,7 +126,7 @@ The seven suspects are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Keyser Soze\n",
             "margin": "",
             "content": [

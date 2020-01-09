@@ -17,7 +17,7 @@ The choices are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "CORRECT...\n",
             "margin": "",
             "content": [
@@ -33,7 +33,7 @@ The choices are:
           {
             "text": "The choices are:\n",
             "margin": "",
-            "type": "text",
+            "type": "para",
             "content": [
               "The choices are:\n"
             ]
@@ -50,7 +50,7 @@ The choices are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Liberty\n",
             "margin": "",
             "content": [
@@ -66,7 +66,7 @@ The choices are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Death\n",
             "margin": "",
             "content": [
@@ -82,7 +82,7 @@ The choices are:
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Beer\n",
             "margin": "",
             "content": [

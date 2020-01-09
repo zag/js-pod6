@@ -16,7 +16,7 @@ between these two paragraphs
       {
         "text": "someone accidentally left a space\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "someone accidentally left a space\n"
         ]
@@ -27,7 +27,7 @@ between these two paragraphs
       {
         "text": "between these two paragraphs\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "between these two paragraphs\n"
         ]

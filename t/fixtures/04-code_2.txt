@@ -16,7 +16,7 @@ Tests for the feed operators
       {
         "text": "Tests for the feed operators\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "Tests for the feed operators\n"
         ]
@@ -27,7 +27,13 @@ Tests for the feed operators
       {
         "text": "==> and <==\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "==> and <==\n"
+          }
+        ]
       },
       {
         "type": "blankline"

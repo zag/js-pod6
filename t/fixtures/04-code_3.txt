@@ -16,7 +16,7 @@ Fun comes
       {
         "text": "Fun comes\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "Fun comes\n"
         ]
@@ -27,7 +27,13 @@ Fun comes
       {
         "text": "This is code\nHa, what now?\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "This is code\n  Ha, what now?\n"
+          }
+        ]
       },
       {
         "type": "blankline"
@@ -35,7 +41,13 @@ Fun comes
       {
         "text": "one more block of code\njust to make sure it works\n or better: maybe it'll break!\n",
         "margin": " ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "one more block of code\n just to make sure it works\n  or better: maybe it'll break!\n"
+          }
+        ]
       }
     ],
     "name": "pod",

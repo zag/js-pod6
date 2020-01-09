@@ -13,12 +13,23 @@
       {
         "text": "twest\n",
         "margin": "  ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "twest\n"
+          }
+        ]
       },
       {
         "type": "block",
         "content": [
           {
+            "type": "para",
+            "content": [
+              "  sdsdsdsd\n"
+            ],
+            "margin": "  ",
             "text": "  sdsdsdsd\n"
           }
         ],
@@ -34,7 +45,10 @@
         "margin": "  ",
         "type": "text",
         "content": [
-          "jjj\n"
+          {
+            "type": "verbatim",
+            "value": "jjj\n"
+          }
         ]
       }
     ],

@@ -26,7 +26,13 @@
       {
         "text": "this is code\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "this is code\n"
+          }
+        ]
       },
       {
         "type": "blankline"
@@ -48,7 +54,13 @@
       {
         "text": "this is not code either\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "this is not code either\n"
+          }
+        ]
       },
       {
         "type": "blankline"
@@ -59,7 +71,7 @@
           {
             "text": "this is not\n",
             "margin": "        ",
-            "type": "text",
+            "type": "para",
             "content": [
               "this is not\n"
             ]
@@ -79,7 +91,13 @@
           {
             "text": "and this is not\n",
             "margin": "        ",
-            "type": "code"
+            "type": "code",
+            "content": [
+              {
+                "type": "verbatim",
+                "value": "and this is not\n"
+              }
+            ]
           }
         ],
         "name": "Quitem",
@@ -96,7 +114,13 @@
           {
             "text": "and this is!\n",
             "margin": "        ",
-            "type": "code"
+            "type": "code",
+            "content": [
+              {
+                "type": "verbatim",
+                "value": "and this is!\n"
+              }
+            ]
           }
         ],
         "name": "item",

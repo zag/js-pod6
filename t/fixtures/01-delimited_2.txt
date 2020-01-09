@@ -10,7 +10,7 @@ spaced   text
       {
         "text": "some\nspaced   text\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "some\nspaced   text\n"
         ]

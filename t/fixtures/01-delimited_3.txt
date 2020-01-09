@@ -12,7 +12,7 @@ two
       {
         "text": "paragraph one\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "paragraph one\n"
         ]
@@ -23,7 +23,7 @@ two
       {
         "text": "paragraph\ntwo\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "paragraph\ntwo\n"
         ]

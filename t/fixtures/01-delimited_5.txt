@@ -25,7 +25,7 @@ Which, as we all know...
       {
         "text": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n"
         ]
@@ -36,7 +36,7 @@ Which, as we all know...
       {
         "text": "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "and it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n"
         ]
@@ -50,7 +50,7 @@ Which, as we all know...
           {
             "text": "Dragon Tears!\n",
             "margin": "",
-            "type": "text",
+            "type": "para",
             "content": [
               "Dragon Tears!\n"
             ]
@@ -70,7 +70,7 @@ Which, as we all know...
       {
         "text": "Which, as we all know...\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "Which, as we all know...\n"
         ]
@@ -84,7 +84,7 @@ Which, as we all know...
           {
             "text": "Turn into Jelly Beans!\n",
             "margin": "    ",
-            "type": "text",
+            "type": "para",
             "content": [
               "Turn into Jelly Beans!\n"
             ]

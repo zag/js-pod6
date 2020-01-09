@@ -23,7 +23,7 @@
           {
             "text": "one, delimited block\n",
             "margin": "    ",
-            "type": "text",
+            "type": "para",
             "content": [
               "one, delimited block\n"
             ]
@@ -39,7 +39,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "two,\n    paragraph block\n",
             "margin": "",
             "content": [
@@ -53,6 +53,11 @@
         "type": "block",
         "content": [
           {
+            "type": "para",
+            "content": [
+              "    three, still a parablock\n"
+            ],
+            "margin": "    ",
             "text": "    three, still a parablock\n"
           }
         ],
@@ -69,7 +74,7 @@
           {
             "text": "four, another delimited one\n",
             "margin": "    ",
-            "type": "text",
+            "type": "para",
             "content": [
               "four, another delimited one\n"
             ]
@@ -85,7 +90,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "And just for the sake of having a working =head1 :)\n",
             "margin": "",
             "content": [
@@ -93,7 +98,8 @@
             ]
           }
         ],
-        "name": "head1"
+        "name": "head",
+        "level": "1"
       }
     ],
     "name": "pod",

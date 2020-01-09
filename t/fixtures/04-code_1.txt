@@ -20,7 +20,7 @@ But this is just a text. Again
       {
         "text": "This is an ordinary paragraph\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "This is an ordinary paragraph\n"
         ]
@@ -31,7 +31,13 @@ But this is just a text. Again
       {
         "text": "While this is not\nThis is a code block\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "While this is not\n    This is a code block\n"
+          }
+        ]
       },
       {
         "type": "blankline"
@@ -41,7 +47,7 @@ But this is just a text. Again
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Mumble mumble\n",
             "margin": "",
             "content": [
@@ -49,7 +55,8 @@ But this is just a text. Again
             ]
           }
         ],
-        "name": "head1"
+        "name": "head",
+        "level": "1"
       },
       {
         "type": "blankline"
@@ -59,7 +66,10 @@ But this is just a text. Again
         "margin": "    ",
         "type": "text",
         "content": [
-          "Suprisingly, this is not a code block\n        (with fancy indentation too)\n"
+          {
+            "type": "verbatim",
+            "value": "Suprisingly, this is not a code block\n        (with fancy indentation too)\n"
+          }
         ]
       },
       {
@@ -68,7 +78,7 @@ But this is just a text. Again
       {
         "text": "But this is just a text. Again\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "But this is just a text. Again\n"
         ]

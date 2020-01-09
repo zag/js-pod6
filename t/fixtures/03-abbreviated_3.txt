@@ -21,7 +21,7 @@ Outside blocks
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Inside\ngot\n",
             "margin": "",
             "content": [
@@ -39,7 +39,7 @@ Outside blocks
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "Inside\nbidden\n",
             "margin": "",
             "content": [
@@ -55,7 +55,7 @@ Outside blocks
       {
         "text": "Outside blocks\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "Outside blocks\n"
         ]

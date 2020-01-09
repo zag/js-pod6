@@ -7,7 +7,7 @@ Heading level 3
     "type": "block",
     "content": [
       {
-        "type": "text",
+        "type": "para",
         "text": "Heading level 3\n",
         "margin": "",
         "content": [
@@ -15,6 +15,7 @@ Heading level 3
         ]
       }
     ],
-    "name": "head3"
+    "name": "head",
+    "level": "3"
   }
 ]

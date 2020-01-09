@@ -10,7 +10,7 @@
     "type": "block",
     "content": [
       {
-        "type": "text",
+        "type": "para",
         "text": "    Constants 1\n    Variables 10\n    Subroutines 33\n    Everything else 57\n",
         "margin": "",
         "content": [

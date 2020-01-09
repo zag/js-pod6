@@ -7,7 +7,7 @@ and some more
     "type": "block",
     "content": [
       {
-        "type": "text",
+        "type": "para",
         "text": "some text\nand some more\n",
         "margin": "",
         "content": [

@@ -26,7 +26,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "This is a heading block\n",
             "margin": "",
             "content": [
@@ -34,7 +34,8 @@
             ]
           }
         ],
-        "name": "head1"
+        "name": "head",
+        "level": "1"
       },
       {
         "type": "blankline"
@@ -44,7 +45,10 @@
         "margin": "    ",
         "type": "text",
         "content": [
-          "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
+          {
+            "type": "verbatim",
+            "value": "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
+          }
         ]
       },
       {
@@ -55,7 +59,10 @@
         "margin": "    ",
         "type": "text",
         "content": [
-          "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
+          {
+            "type": "verbatim",
+            "value": "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
+          }
         ]
       },
       {
@@ -63,7 +70,7 @@
         "type": "block",
         "content": [
           {
-            "type": "text",
+            "type": "para",
             "text": "This is another heading block\n",
             "margin": "",
             "content": [
@@ -71,7 +78,8 @@
             ]
           }
         ],
-        "name": "head2"
+        "name": "head",
+        "level": "2"
       },
       {
         "type": "blankline"
@@ -81,7 +89,10 @@
         "margin": "        ",
         "type": "text",
         "content": [
-          "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
+          {
+            "type": "verbatim",
+            "value": "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
+          }
         ]
       }
     ],

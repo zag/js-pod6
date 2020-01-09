@@ -16,7 +16,7 @@ foo
       {
         "text": "= DESCRIPTION\nbla bla\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "= DESCRIPTION\nbla bla\n"
         ]
@@ -27,7 +27,7 @@ foo
       {
         "text": "foo\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "foo\n"
         ]

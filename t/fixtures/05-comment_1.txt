@@ -7,7 +7,7 @@ This file is deliberately specified in Raku Pod format
     "type": "block",
     "content": [
       {
-        "type": "text",
+        "type": "para",
         "text": "This file is deliberately specified in Raku Pod format\n",
         "margin": "",
         "content": [

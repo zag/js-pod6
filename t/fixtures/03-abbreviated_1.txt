@@ -6,7 +6,7 @@
     "type": "block",
     "content": [
       {
-        "type": "text",
+        "type": "para",
         "text": "some text\n",
         "margin": "",
         "content": [

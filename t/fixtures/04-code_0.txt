@@ -16,7 +16,7 @@ This ordinary paragraph introduces a code block:
       {
         "text": "This ordinary paragraph introduces a code block:\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "This ordinary paragraph introduces a code block:\n"
         ]
@@ -27,7 +27,13 @@ This ordinary paragraph introduces a code block:
       {
         "text": "$this = 1 * code('block');\n$which.is_specified(:by<indenting>);\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "$this = 1 * code('block');\n    $which.is_specified(:by<indenting>);\n"
+          }
+        ]
       },
       {
         "type": "blankline"
@@ -38,7 +44,13 @@ This ordinary paragraph introduces a code block:
       {
         "text": "$which.spans(:newlines);\n",
         "margin": "    ",
-        "type": "code"
+        "type": "code",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "$which.spans(:newlines);\n"
+          }
+        ]
       },
       {
         "type": "blankline"

@@ -9,7 +9,7 @@ some text
       {
         "text": "some text\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "some text\n"
         ]

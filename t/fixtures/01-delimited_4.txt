@@ -14,7 +14,7 @@
           {
             "text": "toot tooot!\n",
             "margin": "    ",
-            "type": "text",
+            "type": "para",
             "content": [
               "toot tooot!\n"
             ]

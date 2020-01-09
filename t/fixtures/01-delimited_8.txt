@@ -15,7 +15,7 @@ XXX: chop(%has)   should return a  hash  of chopped strings?
       {
         "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n",
         "margin": "",
-        "type": "text",
+        "type": "para",
         "content": [
           "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
         ]
