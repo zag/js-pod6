@@ -164,7 +164,20 @@ delimitedBlock =
                     }
           }
 
-textBlock = ( text_content )+ { return { text: text(), type: "text"}}
+textBlock = ( text_content )+ 
+            {
+              return { 
+                      text: text(),
+                      type:'para',
+                      margin: '',
+                      content:[ 
+                                {
+                                  type:'text',
+                                  value:text()
+                                }
+                              ] 
+                    }
+            }
 ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { return { text: text(), type: "ambient1"}}
 
 abbreviatedBlock = 
