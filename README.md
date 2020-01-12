@@ -66,5 +66,7 @@ foo
 
 ## Links 
 
-[1] Specification of pod6: https://github.com/perl6/specs/blob/master/S26-documentation.pod
-[2] Synopsis 2: Bits and Pieces https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod
+[1] Specification of pod6: [Synopsis 26](https://github.com/perl6/specs/blob/master/S26-documentation.pod) 
+
+[2] Synopsis 2: [Bits and Pieces] (https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod)
+
