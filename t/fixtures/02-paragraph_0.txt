@@ -6,6 +6,6 @@
     "content": [],
     "name": "Foo",
     "margin": "",
-    "attr": []
+    "config": []
   }
 ]

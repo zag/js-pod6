@@ -49,30 +49,22 @@ test
 
 #---
 
-# item block
-#
 
-=begin pod
-  =for item 
-   Test message
-=end pod
+#  Value is...       Specify with...           Or with...            Or with...
+#  ===============   =======================   =================   ===========
+#  List              :key[$e1,$e2,...]         :key($e1,$e2,...)
+#  Hash              :key{$k1=>$v1,$k2=>$v2}
+#  Boolean (true)    :key                      :key(True)
+#  Boolean (false)   :!key                     :key(False)
+#  String            :key<str>                 :key('str')         :key("str")
+#  Number            :key(42)                  :key(2.3)
 
+#---
+=begin table :k1<str> :k2('str') :k3("str") :k4["str"] :k5(Q[str])
 
-=begin pod
-    =head1 This is a heading block
+=end table
+#---
 
-    This is an ordinary paragraph.
-    Its text  will   be     squeezed     and
-    short lines filled. It is terminated by
-    the first blank line.
-
-    This is another ordinary paragraph.
-    Its     text    will  also be squeezed and
-    short lines filled. It is terminated by
-    the trailing directive on the next line.
-        =head2 This is another heading block
-
-        This is yet another ordinary paragraph,
-        at the first virtual column set by the
-        previous directive
-=end pod
+#---
+=config table :k1<very long string, comma> :k2<2 23  23 > :k3<'23', 23233, 333>
+#---

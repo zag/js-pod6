@@ -36,6 +36,6 @@ foo
     "name": "kwid",
     "margin": "",
     "text": "=begin kwid\n\n= DESCRIPTION\nbla bla\n\nfoo\n=end kwid\n",
-    "attr": []
+    "config": []
   }
 ]

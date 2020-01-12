@@ -53,6 +53,6 @@ Fun comes
     "name": "pod",
     "margin": "",
     "text": "=begin pod\nFun comes\n\n    This is code\n  Ha, what now?\n\n one more block of code\n just to make sure it works\n  or better: maybe it'll break!\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

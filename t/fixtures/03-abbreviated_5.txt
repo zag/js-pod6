@@ -90,6 +90,6 @@ Which, as we all know...
     "name": "foo",
     "margin": "",
     "text": "=begin foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =bold Dragon Tears!\n\nWhich, as we all know...\n\n    =bold Turn\n          into\n          Jelly\n          Beans!\n=end foo\n",
-    "attr": []
+    "config": []
   }
 ]

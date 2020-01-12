@@ -42,6 +42,6 @@ Tests for the feed operators
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n\nTests for the feed operators\n\n    ==> and <==\n    \n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

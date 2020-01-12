@@ -42,7 +42,7 @@ The choices are:
         "name": "item",
         "margin": "",
         "text": "=begin item1\nThe choices are:\n=end item1\n",
-        "attr": [],
+        "config": [],
         "level": "1"
       },
       {
@@ -97,6 +97,6 @@ The choices are:
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n=comment CORRECT...\n=begin item1\nThe choices are:\n=end item1\n=item2 Liberty\n=item2 Death\n=item2 Beer\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

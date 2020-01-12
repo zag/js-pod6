@@ -24,7 +24,7 @@ This isn't a comment
         ],
         "name": "comment",
         "margin": "",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -41,6 +41,6 @@ This isn't a comment
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n=for comment\nfoo foo\nbla bla    bla\n\nThis isn't a comment\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

@@ -11,6 +11,6 @@ some text
     ],
     "name": "Foo",
     "margin": "",
-    "attr": []
+    "config": []
   }
 ]

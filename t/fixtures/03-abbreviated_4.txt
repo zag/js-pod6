@@ -32,7 +32,7 @@
         "name": "one",
         "margin": "    ",
         "text": "    =begin one\n    one, delimited block\n    =end one\n",
-        "attr": []
+        "config": []
       },
       {
         "margin": "    ",
@@ -63,7 +63,7 @@
         ],
         "name": "three",
         "margin": "    ",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -83,7 +83,7 @@
         "name": "four",
         "margin": "    ",
         "text": "    =begin four\n    four, another delimited one\n    =end four\n",
-        "attr": []
+        "config": []
       },
       {
         "margin": "    ",
@@ -105,6 +105,6 @@
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n    =begin one\n    one, delimited block\n    =end one\n    =two two,\n    paragraph block\n    =for three\n    three, still a parablock\n\n    =begin four\n    four, another delimited one\n    =end four\n    =head1 And just for the sake of having a working =head1 :)\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

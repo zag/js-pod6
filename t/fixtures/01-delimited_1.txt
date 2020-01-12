@@ -18,6 +18,6 @@ some text
     "name": "foo",
     "margin": "",
     "text": "=begin foo\nsome text\n=end foo\n",
-    "attr": []
+    "config": []
   }
 ]

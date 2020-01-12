@@ -62,7 +62,7 @@ Which, as we all know...
         "name": "bar",
         "margin": "    ",
         "text": "    =begin bar\nDragon Tears!\n\n    =end bar\n",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -93,12 +93,12 @@ Which, as we all know...
         "name": "bar",
         "margin": "    ",
         "text": "    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n",
-        "attr": []
+        "config": []
       }
     ],
     "name": "foo",
     "margin": "",
     "text": "=begin foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =begin bar\nDragon Tears!\n\n    =end bar\n\nWhich, as we all know...\n\n    =begin bar\n    Turn into Jelly Beans!\n    =end bar\n=end foo\n",
-    "attr": []
+    "config": []
   }
 ]

@@ -46,7 +46,7 @@
         ],
         "name": "Podcast",
         "margin": "    ",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -80,7 +80,7 @@
         "name": "Itemization",
         "margin": "    ",
         "text": "    =begin Itemization\n        this is not\n    =end Itemization\n",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -103,7 +103,7 @@
         "name": "Quitem",
         "margin": "    ",
         "text": "    =begin Quitem\n        and this is not\n    =end Quitem\n",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -126,13 +126,13 @@
         "name": "item",
         "margin": "    ",
         "text": "    =begin item\n        and this is!\n    =end item\n",
-        "attr": [],
+        "config": [],
         "level": 1
       }
     ],
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n    this is code\n\n    =for Podcast\n        this is not\n\n    this is not code either\n\n    =begin Itemization\n        this is not\n    =end Itemization\n\n    =begin Quitem\n        and this is not\n    =end Quitem\n\n    =begin item\n        and this is!\n    =end item\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

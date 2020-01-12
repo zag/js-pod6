@@ -23,7 +23,7 @@ dd
         ],
         "name": "Named",
         "margin": "",
-        "attr": []
+        "config": []
       },
       {
         "type": "namedBlock",
@@ -34,7 +34,7 @@ dd
         ],
         "name": "Named",
         "text": "=begin Named\nsdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n=end Named\n",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -43,6 +43,6 @@ dd
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n=for Named\n  text\n=begin Named\nsdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n=end Named\n\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

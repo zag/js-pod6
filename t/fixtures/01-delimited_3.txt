@@ -32,6 +32,6 @@ two
     "name": "foo",
     "margin": "",
     "text": "=begin foo\nparagraph one\n\nparagraph\ntwo\n=end foo\n",
-    "attr": []
+    "config": []
   }
 ]

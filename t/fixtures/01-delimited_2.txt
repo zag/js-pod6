@@ -19,6 +19,6 @@ spaced   text
     "name": "foo",
     "margin": "",
     "text": "=begin foo\nsome\nspaced   text\n=end foo\n",
-    "attr": []
+    "config": []
   }
 ]

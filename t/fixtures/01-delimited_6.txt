@@ -39,6 +39,6 @@ between these two paragraphs
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n\nsomeone accidentally left a space\n \nbetween these two paragraphs\n\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

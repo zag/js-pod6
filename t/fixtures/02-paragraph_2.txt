@@ -12,6 +12,6 @@ spaced   text
     ],
     "name": "Foo",
     "margin": "",
-    "attr": []
+    "config": []
   }
 ]

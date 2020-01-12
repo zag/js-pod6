@@ -25,7 +25,7 @@ Four, another delimited one
         ],
         "name": "One",
         "text": "=begin One\nOne, delimited block\n=end One\n",
-        "attr": []
+        "config": []
       },
       {
         "type": "blockNamed",
@@ -36,7 +36,7 @@ Four, another delimited one
         ],
         "name": "Two",
         "margin": "",
-        "attr": []
+        "config": []
       },
       {
         "type": "blockNamed",
@@ -47,7 +47,7 @@ Four, another delimited one
         ],
         "name": "Three",
         "margin": "",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -61,12 +61,12 @@ Four, another delimited one
         ],
         "name": "Four",
         "text": "=begin Four\nFour, another delimited one\n=end Four\n",
-        "attr": []
+        "config": []
       }
     ],
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n=begin One\nOne, delimited block\n=end One\n=for Two\nTwo, paragraph block\n=for Three\nThree, still a parablock\n\n=begin Four\nFour, another delimited one\n=end Four\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

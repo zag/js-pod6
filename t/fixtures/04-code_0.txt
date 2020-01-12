@@ -59,6 +59,6 @@ This ordinary paragraph introduces a code block:
     "name": "pod",
     "margin": "",
     "text": "=begin pod\nThis ordinary paragraph introduces a code block:\n\n    $this = 1 * code('block');\n    $which.is_specified(:by<indenting>);\n\n\n    $which.spans(:newlines);\n\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

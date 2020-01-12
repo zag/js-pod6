@@ -149,6 +149,6 @@
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n=item1  Animal\n=item2     Vertebrate\n=item2     Invertebrate\n\n=item1  Phase\n=item2     Solid\n=item2     Liquid\n=item2     Gas\n=item2     Chocolate\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

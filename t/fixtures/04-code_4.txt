@@ -71,6 +71,6 @@ This is Pod too. Specifically, this is a simple C<para> block
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n\n=head1 A heading\n\nThis is Pod too. Specifically, this is a simple C<para> block\n\n    $this = pod('also');  # Specifically, a code block\n\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

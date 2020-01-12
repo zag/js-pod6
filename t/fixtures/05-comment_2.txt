@@ -15,6 +15,6 @@ foo foo
     ],
     "name": "comment",
     "text": "=begin comment\nfoo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n=end comment\n",
-    "attr": []
+    "config": []
   }
 ]

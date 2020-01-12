@@ -141,6 +141,6 @@ The seven suspects are:
     "name": "pod",
     "margin": "",
     "text": "=begin pod\nThe seven suspects are:\n\n=item  Happy\n=item  Dopey\n=item  Sleepy\n=item  Bashful\n=item  Sneezy\n=item  Grumpy\n=item  Keyser Soze\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]

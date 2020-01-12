@@ -25,7 +25,7 @@ Outside blocks
         ],
         "name": "Got",
         "margin": "",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -39,7 +39,7 @@ Outside blocks
         ],
         "name": "Bidden",
         "margin": "   ",
-        "attr": []
+        "config": []
       },
       {
         "type": "blankline"
@@ -56,6 +56,6 @@ Outside blocks
     "name": "pod",
     "margin": "",
     "text": "=begin pod\n\n=for Got\nInside Got\n\n   =for Bidden\n   Inside Bidden\n\nOutside blocks\n=end pod\n",
-    "attr": []
+    "config": []
   }
 ]
