@@ -56,7 +56,7 @@ text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+
 #  Value is...       Specify with...           Or with...            Or with...
 #  ===============   =======================   =================   ===========
 #  List              :key[$e1,$e2,...]         :key($e1,$e2,...)
-#  List             :key<1 2 3>                :key[1,2,3]       key => [1,2,3]
+#  List              :key<1 2 3>                :key[1,2,3]       key => [1,2,3]
 #  Hash              :key{$k1=>$v1,$k2=>$v2}
 #  Boolean (true)    :key                      :key(True)
 #  Boolean (false)   :!key                     :key(False)
