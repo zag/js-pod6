@@ -1,20 +1,57 @@
 Expression
- = ( code / text)*
+ = ( code_C / code_V / code_L / code / text / raw_text )*
+raw_text= $(.) // { return {raw: text()}}
+code_V = 
+    name:start_code &{return name === "V"}
+    content: $( code / text )+
+    end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+                content,
+             }
+    }
+code_C = 
+    name:start_code &{return name === "C"}
+    content: ( code / text )+
+    end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+                content,
+             }
+    }
+
 code_L = 
-name:start_code &{return name === "L"} 
-    t:( 
-    text:$(!'|' .)+ 
-    //&{return true && !text.match(/|/)} 
-    '|' t:(!code .+) &{console.log({t});return true }{return {text,t}}
-    ) 
-end_code {return {name:'LS', type:'fcode',content:t}}
-allowed_code = ( 'I' / 'C' / 'L' / 'S')
+    name:start_code &{return name === "L"}
+    content: (
+                code / text 
+             )
+     meta:(
+            ['|'] t:text 
+                    { return t }
+           )?
+     end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+                content,
+                meta
+             }
+    }
+allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S')
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
 code =  name:start_code content:(  
-        code / text
+          code / text
         )+ end_code  
 { return {content, type:'fcode', name}} 
-text = text:$(looks_like_code / not_code)+ {return text}
+text = text:$( '<' text '>' / looks_like_code / not_code )+ {return text}
 not_code = text:$(!end_code !start_code !looks_like_code .)+ {return text}
 looks_like_code =(!allowed_code .) '<' not_code '>' {return text()}
