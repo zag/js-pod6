@@ -16,7 +16,8 @@ Element =  delimitedBlockRaw
          / delimitedBlock
          / paragraphBlockRaw 
          / paragraphBlock 
-         / abbreviatedBlock 
+         / abbreviatedBlock
+         / configDirective
          / textBlock 
          / blankline
 
@@ -45,46 +46,119 @@ blankline = $( hs* [\n\r]) { return { type:'blankline'}}
 markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
+markerConfig = '=config'
 markerAbbreviatedBlock = '=' name:identifier  { return name }
-markers = markerBegin / markerEnd / markerFor 
+markers = markerBegin / markerEnd / markerFor / markerConfig
 Text "text" = $(c:char+)
 text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
-/** TODO:
-boolean:          C«:key(1)»   C«key => 1»
-Hash              C«:key{a=>1, b=>2}»,  C«key => {a=>1, b=>2}»
+
+/** 
+#  Value is...       Specify with...           Or with...            Or with...
+#  ===============   =======================   =================   ===========
+#  List              :key[$e1,$e2,...]         :key($e1,$e2,...)
+#  List             :key<1 2 3>                :key[1,2,3]       key => [1,2,3]
+#  Hash              :key{$k1=>$v1,$k2=>$v2}
+#  Boolean (true)    :key                      :key(True)
+#  Boolean (false)   :!key                     :key(False)
+#  String            :key<str>                 :key('str')         :key("str")
+#  Number            :key(42)                  :key(2.3)
 */
-attributes =  _ ':' isFalse:[!]? key:identifier value:(
+
+array_codes = code:FCode hs+ codes:array_codes {return [code,codes].flat()}/ code:FCode { return [code]}
+FCode = $(char)
+
+// Define array: '1 2 3' or '1,2,3'
+array_items = 
+          code:item (hs+ / ', ') codes:array_items 
+                            { return [ code, codes ].flat() }
+          / code:item { return [code] }
+
+identifierKey = $([a-zA-Z0-9]+[a-zA-Z0-9_-]*)
+
+// $k1=>$v1,$k2=>$v2
+pair_item =  name:identifierKey _( ',' / '=>')_ value:item { return { [name]: value } }
+
+array_pairs = 
+              pair:pair_item  _','_  pairs:array_pairs 
+                    { return { ...pair, ...pairs } }
+              / code:pair_item { return code }
+
+allow_attribute = _ ':' key:'allow' value:(
   
-  '[' _ array:array_comma _ ']'  { return { value:array, type:"array"}}
-  /
-  '<' _ array:array_sp _ '>'  { return { value:array, type:"array"}}
-  / 
-  '(' _ text:item _')' { return { value:text, type:"value"}}
-  / _ 
-  {return { value:!isFalse, type:"boolean"}}
-)  _  {return { name:key, ...value}}
-
-attributes_block = 
-  first:attributes* newline 
-  cont:("=" _ rest:attributes+ _ newline { return rest })*  {return [...first, ...cont]}
-
-// :test :!test 
-// :key[1,2,3]
-string = text:$([^'"]+){ return text}
-digits = $([0-9]+)
-
-item =  // quoted strings
-        ["] text:$([^"]+) ["] { return text} /
-        ['] text:$([^']+) ['] { return text} /
-        // number
-        number:digits { return parseInt(number,10) } 
-
-array_comma = first:item _ rest:(","_ i:(item)* {return i[0] } )+ {return [first, ...(rest.filter( (i)=> i !== null))] }/ res:item {return  [res]} / _ {return []}
+  '<' _ array:array_codes _ '>'  { return { value:array, type:"array"}}
+) _  {return { name:'allow', ...value}}
 
 array_sp = all:( _ i:item _ {return i})* { return all }/ res:item {return  [res]} / _ {return []}
+
+attributes =  allow_attribute / _ ':' isFalse:[!]? key:identifier value:(
+  
+  '{' _  hash:array_pairs '}' { return { value:hash } } 
+  /
+   '['  _ array:(  
+              array:array_items  { return array }  
+              /     
+              $(!(']'/'[') .)+ {return [text()]}     
+              ) _ ']'  
+    { return   { 
+                value:array,
+                type:"array"
+              }  
+    } 
+  /
+  '<' _ array:array_items _ '>'  { return { value:array, type:"array" } }
+  /
+  '<' _ array: $(!('<'/'>') .)+ _ '>'  { return { value:array, type:"string" } }
+  / 
+  '(' _ res:(array:array_items {
+                                // if one element (23) set type to 'value' 
+                                 return  (array.length > 1)
+                                        ? { type:'array', value:array}
+                                        : { type:'value', value:array[0]};
+                               } 
+        / 
+        $(!(')'/'(') .)+ {return { value:text() } }) _ ')' 
+        {
+            return { 
+                    type:"value", 
+                    ...res
+                  }
+        }
+  / _ 
+  { return { 
+            value:!isFalse,
+            type:"boolean"
+          }
+  }
+)  _  {return { name:key, ...value}}
+
+pod_configuration = 
+  first:attributes* newline 
+  cont:("=" _ rest:attributes+ _ newline {return rest })*  {return [...first, ...cont].flat()}
+
+string = text:$([^'"]+){ return text}
+
+digits = $([0-9]+)
+
+number = $([-+]?[0-9]+)
+
+Boolean = 'True' {return true} / 'False' {return false}
+
+floatNumber = $(number ('.' digits)? [eE] number ) / $( number '.' digits )
+
+item =  // quoted strings
+        ["] text:$([^"]*) ["] { return text} /
+        ['] text:$([^']*) ['] { return text} /
+        // boolean
+        Boolean /
+        // float number
+        numberFloat:floatNumber { return parseFloat(numberFloat) } /
+        // number
+        number:number { return parseInt(number,10) } 
+
+
 delimitedBlockRaw = 
     vmargin:$(_) 
-    markerBegin name:identifier _ attr:attributes_block 
+    markerBegin name:identifier _ config:pod_configuration 
     &{  
      return ( 
        (name.match(/code|comment/))
@@ -112,10 +186,10 @@ vmargin2:$(_) res:(
                               name 
                              }
                     } 
-              ) &{return  true || vmargin === vmargin2} { return { ...res, text:text() , attr }}
+              ) &{return  true || vmargin === vmargin2} { return { ...res, text:text() , config }}
 
 delimitedBlock = 
-  vmargin:$(_) markerBegin name:identifier  _ attr:attributes_block
+  vmargin:$(_) markerBegin name:identifier  _ config:pod_configuration
   content:( nodes:(
           blankline
           / delimitedBlockRaw
@@ -123,6 +197,7 @@ delimitedBlock =
           / paragraphBlockRaw 
           / paragraphBlock 
           / abbreviatedBlock 
+          / configDirective 
           ) & { return true || name == name.toUpperCase() } { return nodes} 
   / tvmargin:$( hs* ) 
     text:$(text_content+)
@@ -160,7 +235,7 @@ delimitedBlock =
             return { 
                     ...res,
                     text:text(),
-                    attr 
+                    config
                     }
           }
 
@@ -181,7 +256,7 @@ textBlock = ( text_content )+
 ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { return { text: text(), type: "ambient1"}}
 
 abbreviatedBlock = 
-  vmargin:$(_) !markers 
+  vmargin:$(_) !markers
   name:markerAbbreviatedBlock _ emptyline* 
   content:$(!emptyline text:text_content )*
   { 
@@ -204,10 +279,22 @@ abbreviatedBlock =
                                       ],
             name
           }
-  } 
+  }
+configDirective = 
+  vmargin:$(_)
+  marker:'=config' _  name:identifier _ config:pod_configuration
+  {
+      return {
+          name,
+          type:'config',
+          config,
+          margin:vmargin
+      }
+  }
+
 paragraphBlockRaw = 
   vmargin:$(_) 
-  marker:markerFor  name:identifier _ attr:attributes_block
+  marker:markerFor  name:identifier _ config:pod_configuration
       &{  
      return ( 
        name !== name.toLowerCase() 
@@ -221,13 +308,13 @@ paragraphBlockRaw =
               content: content === "" ? [] : [{text:content}],
               name,
               margin:vmargin,
-              attr
+              config
             }
   } 
 
 paragraphBlock = 
   vmargin:$(_) 
-  marker:markerFor  name:identifier _ attr:attributes_block
+  marker:markerFor  name:identifier _ config:pod_configuration
   content:$(!emptyline text_content)*
   { 
       return { 
@@ -248,7 +335,7 @@ paragraphBlock =
                                       ],
               name,
               margin:vmargin,
-              attr
+              config
             }
   } 
 
