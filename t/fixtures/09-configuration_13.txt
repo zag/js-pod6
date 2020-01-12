@@ -1,0 +1,38 @@
+=begin table :k6[+999999999999999999999999999999] :k7[-999999999999999999999999999999]
+foo
+=end table
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "foo\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "foo\n"
+        ]
+      }
+    ],
+    "name": "table",
+    "margin": "",
+    "text": "=begin table :k6[+999999999999999999999999999999] :k7[-999999999999999999999999999999]\nfoo\n=end table\n",
+    "config": [
+      {
+        "name": "k6",
+        "value": [
+          1e+30
+        ],
+        "type": "array"
+      },
+      {
+        "name": "k7",
+        "value": [
+          -1e+30
+        ],
+        "type": "array"
+      }
+    ]
+  }
+]

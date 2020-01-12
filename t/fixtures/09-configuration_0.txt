@@ -1,0 +1,32 @@
+=begin pod
+    =begin code :allow<B>
+    =end code
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [],
+        "name": "code",
+        "margin": "    ",
+        "text": "    =begin code :allow<B>\n    =end code\n",
+        "config": [
+          {
+            "name": "allow",
+            "value": [
+              "B"
+            ],
+            "type": "array"
+          }
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n    =begin code :allow<B>\n    =end code\n=end pod\n",
+    "config": []
+  }
+]

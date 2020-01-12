@@ -1,0 +1,39 @@
+=begin pod
+=for DESCRIPTION :title<presentation template>
+=                :author<John Brown> :pubdate(2011)
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [],
+        "name": "DESCRIPTION",
+        "margin": "",
+        "config": [
+          {
+            "name": "title",
+            "value": "presentation template",
+            "type": "string"
+          },
+          {
+            "name": "author",
+            "value": "John Brown",
+            "type": "string"
+          },
+          {
+            "name": "pubdate",
+            "type": "value",
+            "value": 2011
+          }
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=for DESCRIPTION :title<presentation template>\n=                :author<John Brown> :pubdate(2011)\n=end pod\n",
+    "config": []
+  }
+]

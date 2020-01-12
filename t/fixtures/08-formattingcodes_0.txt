@@ -1,0 +1,27 @@
+=pod
+B<I am a formatting code>
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "type": "para",
+        "text": "B<I am a formatting code>\n",
+        "margin": "",
+        "content": [
+          {
+            "content": [
+              "I am a formatting code"
+            ],
+            "type": "fcode",
+            "name": "B"
+          },
+          "\n"
+        ]
+      }
+    ],
+    "name": "pod"
+  }
+]

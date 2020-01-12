@@ -1,0 +1,24 @@
+=pod V<C<boo> B<bar> asd>
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "type": "para",
+        "text": "V<C<boo> B<bar> asd>\n",
+        "margin": "",
+        "content": [
+          {
+            "content": "C<boo> B<bar> asd",
+            "type": "fcode",
+            "name": "V"
+          },
+          "\n"
+        ]
+      }
+    ],
+    "name": "pod"
+  }
+]

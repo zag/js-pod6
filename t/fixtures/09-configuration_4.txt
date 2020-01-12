@@ -1,0 +1,38 @@
+=begin pod
+=for table :caption<Table of contents>
+    foo bar
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "content": [
+              "    foo bar\n"
+            ],
+            "margin": "",
+            "text": "    foo bar\n"
+          }
+        ],
+        "name": "table",
+        "margin": "",
+        "config": [
+          {
+            "name": "caption",
+            "value": "Table of contents",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=for table :caption<Table of contents>\n    foo bar\n=end pod\n",
+    "config": []
+  }
+]

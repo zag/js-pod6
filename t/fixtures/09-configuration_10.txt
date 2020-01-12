@@ -1,0 +1,46 @@
+=begin table :k1(1, 'b c', 2.3, True, False) :k2[1, 'b c', 2.3, True, False]
+foo
+=end table
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "foo\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "foo\n"
+        ]
+      }
+    ],
+    "name": "table",
+    "margin": "",
+    "text": "=begin table :k1(1, 'b c', 2.3, True, False) :k2[1, 'b c', 2.3, True, False]\nfoo\n=end table\n",
+    "config": [
+      {
+        "name": "k1",
+        "type": "array",
+        "value": [
+          1,
+          "b c",
+          2.3,
+          true,
+          false
+        ]
+      },
+      {
+        "name": "k2",
+        "value": [
+          1,
+          "b c",
+          2.3,
+          true,
+          false
+        ],
+        "type": "array"
+      }
+    ]
+  }
+]

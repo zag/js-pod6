@@ -1,0 +1,32 @@
+=begin pod
+    =config head2  :like<head1> :formatted<I>
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "name": "head2",
+        "type": "config",
+        "config": [
+          {
+            "name": "like",
+            "value": "head1",
+            "type": "string"
+          },
+          {
+            "name": "formatted",
+            "value": "I",
+            "type": "string"
+          }
+        ],
+        "margin": "    "
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n    =config head2  :like<head1> :formatted<I>\n=end pod\n",
+    "config": []
+  }
+]
