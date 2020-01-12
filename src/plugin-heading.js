@@ -16,7 +16,7 @@ module.exports = () =>( tree )=>{
                             const match = re.exec(startText.text)
                             if (match){
                                 startText.text = startText.text.replace(re, '')
-                                node.attr = { ...node.attr, ...{ numbered: true }}
+                                node.config = { ...node.config, ...{ numbered: true }}
                             }
                         }
                     }
