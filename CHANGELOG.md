@@ -1,3 +1,8 @@
+# 0.0.7
+
+- base export to html
+- handle lists
+
 # 0.0.6
 
 - =config directive

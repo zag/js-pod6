@@ -5,15 +5,29 @@ Pod6 is an easy-to-use markup language.
 ## Usage
 
 ```
+yarn add pod6
+```
+Export to *html*:
+
+```
+var toHtml = require('pod6').toHtml
+toHtml().run(`=begin pod
+ This is an ordinary paragraph
+=end pod`)
+```
+
+Get parser's *tree*:
+
+```
  var parse = require('pod6').parse
- parse(`=begin pod
+ var tree =  parse(`=begin pod
  This is an ordinary paragraph
 
     While this is not
     This is a code block
-
+    
     =head1 Mumble mumble
-
+    
     Suprisingly, this is not a code block
         (with fancy indentation too)
 
@@ -70,3 +84,7 @@ foo
 
 [2] Synopsis 2: [Bits and Pieces](https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod)
 
+
+```
+
+```
