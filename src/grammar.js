@@ -383,7 +383,7 @@ function peg$parse(input, options) {
            },
       peg$c133 = function(vmargin, marker, name, config, content) { 
             return { 
-                    type:'blockNamed',
+                    type:'namedBlock',
                     content: content === "" ? [] : [{text:content}],
                     name,
                     margin:vmargin,
