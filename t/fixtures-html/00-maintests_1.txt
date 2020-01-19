@@ -1,0 +1,9 @@
+=begin pod
+  twest
+  =for para
+  sdsdsdsd
+
+  jjj
+=end pod
+~~~~~~~
+"<code><pre>twest\n</pre></code><p>  sdsdsdsd\n</p><p>jjj\n</p>"
