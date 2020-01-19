@@ -304,7 +304,7 @@ paragraphBlockRaw =
   content:$(!emptyline text_content)*
   { 
       return { 
-              type:'blockNamed',
+              type:'namedBlock',
               content: content === "" ? [] : [{text:content}],
               name,
               margin:vmargin,
