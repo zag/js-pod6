@@ -35,82 +35,89 @@ As you can see, folk wisdom is often of dubious value.
         "type": "blankline"
       },
       {
-        "type": "block",
+        "type": "list",
+        "level": 1,
         "content": [
           {
-            "text": "I<The rain in Spain falls mainly on the plain.>\n",
-            "margin": "",
-            "type": "para",
+            "type": "block",
             "content": [
               {
+                "text": "I<The rain in Spain falls mainly on the plain.>\n",
+                "margin": "",
+                "type": "para",
                 "content": [
-                  "The rain in Spain falls mainly on the plain."
-                ],
-                "type": "fcode",
-                "name": "I"
+                  {
+                    "content": [
+                      "The rain in Spain falls mainly on the plain."
+                    ],
+                    "type": "fcode",
+                    "name": "I"
+                  },
+                  "\n"
+                ]
               },
-              "\n"
-            ]
+              {
+                "type": "blankline"
+              },
+              {
+                "text": "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n",
+                "margin": "",
+                "type": "para",
+                "content": [
+                  "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n"
+                ]
+              }
+            ],
+            "name": "item",
+            "margin": "",
+            "text": "=begin item\nI<The rain in Spain falls mainly on the plain.>\n\nThis is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n=end item\n",
+            "config": [],
+            "level": 1
           },
           {
             "type": "blankline"
           },
           {
-            "text": "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n",
-            "margin": "",
-            "type": "para",
-            "content": [
-              "This is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "margin": "",
-        "text": "=begin item\nI<The rain in Spain falls mainly on the plain.>\n\nThis is a common myth and an unconscionable slur on the Spanish\npeople, the majority of whom are extremely attractive.\n=end item\n",
-        "config": [],
-        "level": 1
-      },
-      {
-        "type": "blankline"
-      },
-      {
-        "type": "block",
-        "content": [
-          {
-            "text": "I<The early bird gets the worm.>\n",
-            "margin": "",
-            "type": "para",
+            "type": "block",
             "content": [
               {
+                "text": "I<The early bird gets the worm.>\n",
+                "margin": "",
+                "type": "para",
                 "content": [
-                  "The early bird gets the worm."
-                ],
-                "type": "fcode",
-                "name": "I"
+                  {
+                    "content": [
+                      "The early bird gets the worm."
+                    ],
+                    "type": "fcode",
+                    "name": "I"
+                  },
+                  "\n"
+                ]
               },
-              "\n"
-            ]
+              {
+                "type": "blankline"
+              },
+              {
+                "text": "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n",
+                "margin": "",
+                "type": "para",
+                "content": [
+                  "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n"
+                ]
+              }
+            ],
+            "name": "item",
+            "margin": "",
+            "text": "=begin item\nI<The early bird gets the worm.>\n\nIn deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n=end item\n",
+            "config": [],
+            "level": 1
           },
           {
             "type": "blankline"
-          },
-          {
-            "text": "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n",
-            "margin": "",
-            "type": "para",
-            "content": [
-              "In deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n"
-            ]
           }
         ],
-        "name": "item",
-        "margin": "",
-        "text": "=begin item\nI<The early bird gets the worm.>\n\nIn deciding whether to become an early riser, it is worth\nconsidering whether you would actually enjoy annelids\nfor breakfast.\n=end item\n",
-        "config": [],
-        "level": 1
-      },
-      {
-        "type": "blankline"
+        "list": "itemized"
       },
       {
         "text": "As you can see, folk wisdom is often of dubious value.\n",

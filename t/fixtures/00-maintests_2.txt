@@ -15,7 +15,7 @@ dd
     "type": "block",
     "content": [
       {
-        "type": "blockNamed",
+        "type": "namedBlock",
         "content": [
           {
             "text": "  text\n"

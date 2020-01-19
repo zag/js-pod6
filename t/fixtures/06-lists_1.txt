@@ -15,135 +15,156 @@
     "type": "block",
     "content": [
       {
-        "margin": "",
-        "type": "block",
+        "type": "list",
+        "level": "1",
         "content": [
           {
-            "type": "para",
-            "text": "Animal\n",
             "margin": "",
+            "type": "block",
             "content": [
-              "Animal\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "1"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
+              {
+                "type": "para",
+                "text": "Animal\n",
+                "margin": "",
+                "content": [
+                  "Animal\n"
+                ]
+              }
+            ],
+            "name": "item",
+            "level": "1"
+          },
           {
-            "type": "para",
-            "text": "Vertebrate\n",
-            "margin": "",
+            "type": "list",
+            "level": "2",
             "content": [
-              "Vertebrate\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Vertebrate\n",
+                    "margin": "",
+                    "content": [
+                      "Vertebrate\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              },
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Invertebrate\n",
+                    "margin": "",
+                    "content": [
+                      "Invertebrate\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              },
+              {
+                "type": "blankline"
+              }
+            ],
+            "list": "itemized"
+          },
           {
-            "type": "para",
-            "text": "Invertebrate\n",
             "margin": "",
+            "type": "block",
             "content": [
-              "Invertebrate\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
-      },
-      {
-        "type": "blankline"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
+              {
+                "type": "para",
+                "text": "Phase\n",
+                "margin": "",
+                "content": [
+                  "Phase\n"
+                ]
+              }
+            ],
+            "name": "item",
+            "level": "1"
+          },
           {
-            "type": "para",
-            "text": "Phase\n",
-            "margin": "",
+            "type": "list",
+            "level": "2",
             "content": [
-              "Phase\n"
-            ]
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Solid\n",
+                    "margin": "",
+                    "content": [
+                      "Solid\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              },
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Liquid\n",
+                    "margin": "",
+                    "content": [
+                      "Liquid\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              },
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Gas\n",
+                    "margin": "",
+                    "content": [
+                      "Gas\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              },
+              {
+                "margin": "",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "para",
+                    "text": "Chocolate\n",
+                    "margin": "",
+                    "content": [
+                      "Chocolate\n"
+                    ]
+                  }
+                ],
+                "name": "item",
+                "level": "2"
+              }
+            ],
+            "list": "itemized"
           }
         ],
-        "name": "item",
-        "level": "1"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "text": "Solid\n",
-            "margin": "",
-            "content": [
-              "Solid\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "text": "Liquid\n",
-            "margin": "",
-            "content": [
-              "Liquid\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "text": "Gas\n",
-            "margin": "",
-            "content": [
-              "Gas\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
-      },
-      {
-        "margin": "",
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "text": "Chocolate\n",
-            "margin": "",
-            "content": [
-              "Chocolate\n"
-            ]
-          }
-        ],
-        "name": "item",
-        "level": "2"
+        "list": "itemized"
       }
     ],
     "name": "pod",

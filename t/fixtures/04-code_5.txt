@@ -38,7 +38,7 @@
         "type": "blankline"
       },
       {
-        "type": "blockNamed",
+        "type": "namedBlock",
         "content": [
           {
             "text": "        this is not\n"
@@ -109,25 +109,32 @@
         "type": "blankline"
       },
       {
-        "type": "block",
+        "type": "list",
+        "level": 1,
         "content": [
           {
-            "text": "and this is!\n",
-            "margin": "        ",
-            "type": "code",
+            "type": "block",
             "content": [
               {
-                "type": "verbatim",
-                "value": "and this is!\n"
+                "text": "and this is!\n",
+                "margin": "        ",
+                "type": "code",
+                "content": [
+                  {
+                    "type": "verbatim",
+                    "value": "and this is!\n"
+                  }
+                ]
               }
-            ]
+            ],
+            "name": "item",
+            "margin": "    ",
+            "text": "    =begin item\n        and this is!\n    =end item\n",
+            "config": [],
+            "level": 1
           }
         ],
-        "name": "item",
-        "margin": "    ",
-        "text": "    =begin item\n        and this is!\n    =end item\n",
-        "config": [],
-        "level": 1
+        "list": "itemized"
       }
     ],
     "name": "pod",

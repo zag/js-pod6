@@ -43,12 +43,9 @@
       {
         "text": "jjj\n",
         "margin": "  ",
-        "type": "text",
+        "type": "para",
         "content": [
-          {
-            "type": "verbatim",
-            "value": "jjj\n"
-          }
+          "jjj\n"
         ]
       }
     ],

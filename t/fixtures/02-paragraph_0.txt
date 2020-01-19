@@ -2,7 +2,7 @@
 ~~~~~~~
 [
   {
-    "type": "blockNamed",
+    "type": "namedBlock",
     "content": [],
     "name": "Foo",
     "margin": "",

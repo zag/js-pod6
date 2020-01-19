@@ -28,7 +28,7 @@ Four, another delimited one
         "config": []
       },
       {
-        "type": "blockNamed",
+        "type": "namedBlock",
         "content": [
           {
             "text": "Two, paragraph block\n"
@@ -39,7 +39,7 @@ Four, another delimited one
         "config": []
       },
       {
-        "type": "blockNamed",
+        "type": "namedBlock",
         "content": [
           {
             "text": "Three, still a parablock\n"

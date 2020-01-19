@@ -43,12 +43,9 @@
       {
         "text": "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n",
         "margin": "    ",
-        "type": "text",
+        "type": "para",
         "content": [
-          {
-            "type": "verbatim",
-            "value": "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
-          }
+          "This is an ordinary paragraph.\n    Its text  will   be     squeezed     and\n    short lines filled. It is terminated by\n    the first blank line.\n"
         ]
       },
       {
@@ -57,12 +54,9 @@
       {
         "text": "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n",
         "margin": "    ",
-        "type": "text",
+        "type": "para",
         "content": [
-          {
-            "type": "verbatim",
-            "value": "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
-          }
+          "This is another ordinary paragraph.\n    Its     text    will  also be squeezed and\n    short lines filled. It is terminated by\n    the trailing directive on the next line.\n"
         ]
       },
       {
@@ -87,12 +81,9 @@
       {
         "text": "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n",
         "margin": "        ",
-        "type": "text",
+        "type": "para",
         "content": [
-          {
-            "type": "verbatim",
-            "value": "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
-          }
+          "This is yet another ordinary paragraph,\n        at the first virtual column set by the\n        previous directive\n"
         ]
       }
     ],
