@@ -4,7 +4,7 @@ module.exports = () =>( tree )=>{
 
         if( (node.type || "").match(/(code|text)/) ) {
             if ( node.margin && context.margin && context.margin.length > 0 && context.margin.length == node.margin.length ) {
-                node.type='text'
+                node.type='para'
             }
             if ( node.type === 'code') {
             // remove parent margin
