@@ -26,123 +26,116 @@ The seven suspects are:
         "type": "blankline"
       },
       {
-        "type": "list",
-        "level": 1,
+        "margin": "",
+        "type": "block",
         "content": [
           {
+            "type": "para",
+            "text": "Happy\n",
             "margin": "",
-            "type": "block",
             "content": [
-              {
-                "type": "para",
-                "text": "Happy\n",
-                "margin": "",
-                "content": [
-                  "Happy\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Dopey\n",
-                "margin": "",
-                "content": [
-                  "Dopey\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Sleepy\n",
-                "margin": "",
-                "content": [
-                  "Sleepy\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Bashful\n",
-                "margin": "",
-                "content": [
-                  "Bashful\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Sneezy\n",
-                "margin": "",
-                "content": [
-                  "Sneezy\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Grumpy\n",
-                "margin": "",
-                "content": [
-                  "Grumpy\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
-          },
-          {
-            "margin": "",
-            "type": "block",
-            "content": [
-              {
-                "type": "para",
-                "text": "Keyser Soze\n",
-                "margin": "",
-                "content": [
-                  "Keyser Soze\n"
-                ]
-              }
-            ],
-            "name": "item",
-            "level": 1
+              "Happy\n"
+            ]
           }
         ],
-        "list": "itemized"
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Dopey\n",
+            "margin": "",
+            "content": [
+              "Dopey\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Sleepy\n",
+            "margin": "",
+            "content": [
+              "Sleepy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Bashful\n",
+            "margin": "",
+            "content": [
+              "Bashful\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Sneezy\n",
+            "margin": "",
+            "content": [
+              "Sneezy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Grumpy\n",
+            "margin": "",
+            "content": [
+              "Grumpy\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Keyser Soze\n",
+            "margin": "",
+            "content": [
+              "Keyser Soze\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
       }
     ],
     "name": "pod",

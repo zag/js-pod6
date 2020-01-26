@@ -68,3 +68,21 @@ test
 #---
 =config table :k1<very long string, comma> :k2<2 23  23 > :k3<'23', 23233, 333>
 #---
+
+#---
+=code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=for code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=begin code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=end code
+#---
+
+#---
+=config C<>  :allow<B>
+#---
+

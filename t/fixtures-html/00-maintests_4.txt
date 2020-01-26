@@ -1,0 +1,13 @@
+=begin pod
+The seven suspects are:
+
+=item  Happy
+=item  Dopey
+=item  Sleepy
+=item  Bashful
+=item  Sneezy
+=item  Grumpy
+=item  Keyser Soze
+=end pod
+~~~~~~~
+"<p>The seven suspects are:\n</p><ul><li>Happy\n</li><li>Dopey\n</li><li>Sleepy\n</li><li>Bashful\n</li><li>Sneezy\n</li><li>Grumpy\n</li><li>Keyser Soze\n</li></ul>"

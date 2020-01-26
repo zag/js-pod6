@@ -28,4 +28,6 @@ t/fill*
 
 # example output
 examples/**/out
+*.swp
+
 

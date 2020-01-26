@@ -19,9 +19,7 @@ Outside blocks
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "Inside Got\n"
-          }
+          "Inside Got\n"
         ],
         "name": "Got",
         "margin": "",
@@ -33,9 +31,7 @@ Outside blocks
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "   Inside Bidden\n"
-          }
+          "   Inside Bidden\n"
         ],
         "name": "Bidden",
         "margin": "   ",

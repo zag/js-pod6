@@ -17,9 +17,7 @@ dd
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "  text\n"
-          }
+          "  text\n"
         ],
         "name": "Named",
         "margin": "",
@@ -28,11 +26,10 @@ dd
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "sdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n"
-          }
+          "sdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n"
         ],
         "name": "Named",
+        "margin": "",
         "text": "=begin Named\nsdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n=end Named\n",
         "config": []
       },

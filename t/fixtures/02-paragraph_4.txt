@@ -19,20 +19,17 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "One, delimited block\n"
-          }
+          "One, delimited block\n"
         ],
         "name": "One",
+        "margin": "",
         "text": "=begin One\nOne, delimited block\n=end One\n",
         "config": []
       },
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "Two, paragraph block\n"
-          }
+          "Two, paragraph block\n"
         ],
         "name": "Two",
         "margin": "",
@@ -41,9 +38,7 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "Three, still a parablock\n"
-          }
+          "Three, still a parablock\n"
         ],
         "name": "Three",
         "margin": "",
@@ -55,11 +50,10 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "Four, another delimited one\n"
-          }
+          "Four, another delimited one\n"
         ],
         "name": "Four",
+        "margin": "",
         "text": "=begin Four\nFour, another delimited one\n=end Four\n",
         "config": []
       }

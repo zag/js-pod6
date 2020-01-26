@@ -1,3 +1,8 @@
+# 0.0.8
+
+- export html script: pod6html
+- 
+
 # 0.0.7
 
 - base export to html

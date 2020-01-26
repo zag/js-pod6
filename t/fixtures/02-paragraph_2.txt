@@ -6,9 +6,7 @@ spaced   text
   {
     "type": "namedBlock",
     "content": [
-      {
-        "text": "some\nspaced   text\n"
-      }
+      "some\nspaced   text\n"
     ],
     "name": "Foo",
     "margin": "",

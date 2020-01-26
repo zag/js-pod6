@@ -13,14 +13,7 @@ This isn't a comment
       {
         "type": "block",
         "content": [
-          {
-            "type": "para",
-            "content": [
-              "foo foo\nbla bla    bla\n"
-            ],
-            "margin": "",
-            "text": "foo foo\nbla bla    bla\n"
-          }
+          "foo foo\nbla bla    bla\n"
         ],
         "name": "comment",
         "margin": "",

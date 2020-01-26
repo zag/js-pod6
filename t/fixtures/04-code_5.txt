@@ -40,9 +40,7 @@
       {
         "type": "namedBlock",
         "content": [
-          {
-            "text": "        this is not\n"
-          }
+          "        this is not\n"
         ],
         "name": "Podcast",
         "margin": "    ",
@@ -109,32 +107,25 @@
         "type": "blankline"
       },
       {
-        "type": "list",
-        "level": 1,
+        "type": "block",
         "content": [
           {
-            "type": "block",
+            "text": "and this is!\n",
+            "margin": "        ",
+            "type": "code",
             "content": [
               {
-                "text": "and this is!\n",
-                "margin": "        ",
-                "type": "code",
-                "content": [
-                  {
-                    "type": "verbatim",
-                    "value": "and this is!\n"
-                  }
-                ]
+                "type": "verbatim",
+                "value": "and this is!\n"
               }
-            ],
-            "name": "item",
-            "margin": "    ",
-            "text": "    =begin item\n        and this is!\n    =end item\n",
-            "config": [],
-            "level": 1
+            ]
           }
         ],
-        "list": "itemized"
+        "name": "item",
+        "margin": "    ",
+        "text": "    =begin item\n        and this is!\n    =end item\n",
+        "config": [],
+        "level": 1
       }
     ],
     "name": "pod",

@@ -1,0 +1,41 @@
+=code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=for code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=begin code
+  sdkljsalkdjlsd
+  asdasdasdasdsad
+=end code
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+    ],
+    "name": "code",
+    "config": []
+  },
+  {
+    "type": "block",
+    "content": [
+      "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+    ],
+    "name": "code",
+    "margin": "",
+    "config": []
+  },
+  {
+    "type": "block",
+    "content": [
+      "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+    ],
+    "name": "code",
+    "margin": "",
+    "text": "=begin code\n  sdkljsalkdjlsd\n  asdasdasdasdsad\n=end code\n",
+    "config": []
+  }
+]

@@ -38,7 +38,7 @@ const toAny = ( options = {}, plugins = [] ) => {
             return node.map( item => interator(item, context) )
         }
         if ( 'string' === typeof node ) {
-            // convert sunply text to para
+            // convert string to lex node with type 
             return interator({type:'text', value:node}, context)
         }
         // get first rule for this node

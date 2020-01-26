@@ -5,9 +5,7 @@ some text
   {
     "type": "namedBlock",
     "content": [
-      {
-        "text": "some text\n"
-      }
+      "some text\n"
     ],
     "name": "Foo",
     "margin": "",

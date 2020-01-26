@@ -9,11 +9,10 @@ foo foo
   {
     "type": "block",
     "content": [
-      {
-        "text": "foo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n"
-      }
+      "foo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n"
     ],
     "name": "comment",
+    "margin": "",
     "text": "=begin comment\nfoo foo\n=begin invalid pod\n=as many invalid pod as we want\n===yay!\n=end comment\n",
     "config": []
   }

@@ -16,96 +16,76 @@ The choices are:
         "margin": "",
         "type": "block",
         "content": [
+          "CORRECT...\n"
+        ],
+        "name": "comment",
+        "config": []
+      },
+      {
+        "type": "block",
+        "content": [
           {
-            "type": "para",
-            "text": "CORRECT...\n",
+            "text": "The choices are:\n",
             "margin": "",
+            "type": "para",
             "content": [
-              "CORRECT...\n"
+              "The choices are:\n"
             ]
           }
         ],
-        "name": "comment"
+        "name": "item",
+        "margin": "",
+        "text": "=begin item1\nThe choices are:\n=end item1\n",
+        "config": [],
+        "level": "1"
       },
       {
-        "type": "list",
-        "level": "1",
+        "margin": "",
+        "type": "block",
         "content": [
           {
-            "type": "block",
-            "content": [
-              {
-                "text": "The choices are:\n",
-                "margin": "",
-                "type": "para",
-                "content": [
-                  "The choices are:\n"
-                ]
-              }
-            ],
-            "name": "item",
+            "type": "para",
+            "text": "Liberty\n",
             "margin": "",
-            "text": "=begin item1\nThe choices are:\n=end item1\n",
-            "config": [],
-            "level": "1"
-          },
-          {
-            "type": "list",
-            "level": "2",
             "content": [
-              {
-                "margin": "",
-                "type": "block",
-                "content": [
-                  {
-                    "type": "para",
-                    "text": "Liberty\n",
-                    "margin": "",
-                    "content": [
-                      "Liberty\n"
-                    ]
-                  }
-                ],
-                "name": "item",
-                "level": "2"
-              },
-              {
-                "margin": "",
-                "type": "block",
-                "content": [
-                  {
-                    "type": "para",
-                    "text": "Death\n",
-                    "margin": "",
-                    "content": [
-                      "Death\n"
-                    ]
-                  }
-                ],
-                "name": "item",
-                "level": "2"
-              },
-              {
-                "margin": "",
-                "type": "block",
-                "content": [
-                  {
-                    "type": "para",
-                    "text": "Beer\n",
-                    "margin": "",
-                    "content": [
-                      "Beer\n"
-                    ]
-                  }
-                ],
-                "name": "item",
-                "level": "2"
-              }
-            ],
-            "list": "itemized"
+              "Liberty\n"
+            ]
           }
         ],
-        "list": "itemized"
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Death\n",
+            "margin": "",
+            "content": [
+              "Death\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "Beer\n",
+            "margin": "",
+            "content": [
+              "Beer\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": "2"
       }
     ],
     "name": "pod",

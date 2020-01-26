@@ -8,11 +8,10 @@
   {
     "type": "block",
     "content": [
-      {
-        "text": "    foo foo\n    =begin code\n    =end code\n"
-      }
+      "    foo foo\n    =begin code\n    =end code\n"
     ],
     "name": "code",
+    "margin": "",
     "text": "=begin code\n    foo foo\n    =begin code\n    =end code\n=end code\n",
     "config": []
   }

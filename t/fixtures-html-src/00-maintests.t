@@ -74,12 +74,16 @@ The seven suspects are:
 =end pod
 #---
 
-#---
-=begin table :k1<str> :k2('str') :k3("str") :k4["str"] :k5(Q[str])
-
-=end table
-#---
 
 #---
-=config table :k1<very long string, comma> :k2<2 23  23 > :k3<'23', 23233, 333>
+=item # Happy
+=item Sneezy
+#---
+
+#---
+=comment Tesxt
+=begin code 
+Some code
+=end code
+
 #---
