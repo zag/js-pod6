@@ -11,7 +11,7 @@
     "pod6html" : "bin/pod6html"
   },
   "files": [
-    "src/*.js",
+    "src/**/*.js",
     "README.md",
     "CHANGELOG.md"
   ],
