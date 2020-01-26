@@ -21,10 +21,13 @@ const toHtml = ( opt ) => toAny( opt ).use(
         // Formatting codes
         'C<>': wrapContent('<pre><code>','</code></pre>'),
         'B<>': wrapContent('<strong>','</strong>'),
+        'I<>': wrapContent('<em>','</em>'),
+
         'para': wrapContent('<p>','</p>'),
         'para': content,
         'pod': content,
         ':code': wrapContent('<code><pre>', '</pre></code>'),
+        'code:': wrapContent('<code><pre>', '</pre></code>'),
         ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { interator( node.value ) },
         ':blankline': emptyContent,
         ':para':wrapContent('<p>', '</p>'),
@@ -39,6 +42,19 @@ const toHtml = ( opt ) => toAny( opt ).use(
         }),
         // inside head dont' wrap into <p>
         ':para':setFn(( node, ctx ) => ( ctx.parents || [] ).includes('head') ? content : wrapContent('<p>', '</p>')),
+        ':list': setFn(( node, ctx ) => node.list === 'ordered' ? wrapContent('<ol>', '</ol>') : wrapContent('<ul>', '</ul>')), 
+        'item:block':  ( writer, processor ) => ( node, ctx, interator ) => {
+            // make text from first para
+            if (! (node instanceof Array)) {
+                console.log(node)
+            }
+            const [ firstPara, ...other ] = node.content
+            writer.write('<li>')
+            interator([...firstPara.content, ...other], ctx)
+            writer.write('</li>')
+        },
+        'comment:block': emptyContent, 
+
         })
 
 module.exports = toHtml
