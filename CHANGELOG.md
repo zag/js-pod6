@@ -1,7 +1,7 @@
 # 0.0.8
 
 - export html script: pod6html
-- 
+- unify tree
 
 # 0.0.7
 
