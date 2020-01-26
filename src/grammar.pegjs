@@ -15,7 +15,8 @@ Document = nodes:Element*  { return  nodes }
 Element =  delimitedBlockRaw  
          / delimitedBlock
          / paragraphBlockRaw 
-         / paragraphBlock 
+         / paragraphBlock
+         / abbreviatedBlockRaw
          / abbreviatedBlock
          / configDirective
          / textBlock 
@@ -163,11 +164,7 @@ delimitedBlockRaw =
      return ( 
        (name.match(/code|comment/))
         || 
-       (
-        name !== name.toLowerCase() 
-            && 
-        name !== name.toUpperCase() 
-       )
+        isNamedBlock(name)
       )
      }
   
@@ -182,11 +179,17 @@ vmargin2:$(_) res:(
                       const type = isNamedBlock(name) ? 'namedBlock' : 'block'
                       return {
                               type:type,
-                              content:[{text:content}],
-                              name 
+                              content:[content],
+                              name,
+                              margin:vmargin
                              }
                     } 
-              ) &{return  true || vmargin === vmargin2} { return { ...res, text:text() , config }}
+              ) &{return  true || vmargin === vmargin2} 
+                { return {
+                          ...res,
+                          text:text(),
+                          config
+                          }}
 
 delimitedBlock = 
   vmargin:$(_) markerBegin name:identifier  _ config:pod_configuration
@@ -195,7 +198,8 @@ delimitedBlock =
           / delimitedBlockRaw
           / delimitedBlock
           / paragraphBlockRaw 
-          / paragraphBlock 
+          / paragraphBlock
+          / abbreviatedBlockRaw
           / abbreviatedBlock 
           / configDirective 
           ) & { return true || name == name.toUpperCase() } { return nodes} 
@@ -255,6 +259,27 @@ textBlock = ( text_content )+
             }
 ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { return { text: text(), type: "ambient1"}}
 
+abbreviatedBlockRaw = 
+  vmargin:$(_) !markers
+  name:markerAbbreviatedBlock _ emptyline* 
+    &{  
+     return ( 
+       (name.match(/code|comment/))
+        || 
+        isNamedBlock(name)
+      )
+     }
+  content:$(!emptyline text:text_content )*
+  { 
+    return {
+            margin:vmargin,
+            type: isNamedBlock(name) ? 'namedBlock' : 'block',
+            content: content === "" ? [] 
+                                    : [content],
+            name,
+            config:[]
+          }
+  }
 abbreviatedBlock = 
   vmargin:$(_) !markers
   name:markerAbbreviatedBlock _ emptyline* 
@@ -282,7 +307,7 @@ abbreviatedBlock =
   }
 configDirective = 
   vmargin:$(_)
-  marker:'=config' _  name:identifier _ config:pod_configuration
+  marker:'=config' _  name:$(identifier / [A-Z]'<>') _ config:pod_configuration
   {
       return {
           name,
@@ -297,15 +322,16 @@ paragraphBlockRaw =
   marker:markerFor  name:identifier _ config:pod_configuration
       &{  
      return ( 
-       name !== name.toLowerCase() 
-        && 
-        name !== name.toUpperCase() )
+       (name.match(/code|comment/))
+        || 
+        isNamedBlock(name)
+      )
      }
   content:$(!emptyline text_content)*
   { 
       return { 
-              type:'namedBlock',
-              content: content === "" ? [] : [{text:content}],
+              type: isNamedBlock(name) ? 'namedBlock' : 'block',
+              content: content === "" ? [] : [content],
               name,
               margin:vmargin,
               config
