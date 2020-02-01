@@ -1,3 +1,12 @@
+# 0.0.10
+
+- add S<>, Z<>
+- fix L<>
+- =defn lists
+- avoid critical parse errors 
+- report locations of errors in source text
+- add version to module.exports
+
 # 0.0.9
 
 - fix npm

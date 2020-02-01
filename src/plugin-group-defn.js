@@ -54,17 +54,17 @@ const group = ( a ) => {
         return item
     })
   }
-  const visit = ( node )=>{
+  const visit = ( node ) => {
     if ( Array.isArray( node ) ) {
-        node.forEach( i => { visit(i) } )
+        node = group( node )
     } else {
-      if (node.type === 'block') {
-        // visit(node.content)
+      if ( node.type === 'block' ) {
         node.content = group( node.content )
       }
     }
+    return node
   }
- visit(tree)
- return tree
+  tree = visit(tree)
+  return tree
 }
 

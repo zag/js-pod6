@@ -22,6 +22,7 @@ const group = ( a, level = 1 ) => {
            i.type === 'blankline'
    )
   let lastItem = {}
+
   let result =  a.reduce((
     a, i 
   ) => {
@@ -65,23 +66,23 @@ const group = ( a, level = 1 ) => {
    *   list = ['ordered', 'variable', 'itemized']
    */
   return result.map( item => { 
-      if ( item.type === 'list') {
-          // process internally list
+      // process any item with content ( except formatting codes)
+      if (item.content && item.type !== 'fcode') {
           item.content = group( item.content, item.level + 1 )
       }
       return item
   })
 }
-const visit = ( node ) => {
-  if ( Array.isArray( node ) ) {
-      node = group( node )
-  } else {
-    if ( node.type === 'block' ) {
-      node.content = group( node.content )
+  const visit = ( node ) => {
+    if ( Array.isArray( node ) ) {
+        node = group( node )
+    } else {
+      if ( node.type === 'block' ) {
+        node.content = group( node.content )
+      }
     }
+    return node
   }
-  return node
-}
- tree = visit(tree)
- return tree
+  tree = visit(tree)
+  return tree
 }
