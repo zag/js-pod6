@@ -57,7 +57,7 @@ const toAny = ( options = {}, plugins = [] ) => {
     }
 
     function makeMixin (o) {
-        return Object.assign({out:'', name:'test'},  Events.prototype, o)
+        return Object.assign({out:'', errors: [], name:'test'},  Events.prototype, o)
     }
 
     function run(src) {
@@ -66,12 +66,21 @@ const toAny = ( options = {}, plugins = [] ) => {
                 this.out += str
             },
             getStr() {
-                return this.out
+                // let str = this.out
+                // str.error = this.errors
+                // return str
+                return {
+                    errors : this.errors,
+                //    out : this.out,
+                   toString: () => this.out,
+                   valueOf: () => this.out
+                }
             },
             startWrite(){
                 // setup events
                  (this.ons || [] ).map( a=>Events.prototype.on.call( this, ...a ) )
                 this.emit('start')
+                this.addListener('errors', (err)=>{ this.errors.push(err); console.log({err1:err})})
             },
             on(){
                 // overload 'on' method for reverse setup handlers

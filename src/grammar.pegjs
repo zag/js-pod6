@@ -12,15 +12,16 @@
 
 Document = nodes:Element*  { return  nodes }
 
-Element =  delimitedBlockRaw  
+Element =  delimitedBlockRaw
          / delimitedBlock
          / paragraphBlockRaw 
          / paragraphBlock
          / abbreviatedBlockRaw
          / abbreviatedBlock
          / configDirective
-         / textBlock 
+         / textBlock
          / blankline
+         / error_para
 
 /**
 U+0020 SPACE
@@ -52,7 +53,8 @@ markerAbbreviatedBlock = '=' name:identifier  { return name }
 markers = markerBegin / markerEnd / markerFor / markerConfig
 Text "text" = $(c:char+)
 text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
-
+error_para = $(!EOL .)+ EOL
+            { return { type:"verbatim", value:text(), error:true, location:location()}}
 /** 
 #  Value is...       Specify with...           Or with...            Or with...
 #  ===============   =======================   =================   ===========
@@ -65,7 +67,7 @@ text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+
 #  Number            :key(42)                  :key(2.3)
 */
 
-array_codes = code:FCode hs+ codes:array_codes {return [code,codes].flat()}/ code:FCode { return [code]}
+array_codes = code:FCode hs+ codes:array_codes {return [code,codes].flat()}/ code:FCode { return [code] }
 FCode = $(char)
 
 // Define array: '1 2 3' or '1,2,3'
@@ -160,7 +162,7 @@ item =  // quoted strings
 delimitedBlockRaw = 
     vmargin:$(_) 
     markerBegin name:identifier _ config:pod_configuration 
-    &{  
+    &{ 
      return ( 
        (name.match(/code|comment/))
         || 
@@ -201,7 +203,7 @@ delimitedBlock =
           / paragraphBlock
           / abbreviatedBlockRaw
           / abbreviatedBlock 
-          / configDirective 
+          / configDirective
           ) & { return true || name == name.toUpperCase() } { return nodes} 
   / tvmargin:$( hs* ) 
     text:$(text_content+)
@@ -222,7 +224,7 @@ delimitedBlock =
               }
     }
   )* 
-  vmargin2:$(_) res:( 
+  vmargin2:$(_) res:(
           markerEnd ename:identifier &{ return name === ename } Endline? 
           { 
             return { 
@@ -306,7 +308,7 @@ abbreviatedBlock =
           }
   }
 configDirective = 
-  vmargin:$(_)
+  vmargin:$(_) 
   marker:'=config' _  name:$(identifier / [A-Z]'<>') _ config:pod_configuration
   {
       return {
@@ -318,8 +320,8 @@ configDirective =
   }
 
 paragraphBlockRaw = 
-  vmargin:$(_) 
-  marker:markerFor  name:identifier _ config:pod_configuration
+  vmargin:$(_)
+  marker:markerFor  name:identifier _ config:pod_configuration 
       &{  
      return ( 
        (name.match(/code|comment/))
