@@ -12,9 +12,9 @@ describe("run html export tests", () => {
                 i.file, 
                 ()=> {
                     const loaded = prepare(i.tree)
-                    const exported = prepare( toStr(toHtml().run(i.text)) )
+                    const exported = prepare( toStr(toHtml().run(i.text).toString()) )
                     // expect(exported).toEqual(expect.stringMatching(exported))
-                    expect(exported).toEqual(exported)
+                    expect(exported).toEqual(loaded)
                 }
             )
 )

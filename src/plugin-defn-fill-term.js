@@ -31,17 +31,15 @@ module.exports = () =>( tree )=>{
                    type: 'para',
                    name: 'term',
                    text: term,
-                   content: [{type:'text', value: term }]
+                   content: [{ type: 'text', value: term }]
                  }
                  newContent.push(newTermPara)
-                //  node.term = term
-                 if (splited.length == 1 && splited[0] !== '' ) {
+                 if (!( splited.length == 1 && splited[0] === '' )) {
                    textNode.value = splited.join('\n')
                    item.text = textNode.value
                    newContent.push(item)  
                  }
                  isFirstParaProcessed = true
-                //  break
                } else {
                 newContent.push(item)
                }

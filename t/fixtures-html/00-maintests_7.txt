@@ -7,4 +7,4 @@ Some para
 =defn I<T>ERM
 text
 ~~~~~~~
-"<dl><dt><em>T</em>erm</dt><dd><p>Some para\n</p></dd><dt><em>T</em>ERM</dt><dd></dd></dl>"
+"<dl><dt><em>T</em>erm</dt><dd><p>Some para\n</p></dd><dt><em>T</em>ERM</dt><dd><p>text\n</p></dd></dl>"

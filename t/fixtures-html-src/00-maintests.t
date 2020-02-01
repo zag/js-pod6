@@ -99,3 +99,14 @@ Some para
 =defn I<T>ERM
 text
 #---
+
+#---
+=begin defn
+
+I<T>erm1
+
+Some para
+=end defn
+=defn I<T>ERM
+text
+#---

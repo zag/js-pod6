@@ -10,4 +10,4 @@ The seven suspects are:
 =item  Keyser Soze
 =end pod
 ~~~~~~~
-"<p>The seven suspects are:\n</p><ul><li>Happy\n</li><li>Dopey\n</li><li>Sleepy\n</li><li>Bashful\n</li><li>Sneezy\n</li><li>Grumpy\n</li><li>Keyser Soze\n</li></ul>"
+"<p>The seven suspects are:\n</p><ul><li><p>Happy\n</p></li><li><p>Dopey\n</p></li><li><p>Sleepy\n</p></li><li><p>Bashful\n</p></li><li><p>Sneezy\n</p></li><li><p>Grumpy\n</p></li><li><p>Keyser Soze\n</p></li></ul>"

@@ -1,3 +1,7 @@
+# 0.0.11
+
+- hot fix for =defn lists
+
 # 0.0.10
 
 - add S<>, Z<>
