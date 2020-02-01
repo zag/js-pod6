@@ -87,3 +87,15 @@ Some code
 =end code
 
 #---
+
+// Test defn lists
+#---
+=begin defn
+
+I<T>erm
+
+Some para
+=end defn
+=defn I<T>ERM
+text
+#---

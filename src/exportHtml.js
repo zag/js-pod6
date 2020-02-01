@@ -42,7 +42,7 @@ const toHtml = ( opt ) => toAny( opt ).use(
         }),
         // inside head dont' wrap into <p>
         ':para':setFn(( node, ctx ) => ( ctx.parents || [] ).includes('head') ? content : wrapContent('<p>', '</p>')),
-        ':list': setFn(( node, ctx ) => node.list === 'ordered' ? wrapContent('<ol>', '</ol>') : wrapContent('<ul>', '</ul>')), 
+        ':list': setFn(( node, ctx ) => node.list === 'ordered' ? wrapContent('<ol>', '</ol>') : node.list ===  'variable' ? wrapContent('<dl>', '</dl>') : wrapContent('<ul>', '</ul>')), 
         'item:block':  ( writer, processor ) => ( node, ctx, interator ) => {
             // make text from first para
             if (! (node instanceof Array)) {
@@ -54,6 +54,8 @@ const toHtml = ( opt ) => toAny( opt ).use(
             writer.write('</li>')
         },
         'comment:block': emptyContent, 
+        'defn':wrapContent('','</dd>'),
+        'term:para': wrapContent('<dt>','</dt><dd>'),
 
         })
 
