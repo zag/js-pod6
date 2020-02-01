@@ -1,0 +1,4 @@
+=for pod
+L<https://www.example.com>
+~~~~~~~
+"<p><a href=\"https://www.example.com\">https://www.example.com</a>\n</p>"

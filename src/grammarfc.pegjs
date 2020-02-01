@@ -1,5 +1,5 @@
 Expression
- = ( code_C / code_V / code_L / code / text / raw_text )*
+ = ( code_S / code_C / code_V / code_L / code_Z / code / text / raw_text )*
 raw_text= $(.) // { return {raw: text()}}
 code_V = 
     name:start_code &{return name === "V"}
@@ -10,7 +10,6 @@ code_V =
                 content,
                 'type':"fcode",
                 name,
-                content,
              }
     }
 code_C = 
@@ -22,18 +21,17 @@ code_C =
                 content,
                 'type':"fcode",
                 name,
-                content,
              }
     }
-
+separator = '|'
+text_L = $( '<' text_L '>' / !separator !end_code !start_code !looks_like_code . )+
 code_L = 
     name:start_code &{return name === "L"}
     content: (
-                code / text 
-             )
+                code / text_L 
+             ) 
      meta:(
-            ['|'] t:text 
-                    { return t }
+            separator t:$(!end_code .)*  { return t }
            )?
      end_code
      {
@@ -41,11 +39,34 @@ code_L =
                 content,
                 'type':"fcode",
                 name,
-                content,
                 meta
              }
     }
-allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S')
+code_S = 
+    name:start_code &{return name === "S"}
+    content: $(!end_code .)+
+    end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+             }
+    }
+
+code_Z = 
+    name:start_code &{return name === "S"}
+    content: $(!end_code .)+
+    end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+             }
+    }
+
+allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z')
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
 code =  name:start_code content:(  
