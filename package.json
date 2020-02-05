@@ -1,6 +1,6 @@
 {
   "name": "pod6",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Pod6 is an easy-to-use markup language",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "test": "jest"
   },
   "bin": {
-    "pod6html" : "bin/pod6html"
+    "pod6html": "bin/pod6html"
   },
   "files": [
     "src/**/*.js",

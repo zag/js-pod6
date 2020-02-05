@@ -13,26 +13,30 @@ L<C<b>|a>
         "margin": "",
         "content": [
           {
-            "content": {
-              "content": [
-                "b"
-              ],
-              "type": "fcode",
-              "name": "C"
-            },
+            "content": [
+              {
+                "content": [
+                  "b"
+                ],
+                "type": "fcode",
+                "name": "C"
+              }
+            ],
             "type": "fcode",
             "name": "L",
             "meta": "a"
           },
           "\n",
           {
-            "content": {
-              "content": [
-                "b"
-              ],
-              "type": "fcode",
-              "name": "C"
-            },
+            "content": [
+              {
+                "content": [
+                  "b"
+                ],
+                "type": "fcode",
+                "name": "C"
+              }
+            ],
             "type": "fcode",
             "name": "L",
             "meta": "a"

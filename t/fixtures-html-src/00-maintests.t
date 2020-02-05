@@ -100,13 +100,19 @@ Some para
 text
 #---
 
+
 #---
-=begin defn
+=begin pod
+=config item :numbered
+=config code :allow<B U>
+=code 1
+=end pod
+#---
 
-I<T>erm1
-
-Some para
-=end defn
-=defn I<T>ERM
-text
+#---
+=begin pod
+=begin nested
+blockquote
+=end nested
+=end pod
 #---

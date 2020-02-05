@@ -1,3 +1,10 @@
+# 0.0.12
+
+- fix term in=defn
+- refactor export interators and tree transformers
+- V<>, R<>, =nested ( only 1 level )
+- implement for overwrite rules for selector ( HOC subUse )
+
 # 0.0.11
 
 - hot fix for =defn lists
