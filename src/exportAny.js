@@ -2,6 +2,7 @@
 const Events = require('events')
 const parse = require('.').parse
 const { makeRule, makePlug } = require('./helpers/makeQuery')
+const makeInterator = require('./helpers/makeInterator')
 
 const toAny = ( options = {}, plugins = [] ) => {
     let fns = plugins
@@ -9,11 +10,10 @@ const toAny = ( options = {}, plugins = [] ) => {
     const processor = options.processor || parse
     chain.use = use
     chain.run = run
-    chain.interator = interator
     chain.getPlugins = () => fns
     return chain
     function chain (root) {
-        return interator(root)
+
     }
     
     function use( key, fn ) {
@@ -23,7 +23,7 @@ const toAny = ( options = {}, plugins = [] ) => {
     
       if ( key instanceof Object ) {
         for ( var prop in key ) {
-            if ( key.hasOwnProperty(prop) ) {
+             if ( key.hasOwnProperty(prop) ) {
                 use( prop, key[prop] )
             }
         }
@@ -33,29 +33,7 @@ const toAny = ( options = {}, plugins = [] ) => {
       return chain
     }
     
-    function interator (node, context)  {
-        if (node instanceof Array) {
-            return node.map( item => interator(item, context) )
-        }
-        if ( 'string' === typeof node ) {
-            // convert string to lex node with type 
-            return interator({type:'text', value:node}, context)
-        }
-        // get first rule for this node
-        const reversed = fns.slice()
-        reversed.reverse()
-        const ruleIndex = reversed.findIndex( rule => rule.isFor(node) )
-        if (ruleIndex !== -1 ){
-            reversed[ruleIndex].fn( node, context, interator )
-        } else {
-            // not found rule
-            const newNode = { ...node }
-            if ( newNode.hasOwnProperty('content') ) {
-                interator( newNode.content, context )
-            }
-        }
-    }
-
+   
     function makeMixin (o) {
         return Object.assign({out:'', errors: [], name:'test'},  Events.prototype, o)
     }
@@ -97,16 +75,15 @@ const toAny = ( options = {}, plugins = [] ) => {
         // reverse init
         let newFns = fns.slice()
         newFns.reverse()
-        const inited = toAny( 
-                            options,
-                            newFns.map(
-                                    rule=>makeRule( rule.rule, rule.fn( writer, processor ) ) 
-                                    ).reverse()
-                            )
+        const interator = makeInterator(
+            newFns.map(
+                rule=>makeRule( rule.rule, rule.fn( writer, processor ) ) 
+            ).reverse()
+        )
         const tree = processor(src)
         const context = {}
         writer.startWrite()
-        inited.interator( tree, context )
+        interator( tree, context )
         writer.endWrite()
         return writer.getStr()
     }
