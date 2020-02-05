@@ -22,7 +22,8 @@ const fixtures = [
         'type': 'fcode'
     },
     'name', {
-        'name':'name'
+        'name':'name',
+        'type': 'block'
     },
 ]
 

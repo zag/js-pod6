@@ -31,14 +31,14 @@ const getQuery = function(k) {
        if (re) {
            return { type:'fcode', name:re[1] }
        }
-       return { name }
+       return { name , type: 'block'}
    }
    return [ name, type ]
 }
 
 const  makePlug = (k) => {
    const res = getQuery(k)
-   const { type, name } = res
+   const { name, type } = res
    if ( type && type === '*') { return { name } }
    if ( name && name === '*') { return { type } }
    return res
@@ -56,7 +56,13 @@ function is( query, node ) {
     // check if query empty
     if ( isEmpty(query) ) return true
     for( var prop in query ) { 
+        if (query === undefined) {
+            console.log('key!!!')
+        }
         if( query.hasOwnProperty(prop) ) {
+            if (node === undefined) {
+                console.log('node!!!')
+            }
             if ( node.hasOwnProperty(prop) ) {
                 if ( query[prop] !== node[prop] ) {
                     return false
@@ -81,6 +87,26 @@ const makeRule = ( query, fn ) => {
     }
 }
 
+
+function makeRulesArray( key, fn ) {
+    if ( key instanceof Array ) {
+       // TODO handle arrays
+    }
+  
+    if ( key instanceof Object ) {
+      let rules = []
+      for ( var prop in key ) {
+          if ( key.hasOwnProperty(prop) ) {
+            rules.push( makeRule( makePlug(prop), key[prop] ) )
+          }
+      }
+      return rules
+    }
+    return [ makeRule( makePlug(key), fn ) ]
+  }
+
+
 module.exports.makePlug = makePlug
 module.exports.is = is
 module.exports.makeRule = makeRule
+module.exports.makeRulesArray = makeRulesArray
