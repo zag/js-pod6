@@ -1,6 +1,6 @@
 'use strict'
 const toAny = require('./exportAny')
-const {wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
+const { subUse, wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
 
     
 const toHtml = ( opt ) => toAny( opt ).use(
@@ -30,6 +30,7 @@ const toHtml = ( opt ) => toAny( opt ).use(
         'C<>': wrapContent('<code>','</code>'),
         'B<>': wrapContent('<strong>','</strong>'),
         'I<>': wrapContent('<em>','</em>'),
+        'R<>': wrapContent('<var>','</var>'),
         "L<>": setFn(( node, ctx ) => {
             let { meta } = node
             if ( meta === null) {
@@ -43,12 +44,11 @@ const toHtml = ( opt ) => toAny( opt ).use(
             const newFeed = spaces.replace(/\n/g, '</br>')
             writer.write(newFeed)
         },
+        'V<>': content,
         'Z<>': emptyContent,
-        'para': wrapContent('<p>','</p>'),
-        'para': content,
         'pod': content,
         ':code': wrapContent('<code><pre>', '</pre></code>'),
-        'code:': wrapContent('<code><pre>', '</pre></code>'),
+        'code': wrapContent('<code><pre>', '</pre></code>'),
         ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
             if (node.error) {
                 console.log('err')
@@ -57,19 +57,27 @@ const toHtml = ( opt ) => toAny( opt ).use(
             interator( node.value ) 
         },
         ':blankline': emptyContent,
+        ':config': emptyContent,
+        // block =para
+        'para': content,
         ':para':wrapContent('<p>', '</p>'),
         //Named blocks for which no explicit class has been defined or loaded are
         //usually not rendered by the standard renderers.
-         ':namedBlock':emptyContent,
-         'head:block': setFn(( node, ctx ) => {
-            const parents = ( ctx.parents || [] )
-            parents.push('head')
-            const {level} = node
-            return setContext( { ...ctx, parents }, wrapContent( `<h${level}>`, `</h${level}>` ))
-        }),
-        // inside head dont' wrap into <p>
-        ':para':setFn(( node, ctx ) => ( ctx.parents || [] ).includes('head') ? content : wrapContent('<p>', '</p>')),
-        ':list': setFn(( node, ctx ) => node.list === 'ordered' ? wrapContent('<ol>', '</ol>') : node.list ===  'variable' ? wrapContent('<dl>', '</dl>') : wrapContent('<ul>', '</ul>')), 
+        ':namedBlock':emptyContent,
+        'head:block': subUse({
+                           // inside head don't wrap into <p>
+                                ':para' : content,
+                            },
+                            setFn(( node, ctx ) => {
+                                const {level} = node
+                                return wrapContent( `<h${level}>`, `</h${level}>` )
+                            })
+                        ),
+        ':list': setFn(( node, ctx ) => 
+                        node.list === 'ordered' ? wrapContent('<ol>', '</ol>') 
+                                                : node.list ===  'variable' ? wrapContent('<dl>', '</dl>') 
+                                                                            : wrapContent('<ul>', '</ul>')
+                        ), 
         'item:block':  ( writer, processor ) => ( node, ctx, interator ) => {
             // make text from first para
             if (! (node.content instanceof Array)) {
@@ -85,6 +93,10 @@ const toHtml = ( opt ) => toAny( opt ).use(
         'comment:block': emptyContent,
         'defn':wrapContent('','</dd>'),
         'term:para': wrapContent('<dt>','</dt><dd>'),
+        // TODO: handle =table properly
+        'table:block': wrapContent('<code><pre>', '</pre></code>'),
+        // TODO: handle levels of nesting
+        'nested':wrapContent('<blockquote>', '</blockquote>'),
 
         })
 
