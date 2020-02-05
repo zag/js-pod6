@@ -3,7 +3,7 @@ Expression
 raw_text= $(.) // { return {raw: text()}}
 code_V = 
     name:start_code &{return name === "V"}
-    content: $( code / text )+
+    content: $( text_C )+ 
     end_code
      {
          return  { 
@@ -12,9 +12,12 @@ code_V =
                 name,
              }
     }
+allowed_code_C =('B')
+looks_like_code_C =(!allowed_code_C .) '<' not_code '>' {return text()}
+text_C = text:$( (!'<' .)? '<' text_C? '>' / looks_like_code_C / not_code )+ {return text}
 code_C = 
     name:start_code &{return name === "C"}
-    content: ( code / text )+
+    content:( text_C )+
     end_code
      {
          return  { 
@@ -24,12 +27,17 @@ code_C =
              }
     }
 separator = '|'
-text_L = $( '<' text_L '>' / !separator !end_code !start_code !looks_like_code . )+
+text_L = $(
+     (!'<' .) '<' text_L '>'  &{ console.log({content:text()}); return true}
+    / 
+    !separator !end_code !start_code !looks_like_code . )+ 
 code_L = 
     name:start_code &{return name === "L"}
+            
     content: (
-                code / text_L 
-             ) 
+               code_C  /  text_L 
+             )+ 
+     
      meta:(
             separator t:$(!end_code .)*  { return t }
            )?
@@ -69,7 +77,7 @@ code_Z =
 allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z')
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
-code =  name:start_code content:(  
+code =  name:start_code &{ return name !== 'C' } content:(  
           code / text
         )+ end_code  
 { return {content, type:'fcode', name}} 
