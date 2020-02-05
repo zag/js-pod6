@@ -1,4 +1,7 @@
 'use strict'
+const { makeRule, makeRulesArray } = require('./makeQuery')
+const makeInterator = require('./makeInterator')
+
 /**
  * wrap content by open and closed tags
  */
@@ -8,7 +11,7 @@ exports.wrapContent =
             ( node, ctx, interator )=>
                 {
                     writer.write(pre) 
-                    interator( node.content, ctx )
+                    if (node.content) interator( node.content, ctx )
                     writer.write(post) 
                 }
 /**
@@ -18,7 +21,7 @@ exports.emptyContent = () => () => ()=>{}
 /**
  * content - process childs as regular content 
  */
-exports.content = (writer, processor)=>(node,ctx, interator)=>{interator(node.content, ctx)}
+exports.content = ( writer, processor )=>( node,ctx, interator )=>{ node.content && interator(node.content, ctx) }
 
 /** 
 
@@ -60,4 +63,26 @@ const IfNode = ( check, ...fns ) => ( writer, processor ) => {
     return ( node, ctx, interator ) =>{
         check( node, ctx, ...fns.map( i => i( writer, processor ) ) )( node, ctx, interator )
     }
+}
+
+/**
+ * Make subset of rules for processing
+ * 
+ * @param {*} rules 
+ * @param {*} processNode 
+ */
+exports.subUse = ( rules, processNode ) => {
+    const newFns = makeRulesArray(rules).reverse()
+    return ( writer, processor ) => {
+        // init new rules
+        const inited = newFns.map(
+                                    item=>makeRule( item.rule, item.fn( writer, processor ) ) 
+                                ).reverse()
+        const processNodeInited = processNode( writer, processor )
+        let subInterator ;
+        return ( node, ctx, interator ) => {
+            if ( !subInterator ) subInterator = makeInterator([ ...interator.rules, ...inited ])
+            processNodeInited( node, ctx, subInterator )
+        }
+     }
 }
