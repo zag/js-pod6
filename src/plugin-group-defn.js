@@ -17,6 +17,7 @@ const group = ( a ) => {
       a, i
     ) => {
       if (i.name === 'defn') {
+        
         if ( isNodesEqual( lastItem, i ) ) {
               // group items into arrays
                a[a.length-1].push(i)
@@ -51,12 +52,15 @@ const group = ( a ) => {
                 content: [ ...item ]
             }
         }
+        if (item.content && item.type !== 'fcode') {
+          item.content = group( item.content, item.level + 1 )
+        }
         return item
     })
   }
   const visit = ( node ) => {
     if ( Array.isArray( node ) ) {
-        node = group( node )
+        return group( node )
     } else {
       if ( node.type === 'block' ) {
         node.content = group( node.content )
