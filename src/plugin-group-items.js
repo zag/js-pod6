@@ -17,7 +17,7 @@ const group = ( a, level = 1 ) => {
   const getList = (a) => { if(isInListMode(a)) return a[a.length-1] }
   const isNumbered = ( node ) => Boolean( node.config  && node.config.numbered )
   const isInsertableToList = ( l, i ) => (
-          i.name && i.name === 'item'
+          i.name && i.name === 'item' && i.type && i.type === 'block'
            ||
            i.type === 'blankline'
    )
@@ -27,10 +27,10 @@ const group = ( a, level = 1 ) => {
     a, i 
   ) => {
    // skip items out of level
-   if ( i.name === 'item' &&  i.level < level ) {
+   if ( i.name === 'item' && i.type === 'block' &&  i.level < level ) {
        return [ ...a, i ]
    }
-   if ( i.name === 'item' && (
+   if ( i.name === 'item'  && i.type === 'block' && (
           !isInListMode(a)
              ||
           // different type of list and item
