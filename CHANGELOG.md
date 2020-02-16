@@ -1,3 +1,7 @@
+# 0.0.13
+- add =table support
+- add link to https://pod6.in - online pod6 editor 
+
 # 0.0.12
 
 - fix term in=defn

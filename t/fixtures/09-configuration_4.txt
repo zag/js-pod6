@@ -11,12 +11,20 @@
         "type": "block",
         "content": [
           {
-            "type": "para",
+            "name": "row",
+            "type": "block",
             "content": [
-              "    foo bar\n"
-            ],
-            "margin": "",
-            "text": "    foo bar\n"
+              {
+                "name": "column",
+                "type": "block",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": " foo bar"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "name": "table",

@@ -7,11 +7,19 @@ foo
     "type": "block",
     "content": [
       {
-        "text": "foo\n",
-        "margin": "",
-        "type": "para",
+        "name": "row",
+        "type": "block",
         "content": [
-          "foo\n"
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " foo"
+              }
+            ]
+          }
         ]
       }
     ],
