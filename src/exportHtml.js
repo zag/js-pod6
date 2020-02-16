@@ -96,13 +96,18 @@ const toHtml = ( opt ) => toAny( opt ).use(
         // TODO: handle levels of nesting
         'nested':wrapContent('<blockquote>', '</blockquote>'),
         // table section
-        'table:block' : wrapContent('<table>','</table>'),
+        'table:block' : 
+              subUse({
+                        // TODO: rename table's 'head' to table-head
+                        'head': subUse({
+                                            'column': wrapContent('<th>','</th>')
+                                        },
+                                        wrapContent('<tr>','</tr>')
+                                        )},
+                        wrapContent('<table>','</table>')
+                    ),
         ':separator' : emptyContent,
-        'head': subUse({
-            'column': wrapContent('<th>','</th>')
-           },
-           wrapContent('<tr>','</tr>')
-         ),
+
          'row':wrapContent('<tr>','</tr>'),
          'column':wrapContent('<td>','</td>'),
  
