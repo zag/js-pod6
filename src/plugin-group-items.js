@@ -13,7 +13,7 @@ module.exports = () =>( tree )=>{
 const isNumbered = ( node ) => Boolean( node.config  && node.config.numbered )
 
 const group = ( a, level = 1 ) => {
-  const isInListMode = ( a ) => { return a.length > 0 && a[a.length-1].type === 'list' }
+  const isInListMode = ( a ) => { return  a.length > 0 && a[a.length-1].type === 'list' }
   const getList = (a) => { if(isInListMode(a)) return a[a.length-1] }
   const isNumbered = ( node ) => Boolean( node.config  && node.config.numbered )
   const isInsertableToList = ( l, i ) => (
@@ -22,7 +22,7 @@ const group = ( a, level = 1 ) => {
            i.type === 'blankline'
    )
   let lastItem = {}
-
+  
   let result =  a.reduce((
     a, i 
   ) => {
@@ -75,9 +75,9 @@ const group = ( a, level = 1 ) => {
 }
   const visit = ( node ) => {
     if ( Array.isArray( node ) ) {
-        node = group( node )
+         node = group( node )
     } else {
-      if ( node.type === 'block' ) {
+      if ( node.type === 'block' && node.name !== 'table') {
         node.content = group( node.content )
       }
     }

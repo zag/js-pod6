@@ -41,6 +41,7 @@ const group = ( a ) => {
      */
     return result.map(item => { 
         if ( item instanceof Array) {
+             if (item[0].name !== 'defn') { return item }
             // get type of list
             const list = item[0].name === 'defn' ? 'variable' : 
                                  isNumbered( item[0] ) ? 'ordered' : 'itemized'
@@ -60,9 +61,9 @@ const group = ( a ) => {
   }
   const visit = ( node ) => {
     if ( Array.isArray( node ) ) {
-        return group( node )
+         return group( node )
     } else {
-      if ( node.type === 'block' ) {
+      if ( node.type === 'block' && node.name !== 'table' ) {
         node.content = group( node.content )
       }
     }
