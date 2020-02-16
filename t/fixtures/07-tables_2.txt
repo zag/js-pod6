@@ -1,0 +1,93 @@
+=for table
+    mouse    | mice
+    horse    | horses
+    elephant | elephants
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " mouse   "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " mice"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " horse   "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " horses"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " elephant"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " elephants"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "name": "table",
+    "margin": "",
+    "config": []
+  }
+]

@@ -1,0 +1,120 @@
+=table
+    Constants           1
+    Variables           10
+    Subroutines         33
+    Everything else     57
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Constants      "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " 1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Variables      "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " 10"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Subroutines    "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " 33"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Everything else"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " 57"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "name": "table",
+    "config": []
+  }
+]
