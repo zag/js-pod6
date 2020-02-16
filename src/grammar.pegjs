@@ -13,10 +13,13 @@
 Document = nodes:Element*  { return  nodes }
 
 Element =  delimitedBlockRaw
+         / delimitedBlockTable
          / delimitedBlock
          / paragraphBlockRaw 
+         / paragraphBlockTable
          / paragraphBlock
          / abbreviatedBlockRaw
+         / abbreviatedBlockTable
          / abbreviatedBlock
          / configDirective
          / textBlock
@@ -192,16 +195,74 @@ vmargin2:$(_) res:(
                           text:text(),
                           config
                           }}
+tableHeadSeparator = !( _ ( markers / markerAbbreviatedBlock ) / blankline ) hs* $([+-=_|] hs*)+ EOL
+                    { return { type: 'separator', text:text() } }
+tableBodyRowSeparator  =  $( tableHeadSeparator / blankline ) { return { type:'separator', text:text() } }
+tableRow = t:text_content { return { name:'row', type:'text', value:t } }
+tableContents =  
+    head:$( !tableHeadSeparator tableRow )+
+    separator:tableHeadSeparator
+    rest:(
+       $( !tableBodyRowSeparator tableRow )+  
+       bseparator:tableBodyRowSeparator
+       {
+          return [ 
+                  { 
+                    name:'row',
+                    type:'text',
+                    value:text() 
+                  },
+                  bseparator 
+                ] 
+        }
+       / !tableBodyRowSeparator singleRow:tableRow { return [singleRow] }
+      )+ 
+      { return [
+                  {
+                    name:'head',
+                    type:'text',
+                    value:head
+                  },
+                  separator,
+                  ...rest.flat() 
+                ]
+      } 
+    / tableRow+
+
+delimitedBlockTable = 
+    vmargin:$(_) 
+    markerBegin name:identifier _ config:pod_configuration 
+    &{ return name === 'table' }
+content:tableContents
+vmargin2:$(_) res:( 
+                    markerEnd ename:identifier &{ return name === ename } Endline? 
+                    { 
+                      return {
+                              type:'block',
+                              content:content,
+                              name,
+                              margin:vmargin
+                             }
+                    } 
+              ) &{return  true || vmargin === vmargin2} 
+                { return {
+                          ...res,
+                          text:text(),
+                          config
+                          }}
 
 delimitedBlock = 
   vmargin:$(_) markerBegin name:identifier  _ config:pod_configuration
   content:( nodes:(
           blankline
           / delimitedBlockRaw
+          / delimitedBlockTable
           / delimitedBlock
-          / paragraphBlockRaw 
+          / paragraphBlockRaw
+          / paragraphBlockTable 
           / paragraphBlock
           / abbreviatedBlockRaw
+          / abbreviatedBlockTable
           / abbreviatedBlock 
           / configDirective
           ) & { return true || name == name.toUpperCase() } { return nodes} 
@@ -282,6 +343,23 @@ abbreviatedBlockRaw =
             config:[]
           }
   }
+
+abbreviatedBlockTable = 
+  vmargin:$(_) !markers
+  name:markerAbbreviatedBlock _ emptyline* 
+    &{ return name === 'table' }
+  content:tableContents
+  { 
+    return {
+            margin:vmargin,
+            type: 'block',
+            content: content === "" ? [] 
+                                    : content,
+            name,
+            config:[]
+          }
+  }
+
 abbreviatedBlock = 
   vmargin:$(_) !markers
   name:markerAbbreviatedBlock _ emptyline* 
@@ -334,6 +412,21 @@ paragraphBlockRaw =
       return { 
               type: isNamedBlock(name) ? 'namedBlock' : 'block',
               content: content === "" ? [] : [content],
+              name,
+              margin:vmargin,
+              config
+            }
+  } 
+
+paragraphBlockTable = 
+  vmargin:$(_)
+  marker:markerFor  name:identifier _ config:pod_configuration 
+  &{ return name === 'table' }
+  content:tableContents
+  { 
+      return { 
+              type: 'block',
+              content: content === "" ? [] : content,
               name,
               margin:vmargin,
               config

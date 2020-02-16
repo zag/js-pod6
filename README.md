@@ -36,6 +36,15 @@ But this is just a text. Again
 =end pod`)
 ```
 
+Convert pod6 from cli:
+
+```
+npx -p pod6 pod6html < example.pod6 > example.html
+```
+
+Test Pod6 online: [pod6.in](https://pod6.in)
+
+
 ### Pod configuration
 
 Example of configuration information for the block:
@@ -78,11 +87,91 @@ foo
 =end table
 ```
 
+### Tables
+
+```
+=begin table
+        The Shoveller   Eddie Stevens     King Arthur's singing shovel
+        Blue Raja       Geoffrey Smith    Master of cutlery
+        Mr Furious      Roy Orson         Ticking time bomb of fury
+        The Bowler      Carol Pinnsler    Haunted bowling ball
+=end table
+```
+
+```
+=table
+    Constants           1
+    Variables           10
+    Subroutines         33
+    Everything else     57
+```
+
+```
+=for table
+    mouse    | mice
+    horse    | horses
+    elephant | elephants
+```
+
+```
+=table
+    Animal | Legs |    Eats
+    =======================
+    Zebra  +   4  + Cookies
+    Human  +   2  +   Pizza
+    Shark  +   0  +    Fish
+```
+
+```
+=table
+        Superhero     | Secret          |
+                      | Identity        | Superpower
+        ==============|=================|================================
+        The Shoveller | Eddie Stevens   | King Arthur's singing shovel
+```
+
+```
+=begin table
+
+                        Secret
+        Superhero       Identity          Superpower
+        =============   ===============   ===================
+        The Shoveller   Eddie Stevens     King Arthur's
+                                          singing shovel
+
+        Blue Raja       Geoffrey Smith    Master of cutlery
+
+        Mr Furious      Roy Orson         Ticking time bomb
+                                          of fury
+
+        The Bowler      Carol Pinnsler    Haunted bowling ball
+
+=end table
+```
+
+```
+=table
+    X | O |
+   ---+---+---
+      | X | O
+   ---+---+---
+      |   | X
+```
+
+## Try it online
+
+You can test pod6 at [pod6.in](https://pod6.in) site.
+I'd appreciate it if you'd report any mistakes to the tracker[4]
+
 ## Links 
 
 [1] Specification of pod6: [Synopsis 26](https://github.com/perl6/specs/blob/master/S26-documentation.pod) 
 
 [2] Synopsis 2: [Bits and Pieces](https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod)
+
+[3] Pod6 online editor: [Pod6 to HTML](https://pod6.in)
+
+[4] pod6 issues tracker: [https://github.com/zag/js-pod6/issues](https://github.com/zag/js-pod6/issues) 
 
 
 ```

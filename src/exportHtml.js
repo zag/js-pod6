@@ -93,11 +93,19 @@ const toHtml = ( opt ) => toAny( opt ).use(
         'comment:block': emptyContent,
         'defn':wrapContent('','</dd>'),
         'term:para': wrapContent('<dt>','</dt><dd>'),
-        // TODO: handle =table properly
-        'table:block': wrapContent('<code><pre>', '</pre></code>'),
         // TODO: handle levels of nesting
         'nested':wrapContent('<blockquote>', '</blockquote>'),
-
+        // table section
+        'table:block' : wrapContent('<table>','</table>'),
+        ':separator' : emptyContent,
+        'head': subUse({
+            'column': wrapContent('<th>','</th>')
+           },
+           wrapContent('<tr>','</tr>')
+         ),
+         'row':wrapContent('<tr>','</tr>'),
+         'column':wrapContent('<td>','</td>'),
+ 
         })
 
 module.exports = toHtml

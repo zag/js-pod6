@@ -7,6 +7,7 @@ var heading_plug = require('./plugin-heading')
 var defnGroup_plug = require('./plugin-group-defn')
 var itemsGroup_plug = require('./plugin-group-items')
 var defnTerms_plug = require('./plugin-defn-fill-term')
+var table_plug = require('./plugin-tables')
 var version = require('../package.json').version
 
 function makeTree () {
@@ -17,6 +18,7 @@ function makeTree () {
     chain.use( itemsNumbering_plug )
     chain.use( heading_plug )
     chain.use( defnTerms_plug )
+    chain.use(table_plug)
     chain.use( formattingCodes_plug )
     
     // save order for the next two plugins
