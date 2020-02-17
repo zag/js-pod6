@@ -132,7 +132,6 @@ foo
 
 ```
 =begin table
-
                         Secret
         Superhero       Identity          Superpower
         =============   ===============   ===================
