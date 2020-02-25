@@ -1,0 +1,23 @@
+=begin SYNOPSIS
+Para inside SYNOPSIS
+=end SYNOPSIS
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "Para inside SYNOPSIS\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "Para inside SYNOPSIS\n"
+        ]
+      }
+    ],
+    "name": "SYNOPSIS",
+    "margin": "",
+    "text": "=begin SYNOPSIS\nPara inside SYNOPSIS\n=end SYNOPSIS\n",
+    "config": []
+  }
+]

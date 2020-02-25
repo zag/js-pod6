@@ -131,7 +131,7 @@ foo
 ```
 
 ```
-=begin table
+=begin table :caption('Super table')
                         Secret
         Superhero       Identity          Superpower
         =============   ===============   ===================

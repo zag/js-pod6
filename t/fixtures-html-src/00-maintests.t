@@ -117,4 +117,9 @@ blockquote
 =end pod
 #---
 
+#---
+=begin SYNOPSIS
+Para inside SYNOPSIS
+=end SYNOPSIS
+#---
 

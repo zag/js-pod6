@@ -13,7 +13,12 @@ const toHtml = ( opt ) => toAny( opt ).use(
                 return isTypeBlock && name === name.toUpperCase()
             }
 
-            if ( !isSemanticBlock(node) )  console.warn("Unhandled node" + JSON.stringify( node, null, 2))
+            if ( isSemanticBlock(node) ) {
+                const name  = node.name
+                writer.write(`<h1 class="${name}">${name}</h1>`)
+            } else {
+                 console.warn("Unhandled node" + JSON.stringify( node, null, 2))
+                }
             if ( node.hasOwnProperty('content')) {
                 interator(node.content, ctx)
             }

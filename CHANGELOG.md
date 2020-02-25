@@ -1,3 +1,9 @@
+# 0.0.14
+- add :caption support for =table
+- add helpers for =config directive
+- support =config table
+- html: export Semantic blocks 
+
 # 0.0.13
 - add =table support
 - add link to https://pod6.in - online pod6 editor 

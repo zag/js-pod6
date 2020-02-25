@@ -86,3 +86,8 @@ test
 =config C<>  :allow<B>
 #---
 
+#---
+=begin SYNOPSIS
+Para inside SYNOPSIS
+=end SYNOPSIS
+#---
