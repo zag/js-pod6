@@ -199,24 +199,26 @@ tableHeadSeparator = !( _ ( markers / markerAbbreviatedBlock ) / blankline ) hs*
                     { return { type: 'separator', text:text() } }
 tableBodyRowSeparator  =  $( tableHeadSeparator / blankline ) { return { type:'separator', text:text() } }
 tableRow = t:text_content { return { name:'row', type:'text', value:t } }
-tableContents =  
+tableContents =
+    blankline*
     head:$( !tableHeadSeparator tableRow )+
     separator:tableHeadSeparator
     rest:(
-       $( !tableBodyRowSeparator tableRow )+  
+       rowtext:$( !tableBodyRowSeparator tableRow )+  
        bseparator:tableBodyRowSeparator
        {
           return [ 
                   { 
                     name:'row',
                     type:'text',
-                    value:text() 
+                    value:rowtext
                   },
                   bseparator 
                 ] 
         }
        / !tableBodyRowSeparator singleRow:tableRow { return [singleRow] }
-      )+ 
+      )+
+      blankline*
       { return [
                   {
                     name:'head',

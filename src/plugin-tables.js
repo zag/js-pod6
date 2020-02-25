@@ -23,9 +23,9 @@ const makeTransformer = require('./helpers/makeTransformer')
   }
 
   // Create mask for extract columns
-  const makeMask = ( lines ) => {
+  const makeMask = ( lines, separators ) => {
           // calculate template length
-          const tmplLength = Math.max( ...lines.map( s => s.length) )
+          const tmplLength = Math.max( ...[...lines, ...separators].map( s => s.length) )
           // make bin mask for each string
           const masks = lines.map((str)=>{
               /** make mask for each line
@@ -36,7 +36,7 @@ const makeTransformer = require('./helpers/makeTransformer')
               // enlarge string to tmplLength
               let tstr = str + " ".repeat(tmplLength -str.length )
               let mask = []
-              const re = /\s+[+|\s]\s+/g
+              const re = /\s+[+|\s]\s/g
               let match
               while ((match = re.exec(tstr)) != null) {
                   const tmpMask =  
@@ -85,20 +85,25 @@ module.exports = () =>( tree )=>{
   const transformer = makeTransformer({'table' : (node) => {
     let rows = []
     const collectValues = (row) => { rows.push(row.value) }
+    // collect separators for calculate max length of rows
+    let seps = []
     makeTransformer({
                 'row:text'  : collectValues,
                 'head:text' : collectValues,
+                ':separator': (sep) => { seps.push(sep.text) }
     })(node)
+    // add table-caption
     // if table empty return node as is
     if (!rows.length) return node
 
+    const splinToLines = (row)=>row.split(/\n/)  // split each row by eol
+                         .filter((str)=>str.length > 0 ) // filter empty strings ( after slit )
+                         
     // split each row into lines
-    const lines = rows.map(
-                            (row)=>row.split(/\n/)  // split each row by eol
-                            .filter((str)=>str.length > 0 ) // filter empty strings ( after slit )
-                          ).flat() 
-    const columnTemplate = makeMask(lines)
-    
+    const lines = rows.map(splinToLines).flat()
+    const separators = seps.map(splinToLines).flat()
+
+    const columnTemplate = makeMask(lines, separators)
     const makeBlock = (name, content, ...attr) => { return { ...attr, name, type: 'block', content: Array.isArray(content) ? content : [content] } }
     // make columns
     const res = makeTransformer({
