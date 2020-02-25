@@ -1,8 +1,8 @@
 'use strict'
 const toAny = require('./exportAny')
 const { subUse, wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
+const makeAttrs = require('./helpers/config').makeAttrs
 
-    
 const toHtml = ( opt ) => toAny( opt ).use(
     '*', ( writer, processor ) => ( node, ctx, interator ) => {
             const nodeName = node.name || ''
@@ -57,7 +57,12 @@ const toHtml = ( opt ) => toAny( opt ).use(
             interator( node.value ) 
         },
         ':blankline': emptyContent,
-        ':config': emptyContent,
+        ':config': setFn(( node, ctx ) => {
+            // setup context
+            if ( ! ctx.hasOwnProperty('config') ) ctx.config = {}
+            //collect configs in context
+            ctx.config[node.name] = node.config
+            return emptyContent}),
         // block =para
         'para': content,
         ':para':wrapContent('<p>', '</p>'),
