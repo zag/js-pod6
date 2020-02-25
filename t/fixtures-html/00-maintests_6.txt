@@ -4,4 +4,4 @@ Some code
 =end code
 
 ~~~~~~~
-"<code><pre>Some code\n</pre></code>"
+"<pre><code>Some code\n</code></pre>"

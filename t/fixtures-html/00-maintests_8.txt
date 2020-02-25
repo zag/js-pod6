@@ -4,4 +4,4 @@
 =code 1
 =end pod
 ~~~~~~~
-"<code><pre>1\n</pre></code>"
+"<pre><code>1\n</code></pre>"

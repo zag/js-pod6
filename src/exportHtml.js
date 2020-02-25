@@ -47,8 +47,8 @@ const toHtml = ( opt ) => toAny( opt ).use(
         'V<>': content,
         'Z<>': emptyContent,
         'pod': content,
-        ':code': wrapContent('<code><pre>', '</pre></code>'),
-        'code': wrapContent('<code><pre>', '</pre></code>'),
+        ':code': wrapContent('<pre><code>', '</code></pre>'),
+        'code': wrapContent('<pre><code>', '</code></pre>'),
         ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
             if (node.error) {
                 console.log('err')
