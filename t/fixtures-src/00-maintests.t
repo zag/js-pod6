@@ -86,25 +86,3 @@ test
 =config C<>  :allow<B>
 #---
 
-#---
-=item # Happy
-=item Sneezy
-#---
-
-#---
-=begin table :k1<str> :k2('str') :k3("str") :k4["str"] :k5(Q[str])
-sdsds
-=end table
-#---
-
-
-#---
-=begin table
-asdasdsad   asdasdsdsd    asdasdasdasd
---------------------------------------
-asdasdasd   ssadasdasdsd   1sdsdsssdsd
-                          2sdsdsdsdsd
-
-asdasdasda       s             \| sss     
-=end table
-#---

@@ -2,7 +2,7 @@
 const toAny = require('./exportAny')
 const { subUse, wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
 const makeAttrs = require('./helpers/config').makeAttrs
-
+    
 const toHtml = ( opt ) => toAny( opt ).use(
     '*', ( writer, processor ) => ( node, ctx, interator ) => {
             const nodeName = node.name || ''
@@ -109,7 +109,17 @@ const toHtml = ( opt ) => toAny( opt ).use(
                                         },
                                         wrapContent('<tr>','</tr>')
                                         )},
-                        wrapContent('<table>','</table>')
+                         ( writer, processor ) => ( node, ctx, interator ) => {
+                                const conf = makeAttrs(node, ctx)
+                                writer.write('<table>')
+                                if ( conf.exists('caption') ) {
+                                    writer.write('<caption>')
+                                    writer.write(conf.getFirstValue('caption'))
+                                    writer.write('</caption>')
+                                }
+                                interator(node.content, ctx)
+                                writer.write('</table>')
+                        }
                     ),
         ':separator' : emptyContent,
 

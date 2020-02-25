@@ -1,0 +1,8 @@
+=table
+    X | O |
+   ---+---+---
+      | X | O
+   ---+---+---
+      |   | X
+~~~~~~~
+"<table><tr><th> X</th><th> O</th><th> </th></tr><tr><td>  </td><td> X</td><td> O</td></tr><tr><td>  </td><td>  </td><td> X</td></tr></table>"

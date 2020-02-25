@@ -84,6 +84,7 @@ is $r.contents.elems, 1;
 is $r.contents[0].join('|'),
    "The Shoveller|Eddie Stevens|King Arthur's singing shovel";
 
+#---
 =begin table
 
                         Secret
@@ -100,6 +101,7 @@ is $r.contents[0].join('|'),
         The Bowler      Carol Pinnsler    Haunted bowling ball
 
 =end table
+#---
 
 $r = $=pod[$p++];
 is $r.headers.join('|'), "Superhero|Secret Identity|Superpower";
@@ -113,13 +115,14 @@ is $r.contents[2].join('|'),
 is $r.contents[3].join('|'),
    "The Bowler|Carol Pinnsler|Haunted bowling ball";
 
+#---
 =table
     X | O |
    ---+---+---
       | X | O
    ---+---+---
       |   | X
-
+#---
 
 $r = $=pod[$p++];
 is $r.contents.elems, 3;
@@ -132,6 +135,8 @@ is $r.contents[2].join(','), ',,X';
 # Note that the caption property is just one of the table's %config key/value
 # pairs so any tests for other config keys in a single table are usually the same as testing
 # multiple tables, each for one caption test.
+
+#---
 =begin table :caption<foo> :bar(0)
 =            :baz(2.3)
 
@@ -139,6 +144,7 @@ foo
 bar
 
 =end table
+#---
 
 $r = $=pod[$p++];
 is $r.contents.elems, 2;

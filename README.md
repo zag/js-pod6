@@ -148,15 +148,6 @@ foo
 =end table
 ```
 
-```
-=table
-    X | O |
-   ---+---+---
-      | X | O
-   ---+---+---
-      |   | X
-```
-
 ## Try it online
 
 You can test pod6 at [pod6.in](https://pod6.in) site.

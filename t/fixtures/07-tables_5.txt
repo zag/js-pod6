@@ -1,0 +1,228 @@
+=begin table
+
+                        Secret
+        Superhero       Identity          Superpower
+        =============   ===============   ===================
+        The Shoveller   Eddie Stevens     King Arthur's
+                                          singing shovel
+
+        Blue Raja       Geoffrey Smith    Master of cutlery
+
+        Mr Furious      Roy Orson         Ticking time bomb
+                                          of fury
+
+        The Bowler      Carol Pinnsler    Haunted bowling ball
+
+=end table
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "name": "head",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "               Superhero    "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Secret Identity      "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "  Superpower"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "        =============   ===============   ===================\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " The Shoveller              "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Eddie Stevens                "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " King Arthur's singing shovel"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Blue Raja    "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Geoffrey Smith"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Master of cutlery"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Mr Furious                 "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Roy Orson                    "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Ticking time bomb of fury"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " The Bowler   "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Carol Pinnsler"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Haunted bowling ball"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "\n"
+      }
+    ],
+    "name": "table",
+    "margin": "",
+    "text": "=begin table\n\n                        Secret\n        Superhero       Identity          Superpower\n        =============   ===============   ===================\n        The Shoveller   Eddie Stevens     King Arthur's\n                                          singing shovel\n\n        Blue Raja       Geoffrey Smith    Master of cutlery\n\n        Mr Furious      Roy Orson         Ticking time bomb\n                                          of fury\n\n        The Bowler      Carol Pinnsler    Haunted bowling ball\n\n=end table\n",
+    "config": []
+  }
+]

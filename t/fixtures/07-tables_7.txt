@@ -1,0 +1,49 @@
+=begin table :caption<foo> :bar(0)
+=            :baz(2.3)
+
+foo
+bar
+
+=end table
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "foo\nbar\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "foo\nbar\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "table",
+    "margin": "",
+    "text": "=begin table :caption<foo> :bar(0)\n=            :baz(2.3)\n\nfoo\nbar\n\n=end table\n",
+    "config": [
+      {
+        "name": "caption",
+        "value": "foo",
+        "type": "string"
+      },
+      {
+        "name": "bar",
+        "type": "value",
+        "value": 0
+      },
+      {
+        "name": "baz",
+        "type": "value",
+        "value": 2.3
+      }
+    ]
+  }
+]

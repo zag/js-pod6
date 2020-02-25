@@ -1,0 +1,92 @@
+=table
+        Superhero     | Secret          |
+                      | Identity        | Superpower
+        ==============|=================|================================
+        The Shoveller | Eddie Stevens   | King Arthur's singing shovel
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "name": "head",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Superhero                  "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Secret        Identity     "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "  Superpower"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "        ==============|=================|================================\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " The Shoveller"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " Eddie Stevens"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " King Arthur's singing shovel"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "name": "table",
+    "config": []
+  }
+]

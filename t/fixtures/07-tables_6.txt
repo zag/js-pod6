@@ -1,0 +1,133 @@
+=table
+    X | O |
+   ---+---+---
+      | X | O
+   ---+---+---
+      |   | X
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "name": "head",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " X"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " O"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " "
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "   ---+---+---\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "  "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " X"
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " O"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "   ---+---+---\n"
+      },
+      {
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "  "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": "  "
+              }
+            ]
+          },
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              {
+                "type": "text",
+                "value": " X"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "name": "table",
+    "config": []
+  }
+]
