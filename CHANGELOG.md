@@ -1,3 +1,8 @@
+# 0.0.15
+- add :allow support
+- add writers layer
+- escape html entity
+
 # 0.0.14
 - add :caption support for =table
 - add helpers for =config directive
