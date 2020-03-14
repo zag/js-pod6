@@ -91,3 +91,16 @@ test
 Para inside SYNOPSIS
 =end SYNOPSIS
 #---
+
+
+#---
+=head1 Test
+
+text
+
+=head2 Testing
+continue
+
+test
+
+#---

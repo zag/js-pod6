@@ -40,7 +40,10 @@
       {
         "type": "namedBlock",
         "content": [
-          "        this is not\n"
+          {
+            "type": "verbatim",
+            "value": "        this is not\n"
+          }
         ],
         "name": "Podcast",
         "margin": "    ",
@@ -91,10 +94,7 @@
             "margin": "        ",
             "type": "code",
             "content": [
-              {
-                "type": "verbatim",
-                "value": "and this is not\n"
-              }
+              "and this is not\n"
             ]
           }
         ],
@@ -118,10 +118,7 @@
                 "margin": "        ",
                 "type": "code",
                 "content": [
-                  {
-                    "type": "verbatim",
-                    "value": "and this is!\n"
-                  }
+                  "and this is!\n"
                 ]
               }
             ],

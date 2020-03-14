@@ -17,30 +17,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Superhero                  "
-              }
+              " Superhero                  "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Secret        Identity     "
-              }
+              " Secret        Identity     "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "  Superpower"
-              }
+              "  Superpower"
             ]
           }
         ]
@@ -57,30 +48,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " The Shoveller"
-              }
+              " The Shoveller"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Eddie Stevens"
-              }
+              " Eddie Stevens"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " King Arthur's singing shovel"
-              }
+              " King Arthur's singing shovel"
             ]
           }
         ]

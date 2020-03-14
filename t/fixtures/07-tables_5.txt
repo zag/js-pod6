@@ -27,30 +27,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "               Superhero    "
-              }
+              "               Superhero    "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Secret Identity      "
-              }
+              " Secret Identity      "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "  Superpower"
-              }
+              "  Superpower"
             ]
           }
         ]
@@ -67,30 +58,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " The Shoveller              "
-              }
+              " The Shoveller              "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Eddie Stevens                "
-              }
+              " Eddie Stevens                "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " King Arthur's singing shovel"
-              }
+              " King Arthur's singing shovel"
             ]
           }
         ]
@@ -107,30 +89,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Blue Raja    "
-              }
+              " Blue Raja    "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Geoffrey Smith"
-              }
+              " Geoffrey Smith"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Master of cutlery"
-              }
+              " Master of cutlery"
             ]
           }
         ]
@@ -147,30 +120,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Mr Furious                 "
-              }
+              " Mr Furious                 "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Roy Orson                    "
-              }
+              " Roy Orson                    "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Ticking time bomb of fury"
-              }
+              " Ticking time bomb of fury"
             ]
           }
         ]
@@ -187,30 +151,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " The Bowler   "
-              }
+              " The Bowler   "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Carol Pinnsler"
-              }
+              " Carol Pinnsler"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Haunted bowling ball"
-              }
+              " Haunted bowling ball"
             ]
           }
         ]

@@ -8,7 +8,10 @@
   {
     "type": "block",
     "content": [
-      "    foo foo\n    =begin code\n    =end code\n"
+      {
+        "type": "verbatim",
+        "value": "    foo foo\n    =begin code\n    =end code\n"
+      }
     ],
     "name": "code",
     "margin": "",

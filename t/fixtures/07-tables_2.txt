@@ -15,20 +15,14 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " mouse   "
-              }
+              " mouse   "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " mice"
-              }
+              " mice"
             ]
           }
         ]
@@ -41,20 +35,14 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " horse   "
-              }
+              " horse   "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " horses"
-              }
+              " horses"
             ]
           }
         ]
@@ -67,20 +55,14 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " elephant"
-              }
+              " elephant"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " elephants"
-              }
+              " elephants"
             ]
           }
         ]

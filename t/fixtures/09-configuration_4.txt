@@ -18,10 +18,7 @@
                 "name": "column",
                 "type": "block",
                 "content": [
-                  {
-                    "type": "text",
-                    "value": " foo bar"
-                  }
+                  " foo bar"
                 ]
               }
             ]

@@ -18,30 +18,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " X"
-              }
+              " X"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " O"
-              }
+              " O"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " "
-              }
+              " "
             ]
           }
         ]
@@ -58,30 +49,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "  "
-              }
+              "  "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " X"
-              }
+              " X"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " O"
-              }
+              " O"
             ]
           }
         ]
@@ -98,30 +80,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "  "
-              }
+              "  "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "  "
-              }
+              "  "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " X"
-              }
+              " X"
             ]
           }
         ]

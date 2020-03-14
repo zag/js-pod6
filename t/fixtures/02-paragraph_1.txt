@@ -5,7 +5,10 @@ some text
   {
     "type": "namedBlock",
     "content": [
-      "some text\n"
+      {
+        "type": "verbatim",
+        "value": "some text\n"
+      }
     ],
     "name": "Foo",
     "margin": "",

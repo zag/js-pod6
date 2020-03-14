@@ -6,7 +6,10 @@ spaced   text
   {
     "type": "namedBlock",
     "content": [
-      "some\nspaced   text\n"
+      {
+        "type": "verbatim",
+        "value": "some\nspaced   text\n"
+      }
     ],
     "name": "Foo",
     "margin": "",

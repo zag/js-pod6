@@ -19,7 +19,10 @@ Outside blocks
       {
         "type": "namedBlock",
         "content": [
-          "Inside Got\n"
+          {
+            "type": "verbatim",
+            "value": "Inside Got\n"
+          }
         ],
         "name": "Got",
         "margin": "",
@@ -31,7 +34,10 @@ Outside blocks
       {
         "type": "namedBlock",
         "content": [
-          "   Inside Bidden\n"
+          {
+            "type": "verbatim",
+            "value": "   Inside Bidden\n"
+          }
         ],
         "name": "Bidden",
         "margin": "   ",

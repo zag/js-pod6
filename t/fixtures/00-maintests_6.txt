@@ -22,7 +22,10 @@
   {
     "type": "block",
     "content": [
-      "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+      {
+        "type": "verbatim",
+        "value": "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+      }
     ],
     "name": "code",
     "margin": "",
@@ -31,7 +34,10 @@
   {
     "type": "block",
     "content": [
-      "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+      {
+        "type": "verbatim",
+        "value": "  sdkljsalkdjlsd\n  asdasdasdasdsad\n"
+      }
     ],
     "name": "code",
     "margin": "",

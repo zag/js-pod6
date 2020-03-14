@@ -18,30 +18,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Animal"
-              }
+              " Animal"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Legs"
-              }
+              " Legs"
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "    Eats"
-              }
+              "    Eats"
             ]
           }
         ]
@@ -58,30 +49,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Zebra "
-              }
+              " Zebra "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "   4 "
-              }
+              "   4 "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Cookies"
-              }
+              " Cookies"
             ]
           }
         ]
@@ -94,30 +76,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Human "
-              }
+              " Human "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "   2 "
-              }
+              "   2 "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "   Pizza"
-              }
+              "   Pizza"
             ]
           }
         ]
@@ -130,30 +103,21 @@
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": " Shark "
-              }
+              " Shark "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "   0 "
-              }
+              "   0 "
             ]
           },
           {
             "name": "column",
             "type": "block",
             "content": [
-              {
-                "type": "text",
-                "value": "    Fish"
-              }
+              "    Fish"
             ]
           }
         ]

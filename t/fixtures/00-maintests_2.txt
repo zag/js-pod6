@@ -17,7 +17,10 @@ dd
       {
         "type": "namedBlock",
         "content": [
-          "  text\n"
+          {
+            "type": "verbatim",
+            "value": "  text\n"
+          }
         ],
         "name": "Named",
         "margin": "",
@@ -26,7 +29,10 @@ dd
       {
         "type": "namedBlock",
         "content": [
-          "sdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n"
+          {
+            "type": "verbatim",
+            "value": "sdsdsdsd ssd s\n  asdasdasdasd\n\ndd\n"
+          }
         ],
         "name": "Named",
         "margin": "",

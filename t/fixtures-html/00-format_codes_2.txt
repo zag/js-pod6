@@ -2,4 +2,4 @@
 S<sd>
 test C<S<...>>text
 ~~~~~~~
-"<p>sd\ntest <code>S<...></code>text\n</p>"
+"<p>sd\ntest <code>S&lt;...&gt;</code>text\n</p>"

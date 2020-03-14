@@ -19,7 +19,10 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          "One, delimited block\n"
+          {
+            "type": "verbatim",
+            "value": "One, delimited block\n"
+          }
         ],
         "name": "One",
         "margin": "",
@@ -29,7 +32,10 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          "Two, paragraph block\n"
+          {
+            "type": "verbatim",
+            "value": "Two, paragraph block\n"
+          }
         ],
         "name": "Two",
         "margin": "",
@@ -38,7 +44,10 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          "Three, still a parablock\n"
+          {
+            "type": "verbatim",
+            "value": "Three, still a parablock\n"
+          }
         ],
         "name": "Three",
         "margin": "",
@@ -50,7 +59,10 @@ Four, another delimited one
       {
         "type": "namedBlock",
         "content": [
-          "Four, another delimited one\n"
+          {
+            "type": "verbatim",
+            "value": "Four, another delimited one\n"
+          }
         ],
         "name": "Four",
         "margin": "",

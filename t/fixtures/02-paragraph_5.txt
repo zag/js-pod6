@@ -19,7 +19,10 @@ Which, as we all know...
   {
     "type": "namedBlock",
     "content": [
-      "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =for Bar\n    Dragon Tears!\n\nWhich, as we all know...\n\n    =for Bar\n    Turn into Jelly Beans!\n"
+      {
+        "type": "verbatim",
+        "value": "and so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =for Bar\n    Dragon Tears!\n\nWhich, as we all know...\n\n    =for Bar\n    Turn into Jelly Beans!\n"
+      }
     ],
     "name": "Foo",
     "margin": "",
