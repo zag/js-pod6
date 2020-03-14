@@ -14,10 +14,18 @@ module.exports = () =>( tree )=>{
                         if ( startText.text ) {
                             let re = /(\s*#\s*)/
                             const match = re.exec(startText.text)
-                            if (match){
+                            if (match) {
                                 startText.text = startText.text.replace(re, '')
-                                node.config = { ...node.config, ...{ numbered: true }}
-                            }
+                                if (startText.type === 'para') {
+                                    startText.content = [startText.text]
+                                }
+                                node.config =  node.config || [] ;
+                                node.config.push({ 
+                                  "name": "numbered", 
+                                  "value": true, 
+                                  "type": "boolean" 
+                                  })
+                                }
                         }
                     }
                    }
