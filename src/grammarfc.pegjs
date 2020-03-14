@@ -1,11 +1,17 @@
 Expression
- = ( code_S / code_C / code_V / code_L / code_Z / code / text / raw_text )*
-raw_text= $(.) // { return {raw: text()}}
+= ( allowed_rules / code / text / raw_text )*
+// = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
+
+allowed_rules = code_S / code_C / code_V / code_L / code_Z 
+allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z')
+
+raw_text= $(.)
+
 code_V = 
     name:start_code &{return name === "V"}
     content: $( text_C )+ 
     end_code
-     {
+     {  
          return  { 
                 content,
                 'type':"fcode",
@@ -63,7 +69,7 @@ code_S =
     }
 
 code_Z = 
-    name:start_code &{return name === "S"}
+    name:start_code &{return name === "Z"}
     content: $(!end_code .)+
     end_code
      {
@@ -74,11 +80,11 @@ code_Z =
              }
     }
 
-allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z')
+
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
 code =  name:start_code &{ return name !== 'C' } content:(  
-          code / text
+          allowed_rules / code / text
         )+ end_code  
 { return {content, type:'fcode', name}} 
 text = text:$( '<' text '>' / looks_like_code / not_code )+ {return text}

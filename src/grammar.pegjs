@@ -38,11 +38,11 @@ U+2008 PUNCTUATION SPACE
 hs = [ \u00a0\u2001\t\u000C\u2008]
 _ = [ \t\u000C]*
 Endline = $(hs* [\n\r])
-
+ 
 LineOfText = text:$(char+) EOL
    { return text }
 
-// char =  [a-z =0-9.<>]
+//  char =  [a-z =0-9.<>]
 char = [^\n\r]
 newline = '\n' / '\r' '\n'?
 EOL = newline / !.
@@ -172,10 +172,8 @@ delimitedBlockRaw =
         isNamedBlock(name)
       )
      }
-  
 content:$( 
          !markers t:Text Endline? 
-          / empty:emptyline + { return {text: text(), type: "ambient"}} 
           / !markerEnd $(.)
           )+ 
 vmargin2:$(_) res:( 
@@ -184,7 +182,8 @@ vmargin2:$(_) res:(
                       const type = isNamedBlock(name) ? 'namedBlock' : 'block'
                       return {
                               type:type,
-                              content:[content],
+                              content: content === "" ? [] : [{ type:'verbatim', value:content}],
+                              // content: content === "" ? [] : [content],
                               name,
                               margin:vmargin
                              }
@@ -413,7 +412,8 @@ paragraphBlockRaw =
   { 
       return { 
               type: isNamedBlock(name) ? 'namedBlock' : 'block',
-              content: content === "" ? [] : [content],
+              content: content === "" ? [] : [{ type:'verbatim', value:content}],
+              //content: content === "" ? [] : [content],
               name,
               margin:vmargin,
               config
