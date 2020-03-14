@@ -2,8 +2,9 @@
 const toAny = require('./exportAny')
 const { subUse, wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
 const makeAttrs = require('./helpers/config').makeAttrs
+const htmlWriter = require('./writerHtml')
     
-const toHtml = ( opt ) => toAny( opt ).use(
+const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
     '*', ( writer, processor ) => ( node, ctx, interator ) => {
             const nodeName = node.name || ''
             // skip warnings for semantic blocks
@@ -15,7 +16,12 @@ const toHtml = ( opt ) => toAny( opt ).use(
 
             if ( isSemanticBlock(node) ) {
                 const name  = node.name
-                writer.write(`<h1 class="${name}">${name}</h1>`)
+                const { write : w, writeRaw : raw } = writer
+                raw('<h1 class="')
+                       w( name )
+                raw('">')
+                       w( name )
+                raw('</h1>')
             } else {
                  console.warn("Unhandled node" + JSON.stringify( node, null, 2))
                 }
@@ -47,7 +53,7 @@ const toHtml = ( opt ) => toAny( opt ).use(
             const content = node.content || ''
             const spaces = content.replace(/ /g, '&nbsp;')
             const newFeed = spaces.replace(/\n/g, '</br>')
-            writer.write(newFeed)
+            writer.writeRaw(newFeed)
         },
         'V<>': content,
         'Z<>': emptyContent,
@@ -94,11 +100,11 @@ const toHtml = ( opt ) => toAny( opt ).use(
                 console.log(node)
             }
             const [ firstPara, ...other ] = node.content
-            writer.write('<li>')
+            writer.writeRaw('<li>')
             // TODO: get cases for handle first para in items
             // interator([...firstPara.content, ...other], ctx)
             interator(node.content, ctx)
-            writer.write('</li>')
+            writer.writeRaw('</li>')
         },
         'comment:block': emptyContent,
         'defn':wrapContent('','</dd>'),
@@ -116,14 +122,14 @@ const toHtml = ( opt ) => toAny( opt ).use(
                                         )},
                          ( writer, processor ) => ( node, ctx, interator ) => {
                                 const conf = makeAttrs(node, ctx)
-                                writer.write('<table>')
+                                writer.writeRaw('<table>')
                                 if ( conf.exists('caption') ) {
-                                    writer.write('<caption>')
+                                    writer.writeRaw('<caption>')
                                     writer.write(conf.getFirstValue('caption'))
-                                    writer.write('</caption>')
+                                    writer.writeRaw('</caption>')
                                 }
                                 interator(node.content, ctx)
-                                writer.write('</table>')
+                                writer.writeRaw('</table>')
                         }
                     ),
         ':separator' : emptyContent,

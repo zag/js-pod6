@@ -4,7 +4,6 @@
  * and the remaining content is treated as the definition for the term.
  */
 'use strict'
-var fcparser = require("./grammarfc");
 const makeTransformer = require('./helpers/makeTransformer')
 /**
  *  Helpers section
