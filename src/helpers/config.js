@@ -11,7 +11,11 @@ exports.makeAttrs  = ( node, ctx) => {
         if ( !result.hasOwnProperty(a.name) ) {
             result[a.name] = []
         }
-        result[a.name].push(a.value)
+        if (a.type === 'array') {
+            result[a.name].push(...a.value)
+        } else {
+            result[a.name].push(a.value)
+        }
     })
     let resfn = function () {}
     /**

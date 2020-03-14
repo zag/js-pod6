@@ -20,11 +20,11 @@ module.exports  = ( rule ) => {
 
     function visiter (node, context)  {
         if (node instanceof Array) {
-            return node.map( item => visiter(item, context) )
+            return node.map( item => visiter(item, context) ).flat()
         }
         if ( 'string' === typeof node ) {
             // convert string to lex node with type 
-            // return visiter({type:'text', value:node}, context)
+            //return visiter({type:'text', value:node}, context)
             return node
         }
         // get first rule for this node
