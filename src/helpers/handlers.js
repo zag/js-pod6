@@ -10,9 +10,9 @@ exports.wrapContent =
         ( writer, processor ) => 
             ( node, ctx, interator )=>
                 {
-                    writer.write(pre) 
+                    writer.writeRaw(pre) 
                     if (node.content) interator( node.content, ctx )
-                    writer.write(post) 
+                    writer.writeRaw(post) 
                 }
 /**
  * emptyContent - skip any child node
