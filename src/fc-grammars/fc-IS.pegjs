@@ -58,7 +58,7 @@ code_L =
     }
 code_S = 
     name:start_code &{return name === "S"}
-    content: $(!end_code .)+
+    content: $(!end_code .)*
     end_code
      {
          return  { 
@@ -70,7 +70,7 @@ code_S =
 
 code_Z = 
     name:start_code &{return name === "Z"}
-    content: $(!end_code .)+
+    content: $(!end_code .)*
     end_code
      {
          return  { 
@@ -84,9 +84,10 @@ code_Z =
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
 code =  name:start_code &{ return name !== 'C' } content:(  
-          allowed_rules / code / text
-        )+ end_code  
-{ return {content, type:'fcode', name}} 
+          allowed_rules / code / text 
+        )* end_code  
+{ return {content, type:'fcode', name}}
+empty =  $(!end_code .)*
 text = text:$( '<' text '>' / looks_like_code / not_code )+ {return text}
 not_code = text:$(!end_code !start_code !looks_like_code .)+ {return text}
 looks_like_code =(!allowed_code .) '<' not_code '>' {return text()}
