@@ -92,15 +92,8 @@ Para inside SYNOPSIS
 =end SYNOPSIS
 #---
 
-
+# Empty fcode #3
 #---
-=head1 Test
-
-text
-
-=head2 Testing
-continue
-
-test
-
+=para
+teZ<s>tZ<>
 #---
