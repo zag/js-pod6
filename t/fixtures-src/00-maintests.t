@@ -97,3 +97,11 @@ Para inside SYNOPSIS
 =para
 teZ<s>tZ<>
 #---
+
+# N<> Footnote
+#---
+=para
+Use a C<for> loop instead.N<The Perl 6 C<for> loop is far more
+powerful than its Perl 5 predecessor.> Preferably with an explicit
+iterator variable.
+#---

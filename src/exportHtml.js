@@ -49,7 +49,52 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
             }
             return  wrapContent( `<a href="${meta}">`, `</a>` )
         }),
-        "S<>":( writer, processor ) => ( node, ctx, interator ) => {
+
+        /**
+         * CSS rules for footnotes
+         
+        .footnote a {
+            text-decoration: none;
+        }
+        .footnotes {
+        border-top-style: solid;
+        border-top-width: 1px;
+        border-top-color: #eee;
+        }
+         */
+        'N<>' : ( writer, processor ) => {
+            writer.addListener('end', ()=>{
+                if ( !writer.hasOwnProperty('FOOTNOTES') ) { return }
+                const footnotes = writer.FOOTNOTES
+                if ( footnotes.length < 1 ) { return } // if empty footnotes
+                writer.writeRaw(`<div class="footnotes">`)
+                footnotes.map((footnote) =>{
+                   writer.writeRaw(`<p><sup id="${footnote.fnId}" class="footnote"><a href="#${footnote.fnRefId}">[${footnote.gid}]</a></sup> `)
+                   footnote.make()
+                   writer.writeRaw(`</p>`)
+                })
+               writer.writeRaw(`</div>`)
+               
+            })
+            return ( node, ctx, interator ) => {
+                // skip empty notes
+                if ( node.content.length < 1 ) { return }
+                if ( !writer.hasOwnProperty('gid') ) { writer.gid = 1}
+                // get foot note id
+                const gid = writer.gid++
+                const fnRefId = `fnref:${gid}`
+                const fnId = `fn:${gid}`
+                writer.writeRaw(`<sup id="${fnRefId}" class="footnote"><a href="#${fnId}">[${gid}]</a></sup>`)
+                if ( !writer.hasOwnProperty('FOOTNOTES') ) { writer.FOOTNOTES = []}
+                writer.FOOTNOTES.push({
+                    gid,
+                    fnRefId,
+                    fnId,
+                    make: ( )=>{ interator(node.content, ctx) }
+                })
+            }
+        },
+        'S<>':( writer, processor ) => ( node, ctx, interator ) => {
             const content = node.content || ''
             const spaces = content.replace(/ /g, '&nbsp;')
             const newFeed = spaces.replace(/\n/g, '</br>')

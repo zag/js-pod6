@@ -3,7 +3,7 @@ Expression
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
 allowed_rules = code_S / code_C / code_V / code_L / code_Z 
-allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z')
+allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z' / 'N')
 
 raw_text= $(.)
 
