@@ -2,7 +2,6 @@
   "verbose": true,
   "watch": ["./"],
   "ignore": ["src/fc-grammars/*", "README"],
-  "execsss": "pegjs -o src/grammar.js src/grammar.pegjs; pegjs -o src/grammarfc.js src/grammarfc.pegjs",
   "exec": "pegjs -o src/grammar.js src/grammar.pegjs; pegjs -o src/grammarfc.js src/grammarfc.pegjs ; bin/update-fcgrammars",
   "ext": "pegjs"
 }
