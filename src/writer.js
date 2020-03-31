@@ -8,6 +8,10 @@ const Events = require('events')
 
 function Writer( output ){
     Events.apply(this)
+    // save X<> entries
+    this.INDEXTERMS = []
+    // save N<> annotates
+    this.FOOTNOTES = []
     this.output = output
     // escape function for output
     this.escape = (p)=>p

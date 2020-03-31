@@ -58,7 +58,9 @@ const toAny = ( options = {}, plugins = [] ) => {
         return {
            errors : writer.errors,
            toString: () => res,
-           valueOf: () => res
+           valueOf: () => res,
+           indexingTerms: writer.INDEXTERMS,
+           annotations: writer.FOOTNOTES,
         }
     }
 }
