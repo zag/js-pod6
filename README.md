@@ -42,7 +42,7 @@ Convert pod6 from cli:
 npx -p pod6 pod6html < example.pod6 > example.html
 ```
 
-Test Pod6 online: [pod6.in](https://pod6.in)
+Test [Pod6 online at https://pod6.in](https://pod6.in)
 
 
 ### Pod configuration
@@ -148,7 +148,7 @@ foo
 =end table
 ```
 
-## Try it online
+## Try pod6 online
 
 You can test pod6 at [pod6.in](https://pod6.in) site.
 I'd appreciate it if you'd report any mistakes to the tracker[4]
@@ -159,7 +159,7 @@ I'd appreciate it if you'd report any mistakes to the tracker[4]
 
 [2] Synopsis 2: [Bits and Pieces](https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod)
 
-[3] Pod6 online editor: [Pod6 to HTML](https://pod6.in)
+[3] Pod6 online editor: [Pod6 to HTML online](https://pod6.in)
 
 [4] pod6 issues tracker: [https://github.com/zag/js-pod6/issues](https://github.com/zag/js-pod6/issues) 
 
