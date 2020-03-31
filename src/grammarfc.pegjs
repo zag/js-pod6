@@ -2,8 +2,8 @@ Expression
 = ( allowed_rules / code / text / raw_text )*
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
-allowed_rules = code_S / code_C / code_V / code_L / code_Z 
-allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z' / 'N')
+allowed_rules = code_S / code_C / code_V / code_L / code_X /code_Z 
+allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z' / 'N' / 'X')
 
 raw_text= $(.)
 
@@ -34,7 +34,7 @@ code_C =
     }
 separator = '|'
 text_L = $(
-     (!'<' .) '<' text_L '>'  &{ console.log({content:text()}); return true}
+     (!'<' .) '<' text_L '>'
     / 
     !separator !end_code !start_code !looks_like_code . )+ 
 code_L = 
@@ -54,6 +54,30 @@ code_L =
                 'type':"fcode",
                 name,
                 meta
+             }
+    }
+item = $(!';' !end_code .)+
+hs = [ \u00a0\u2001\t\u000C\u2008]
+array_items = 
+          code:item hs*  ';' hs* codes:array_items 
+                            { return [ code, codes ].flat() }
+          / code:item { return [code] }
+
+code_X = 
+    name:start_code &{return name === "X"}
+            
+    content: ( text_L )*
+     
+     entry:(
+           separator t:array_items*  { return t.flat() }
+           )?
+     end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+                entry
              }
     }
 code_S = 

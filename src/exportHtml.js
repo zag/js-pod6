@@ -101,6 +101,17 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
             writer.writeRaw(newFeed)
         },
         'V<>': content,
+        'X<>' : ( writer, processor ) => ( node, ctx, interator ) => {
+            interator(node.content, ctx)
+            let entry = { node }
+            if ( entry === null && node.content.length > 0) {
+                 entry = [node.content[0]]
+            } else { return }
+            if ( !writer.hasOwnProperty('INDEXTERMS') ) { writer.INDEXTERMS = []}
+             writer.INDEXTERMS.push({
+                entry
+             })
+         },
         'Z<>': emptyContent,
         'pod': content,
         ':code': wrapContent('<pre><code>', '</code></pre>'),
@@ -178,7 +189,6 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
                         }
                     ),
         ':separator' : emptyContent,
-
          'row':wrapContent('<tr>','</tr>'),
          'column':wrapContent('<td>','</td>'),
  

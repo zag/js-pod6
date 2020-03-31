@@ -37,3 +37,11 @@ iterator variable.
 =para
 Text.N<> TExt2.N<Yep>
 #---
+
+# X<> indexing terms
+#---
+=para
+A X<hash|hashes, definition of; associative arrays>
+is an unordered X<collection> of X<scalar|scalars> values indexed by their
+associated string X<|puns, deliberate> key. X<> empty
+#---
