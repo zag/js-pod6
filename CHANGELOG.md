@@ -1,3 +1,8 @@
+# 0.0.16
+- fix https://github.com/zag/js-pod6/issues/3
+- implement annotations: N<>
+- implement indexing terms: X<>
+
 # 0.0.15
 - add :allow support
 - add writers layer
@@ -14,7 +19,6 @@
 - add link to https://pod6.in - online pod6 editor 
 
 # 0.0.12
-
 - fix term in=defn
 - refactor export interators and tree transformers
 - V<>, R<>, =nested ( only 1 level )
