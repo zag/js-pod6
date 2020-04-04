@@ -34,6 +34,7 @@ module.exports = () =>( tree )=>{
                             ? fcparser 
                             : fcmap[ allowValues.sort().join('') ]
       return makeTransformer({
+        ':namedBlock': ( n, ctx ) => n, // this prevent from parsing content of named blocks
         ':verbatim' : ( n, ctx ) => {return parser.parse(n.value) },
         ':text' : ( n, ctx ) => {return parser.parse(n.value) },
       })(n,{ ...ctx })
