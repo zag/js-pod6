@@ -50,7 +50,8 @@ const toAny = ( options = {}, plugins = [] ) => {
                 rule=>makeRule( rule.rule, rule.fn( writer, processor ) ) 
             ).reverse()
         )
-        const tree = processor(src)
+        // src may be preparsed tree
+        const tree = ( "string" === typeof src ) ? processor(src) : src 
         const context = {}
         writer.startWrite()
         interator( tree, context )
