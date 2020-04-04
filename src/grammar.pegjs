@@ -338,8 +338,7 @@ abbreviatedBlockRaw =
     return {
             margin:vmargin,
             type: isNamedBlock(name) ? 'namedBlock' : 'block',
-            content: content === "" ? [] 
-                                    : [content],
+            content: content === "" ? [] : [{ type:'verbatim', value:content}],
             name,
             config:[]
           }
