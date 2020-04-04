@@ -75,7 +75,7 @@ FCode = $(char)
 
 // Define array: '1 2 3' or '1,2,3'
 array_items = 
-          code:item (hs+ / ', ') codes:array_items 
+          code:item ( hs+ / _','_ ) codes:array_items 
                             { return [ code, codes ].flat() }
           / code:item { return [code] }
 
