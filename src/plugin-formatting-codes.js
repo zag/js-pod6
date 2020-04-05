@@ -30,9 +30,13 @@ module.exports = () =>( tree )=>{
       // for code block not parse content by default
       if (isCodeBlock && allowValues.length == 0) return n
       // get parser
-      const parser = ( allowValues.length == 0 ) 
+      let parser = ( allowValues.length == 0 ) 
                             ? fcparser 
                             : fcmap[ allowValues.sort().join('') ]
+      if (!parser )  {
+        console.error(`Can't find parser for combination FCodes: ${allowValues.sort().join('')}; use default: none allowed`)
+        parser = fcparser
+      }
       return makeTransformer({
         ':namedBlock': ( n, ctx ) => n, // this prevent from parsing content of named blocks
         ':verbatim' : ( n, ctx ) => {return parser.parse(n.value) },
