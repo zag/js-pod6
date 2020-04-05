@@ -6,6 +6,7 @@ const getAllowed = ( originGrammar)=>{
     // collect all codes with rules
     let rulesFc =[]
     const reg = /code_(\w)/g
+    let result = []
     while((result = reg.exec(allowed_rules)) !== null) {
         rulesFc.push(result[1])
     }
@@ -26,35 +27,36 @@ const getAllowed = ( originGrammar)=>{
 // read original pegjs file
 const grammarsFc = fs.readFileSync('./src/grammarfc.pegjs')
 const {codesFc, rulesFc} = getAllowed(grammarsFc)
+
 // collect all codes
 const b = [...codesFc, ...rulesFc].reduce((a,b ) => {
     if (!a.includes(b))  a.push(b) 
     return a},[]).sort()
-    let results= [];
+let results= [];
 // generate all possible cobination
-let fccount = b.length
-while(fccount--) {
-    for (let i = 0; i<b.length; i++ ) {
-        const tmp = [...b]
-        const prefix =  tmp.splice(0, i)
-        results.push([...prefix].join(''))
-        let restCount = tmp.length
-        for (let n=0; n < restCount; n++) {
-                results.push([ ...prefix, ...tmp].join(''))
-                const r = tmp.splice(0,1)
-                results.push([ ...prefix, ...r].join(''))
-        }
+let uniqFc = (result) => result.filter(i=>i!=='').reduce(
+    ( a, i ) => {
+        if( !a.includes(i) ) a.push(i);
+        return a
     }
-    b.splice(0,1)
+    ,[])
+function combinations(str) {
+        var fn = function(active, rest, a) {
+            if (!active && !rest)
+                return;
+            if (!rest) {
+                a.push(active);
+            } else {
+                fn(active + rest[0], rest.slice(1), a);
+                fn(active, rest.slice(1), a);
+            }
+            return a;
+        }
+        return fn("", str, []);
 }
-let uniq = results.filter(i=>i!=='').reduce(
-                ( a, i ) => {
-                    if( !a.includes(i) ) a.push(i);
-                    return a
-                }
-                ,[])
-
-// generate grammar
+let uniq = uniqFc(combinations(b.join('')))
+console.log(`generate  ${uniq.length}`)
+// generate grammars
 const makeGrammar = ( origin, allowedCodes ) => {
     const {codesFc, rulesFc} = getAllowed(grammarsFc)
     const allowed = allowedCodes.split('')

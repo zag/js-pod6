@@ -36,7 +36,7 @@ function Writer( output ){
         // setup events
          ( this.ons || [] ).map( a=>Events.prototype.on.call( this, ...a ) )
         this.emit('start')
-        this.addListener('errors', (err)=>{ this.errors.push(err); console.log({err1:err})})
+        this.addListener('errors', (err)=>{ this.errors = this.errors || []; this.errors.push(err) })
     },
     this.on = () => {
         // overload 'on' method for reverse setup handlers
