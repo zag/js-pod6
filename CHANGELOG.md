@@ -1,3 +1,8 @@
+# 0.0.17
+- fix abbreviated block for verbatim content
+- fix error reports
+- fix generators for grammars
+
 # 0.0.16
 - fix https://github.com/zag/js-pod6/issues/3
 - implement annotations: N<>
