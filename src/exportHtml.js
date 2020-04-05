@@ -118,7 +118,7 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         'code': wrapContent('<pre><code>', '</code></pre>'),
         ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
             if (node.error) {
-                console.log('err')
+                console.error('err')
                 writer.emit("errors", node.location )
             }
             interator( node.value ) 
@@ -153,7 +153,7 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         'item:block':  ( writer, processor ) => ( node, ctx, interator ) => {
             // make text from first para
             if (! (node.content instanceof Array)) {
-                console.log(node)
+                console.error(node)
             }
             const [ firstPara, ...other ] = node.content
             writer.writeRaw('<li>')
