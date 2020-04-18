@@ -184,10 +184,10 @@ function peg$parse(input, options) {
       peg$c21 = peg$literalExpectation(";", false),
       peg$c22 = /^[ \xA0\u2001\t\f\u2008]/,
       peg$c23 = peg$classExpectation([" ", "\xA0", "\u2001", "\t", "\f", "\u2008"], false, false),
-      peg$c24 = function(code, codes) { return [ code, codes ].flat() },
+      peg$c24 = function(code, codes) { return flattenDeep([ code, codes ]) },
       peg$c25 = function(code) { return [code] },
       peg$c26 = function(name) {return name === "X"},
-      peg$c27 = function(name, content, t) { return t.flat() },
+      peg$c27 = function(name, content, t) { return flattenDeep(t) },
       peg$c28 = function(name, content, entry) {
                return  { 
                       content,
@@ -2293,6 +2293,12 @@ function peg$parse(input, options) {
 
     return s0;
   }
+
+
+     function flattenDeep(arr) {
+     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+    }
+
 
   peg$result = peg$startRuleFunction();
 

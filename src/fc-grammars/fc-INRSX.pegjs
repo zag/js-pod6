@@ -1,3 +1,9 @@
+{
+   function flattenDeep(arr) {
+   return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+  }
+}
+
 Expression
 = ( allowed_rules / code / text / raw_text )*
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
@@ -60,7 +66,7 @@ item = $(!';' !end_code .)+
 hs = [ \u00a0\u2001\t\u000C\u2008]
 array_items = 
           code:item hs*  ';' hs* codes:array_items 
-                            { return [ code, codes ].flat() }
+                            { return flattenDeep([ code, codes ]) }
           / code:item { return [code] }
 
 code_X = 
@@ -69,7 +75,7 @@ code_X =
     content: ( text_L )*
      
      entry:(
-           separator t:array_items*  { return t.flat() }
+           separator t:array_items*  { return flattenDeep(t) }
            )?
      end_code
      {

@@ -171,11 +171,11 @@ function peg$parse(input, options) {
       peg$c27 = peg$otherExpectation("text"),
       peg$c28 = function() {return text()},
       peg$c29 = function() { return { type:"verbatim", value:text(), error:true, location:location()}},
-      peg$c30 = function(code, codes) {return [code,codes].flat()},
+      peg$c30 = function(code, codes) {return flattenDeep([code,codes])},
       peg$c31 = function(code) { return [code] },
       peg$c32 = ",",
       peg$c33 = peg$literalExpectation(",", false),
-      peg$c34 = function(code, codes) { return [ code, codes ].flat() },
+      peg$c34 = function(code, codes) { return flattenDeep([ code, codes ]) },
       peg$c35 = /^[a-zA-Z0-9]/,
       peg$c36 = peg$classExpectation([["a", "z"], ["A", "Z"], ["0", "9"]], false, false),
       peg$c37 = /^[a-zA-Z0-9_\-]/,
@@ -243,7 +243,7 @@ function peg$parse(input, options) {
         },
       peg$c82 = function(isFalse, key, value) {return { name:key, ...value}},
       peg$c83 = function(first, rest) {return rest },
-      peg$c84 = function(first, cont) {return [...first, ...cont].flat()},
+      peg$c84 = function(first, cont) {return flattenDeep([...first, ...cont])},
       peg$c85 = /^[^'"]/,
       peg$c86 = peg$classExpectation(["'", "\""], true, false),
       peg$c87 = function(text) { return text},
@@ -318,7 +318,7 @@ function peg$parse(input, options) {
                           value:head
                         },
                         separator,
-                        ...rest.flat() 
+                        ...flattenDeep(rest) 
                       ]
             },
       peg$c125 = function(vmargin, name, config) { return name === 'table' },
@@ -5177,6 +5177,9 @@ function peg$parse(input, options) {
               && 
           name !== name.toUpperCase() 
         )
+    }
+    function flattenDeep(arr) {
+     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
     }
 
 
