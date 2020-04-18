@@ -1,3 +1,6 @@
+# 0.0.18
+- fix flat() problem #7
+
 # 0.0.17
 - fix abbreviated block for verbatim content
 - fix error reports
