@@ -8,6 +8,9 @@
         name !== name.toUpperCase() 
       )
   }
+  function flattenDeep(arr) {
+   return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+  }
 }
 
 Document = nodes:Element*  { return  nodes }
@@ -70,13 +73,13 @@ error_para = $(!EOL .)+ EOL
 #  Number            :key(42)                  :key(2.3)
 */
 
-array_codes = code:FCode hs+ codes:array_codes {return [code,codes].flat()}/ code:FCode { return [code] }
+array_codes = code:FCode hs+ codes:array_codes {return flattenDeep([code,codes])}/ code:FCode { return [code] }
 FCode = $(char)
 
 // Define array: '1 2 3' or '1,2,3'
 array_items = 
           code:item ( hs+ / _','_ ) codes:array_items 
-                            { return [ code, codes ].flat() }
+                            { return flattenDeep([ code, codes ]) }
           / code:item { return [code] }
 
 identifierKey = $([a-zA-Z0-9]+[a-zA-Z0-9_-]*)
@@ -139,7 +142,7 @@ attributes =  allow_attribute / _ ':' isFalse:[!]? key:identifier value:(
 
 pod_configuration = 
   first:attributes* newline 
-  cont:("=" _ rest:attributes+ _ newline {return rest })*  {return [...first, ...cont].flat()}
+  cont:("=" _ rest:attributes+ _ newline {return rest })*  {return flattenDeep([...first, ...cont])}
 
 string = text:$([^'"]+){ return text}
 
@@ -225,7 +228,7 @@ tableContents =
                     value:head
                   },
                   separator,
-                  ...rest.flat() 
+                  ...flattenDeep(rest) 
                 ]
       } 
     / tableRow+

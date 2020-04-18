@@ -5,6 +5,9 @@
  */
 'use strict'
 const makeTransformer = require('./helpers/makeTransformer')
+function flattenDeep(arr) {
+    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+}
 /**
  *  Helpers section
  */
@@ -52,9 +55,10 @@ const makeTransformer = require('./helpers/makeTransformer')
   }
 
   const extractColumnsByTemplate  = ( text, template ) => {
-      const lines = text.split(/\n/)  // split each row by eol
+      const lines = flattenDeep(
+           text.split(/\n/)  // split each row by eol
           .filter((str)=>str.length > 0 ) // filter empty strings ( after slit )
-          .flat()
+      )
       const cols = lines.map(line=>{
           const re = /((1+|0+))/g
           let columns = []
@@ -99,8 +103,8 @@ module.exports = () =>( tree )=>{
                          .filter((str)=>str.length > 0 ) // filter empty strings ( after slit )
                          
     // split each row into lines
-    const lines = rows.map(splinToLines).flat()
-    const separators = seps.map(splinToLines).flat()
+    const lines = flattenDeep( rows.map(splinToLines) )
+    const separators = flattenDeep( seps.map(splinToLines) )
 
     const columnTemplate = makeMask(lines, separators)
     const makeBlock = (name, content, ...attr) => { return { ...attr, name, type: 'block', content: Array.isArray(content) ? content : [content] } }

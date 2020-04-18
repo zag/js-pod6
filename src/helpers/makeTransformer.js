@@ -1,5 +1,8 @@
 'use strict'
 const { makeRule, makePlug } = require('./makeQuery')
+function flattenDeep(arr) {
+    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+}
 module.exports  = ( rule ) => {
     let rules = []
     function use( key, fn ) {
@@ -20,7 +23,7 @@ module.exports  = ( rule ) => {
 
     function visiter (node, context)  {
         if (node instanceof Array) {
-            return node.map( item => visiter(item, context) ).flat()
+            return flattenDeep(node.map( item => visiter(item, context) ))
         }
         if ( 'string' === typeof node ) {
             // convert string to lex node with type 
