@@ -169,7 +169,9 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         'defn':wrapContent('','</dd>'),
         'term:para': wrapContent('<dt>','</dt><dd>'),
         // TODO: handle levels of nesting
-        'nested':wrapContent('<blockquote>', '</blockquote>'),
+        'nested': wrapContent('<blockquote>', '</blockquote>'),
+        'output': wrapContent('<blockquote><pre><samp>', '</samp></pre></blockquote>'),
+        'input': wrapContent('<blockquote><pre><kbd>', '</kbd></pre></blockquote>'),
         // table section
         'table:block' : 
               subUse({

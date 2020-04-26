@@ -170,7 +170,7 @@ delimitedBlockRaw =
     markerBegin name:identifier _ config:pod_configuration 
     &{ 
      return ( 
-       (name.match(/code|comment/))
+       (name.match(/code|comment|output|input/))
         || 
         isNamedBlock(name)
       )
@@ -331,7 +331,7 @@ abbreviatedBlockRaw =
   name:markerAbbreviatedBlock _ emptyline* 
     &{  
      return ( 
-       (name.match(/code|comment/))
+       (name.match(/code|comment|output|input/))
         || 
         isNamedBlock(name)
       )
@@ -405,7 +405,7 @@ paragraphBlockRaw =
   marker:markerFor  name:identifier _ config:pod_configuration 
       &{  
      return ( 
-       (name.match(/code|comment/))
+       (name.match(/code|comment|output|input/))
         || 
         isNamedBlock(name)
       )

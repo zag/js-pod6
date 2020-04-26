@@ -1,0 +1,86 @@
+=begin pod
+    =begin output
+        Name:    Baracus, B.A.
+        Age:     49
+        Print? B<K<n>>
+    =end output
+    =begin output
+        Name:    Baracus, B.A.
+        Age:     49
+        Print? B<K<n>>
+    =end output
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n",
+            "margin": "        ",
+            "type": "para",
+            "content": [
+              "Name:    Baracus, B.A.\n        Age:     49\n        Print? ",
+              {
+                "content": [
+                  {
+                    "content": [
+                      "n"
+                    ],
+                    "type": "fcode",
+                    "name": "K"
+                  }
+                ],
+                "type": "fcode",
+                "name": "B"
+              },
+              "\n"
+            ]
+          }
+        ],
+        "name": "output",
+        "margin": "    ",
+        "text": "    =begin output\n        Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n    =end output\n",
+        "config": []
+      },
+      {
+        "type": "block",
+        "content": [
+          {
+            "text": "Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n",
+            "margin": "        ",
+            "type": "para",
+            "content": [
+              "Name:    Baracus, B.A.\n        Age:     49\n        Print? ",
+              {
+                "content": [
+                  {
+                    "content": [
+                      "n"
+                    ],
+                    "type": "fcode",
+                    "name": "K"
+                  }
+                ],
+                "type": "fcode",
+                "name": "B"
+              },
+              "\n"
+            ]
+          }
+        ],
+        "name": "output",
+        "margin": "    ",
+        "text": "    =begin output\n        Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n    =end output\n",
+        "config": []
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n    =begin output\n        Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n    =end output\n    =begin output\n        Name:    Baracus, B.A.\n        Age:     49\n        Print? B<K<n>>\n    =end output\n=end pod\n",
+    "config": []
+  }
+]

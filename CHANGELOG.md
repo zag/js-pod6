@@ -1,3 +1,9 @@
+# 0.0.19
+- implement terminal output: T<>
+- implement keyboard input: K<>
+- implement unusual or distinctive: U<>
+- implement =input, =output blocks
+
 # 0.0.18
 - fix flat() problem #7
 

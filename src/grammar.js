@@ -273,7 +273,7 @@ function peg$parse(input, options) {
       peg$c111 = function(number) { return parseInt(number,10) },
       peg$c112 = function(vmargin, name, config) { 
            return ( 
-             (name.match(/code|comment/))
+             (name.match(/code|comment|output|input/))
               || 
               isNamedBlock(name)
             )
@@ -382,7 +382,7 @@ function peg$parse(input, options) {
       peg$c136 = function(line) { return { text: text(), type: "ambient1"}},
       peg$c137 = function(vmargin, name) {  
            return ( 
-             (name.match(/code|comment/))
+             (name.match(/code|comment|output|input/))
               || 
               isNamedBlock(name)
             )
@@ -442,7 +442,7 @@ function peg$parse(input, options) {
         },
       peg$c147 = function(vmargin, marker, name, config) {  
            return ( 
-             (name.match(/code|comment/))
+             (name.match(/code|comment|output|input/))
               || 
               isNamedBlock(name)
             )
