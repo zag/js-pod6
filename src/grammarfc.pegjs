@@ -9,7 +9,13 @@ Expression
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
 allowed_rules = code_S / code_C / code_V / code_L / code_X / code_Z 
-allowed_code = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'L' / 'S' / 'Z' / 'N' / 'X' )
+allpossible_codes = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
+allowed_code = 
+            char:allpossible_codes 
+            &{ return   !(options.allowed || [] ).length  //allow all formatting codes by default
+                           ||  
+                        (options.allowed || [] ).includes(char)
+            }
 
 raw_text= $(.)
 

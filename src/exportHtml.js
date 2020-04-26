@@ -42,6 +42,7 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         'B<>': wrapContent('<strong>','</strong>'),
         'I<>': wrapContent('<em>','</em>'),
         'R<>': wrapContent('<var>','</var>'),
+        'K<>': wrapContent('<kbd>','</kbd>'),
         "L<>": setFn(( node, ctx ) => {
             let { meta } = node
             if ( meta === null) {
@@ -100,6 +101,8 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
             const newFeed = spaces.replace(/\n/g, '</br>')
             writer.writeRaw(newFeed)
         },
+        'T<>': wrapContent('<samp>','</samp>'),
+        'U<>': wrapContent('<u>','</u>'),
         'V<>': content,
         'X<>' : ( writer, processor ) => ( node, ctx, interator ) => {
             interator(node.content, ctx)
