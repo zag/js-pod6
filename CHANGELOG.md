@@ -3,6 +3,7 @@
 - implement keyboard input: K<>
 - implement unusual or distinctive: U<>
 - implement =input, =output blocks
+- implement A<>, =alias directive
 
 # 0.0.18
 - fix flat() problem #7

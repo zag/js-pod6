@@ -147,6 +147,25 @@ foo
 
 =end table
 ```
+## Macro aliases
+
+The `=alias` directive provides a way to define lexically scoped
+synonyms for longer Pod sequences, (meta) object declarators from the
+code, or even entire chunks of ambient source. These synonyms can then
+be inserted into subsequent Pod using the `A<>`
+
+For example:
+
+    =alias PROGNAME    Earl Irradiatem Evermore
+    =alias VENDOR      4D Kingdoms
+    =alias TERMS_URLS  =item L<http://www.4dk.com/eie>
+    =                  =item L<http://www.4dk.co.uk/eie.io/>
+    =                  =item L<http://www.fordecay.ch/canttouchthis>
+    
+    The use of A<PROGNAME> is subject to the terms and conditions
+    	laid out by A<VENDOR>, as specified at:
+    
+    A<TERMS_URLS>
 
 ## Try pod6 online
 
