@@ -38,6 +38,20 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         },
             
         // Formatting codes
+        'A<>': ( writer, processor ) => ( node, ctx, interator ) => {
+            //get replacement text
+            if (! ctx.alias.hasOwnProperty(node.content) ) {
+                writer.write(`A<${node.content}>`)
+            } else {
+                const src = ctx.alias[ node.content ].join('\n')
+                const tree = processor( src )
+                if ( tree[0].type === 'para') {
+                    interator( tree[0].content, ctx )
+                } else {
+                    interator( tree, ctx )
+                }
+            }
+        },
         'C<>': wrapContent('<code>','</code>'),
         'B<>': wrapContent('<strong>','</strong>'),
         'I<>': wrapContent('<em>','</em>'),
@@ -127,12 +141,21 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
             interator( node.value ) 
         },
         ':blankline': emptyContent,
+
+        // Directives 
         ':config': setFn(( node, ctx ) => {
             // setup context
             if ( ! ctx.hasOwnProperty('config') ) ctx.config = {}
             //collect configs in context
             ctx.config[node.name] = node.config
             return emptyContent}),
+        ':alias': setFn(( node, ctx ) => {
+            // set alias
+            if ( ! ctx.hasOwnProperty('alias') ) ctx.alias = {}
+            //collect configs in context
+            ctx.alias[node.name] = node.replacement
+            return emptyContent}),
+        
         // block =para
         'para': content,
         ':para':wrapContent('<p>', '</p>'),

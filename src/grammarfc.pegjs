@@ -8,8 +8,9 @@ Expression
 = ( allowed_rules / code / text / raw_text )*
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
-allowed_rules = code_S / code_C / code_V / code_L / code_X / code_Z 
-allpossible_codes = ( 'V' / 'R' / 'B' / 'I' / 'C' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
+allowed_rules = code_A / code_S / code_C / code_V / code_L / code_X / code_Z 
+allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
+identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
 allowed_code = 
             char:allpossible_codes 
             &{ return   !(options.allowed || [] ).length  //allow all formatting codes by default
@@ -18,6 +19,18 @@ allowed_code =
             }
 
 raw_text= $(.)
+
+code_A = 
+    name:start_code &{return name === "A"}
+    content: $(!end_code identifier)*
+    end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+             }
+    }
 
 code_V = 
     name:start_code &{return name === "V"}
@@ -103,6 +116,7 @@ code_S =
                 name,
              }
     }
+
 
 code_Z = 
     name:start_code &{return name === "Z"}

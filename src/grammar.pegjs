@@ -21,10 +21,11 @@ Element =  delimitedBlockRaw
          / paragraphBlockRaw 
          / paragraphBlockTable
          / paragraphBlock
+         / aliasDirective
+         / configDirective
          / abbreviatedBlockRaw
          / abbreviatedBlockTable
          / abbreviatedBlock
-         / configDirective
          / textBlock
          / blankline
          / error_para
@@ -265,10 +266,11 @@ delimitedBlock =
           / paragraphBlockRaw
           / paragraphBlockTable 
           / paragraphBlock
+          / aliasDirective
+          / configDirective
           / abbreviatedBlockRaw
           / abbreviatedBlockTable
-          / abbreviatedBlock 
-          / configDirective
+          / abbreviatedBlock
           ) & { return true || name == name.toUpperCase() } { return nodes} 
   / tvmargin:$( hs* ) 
     text:$(text_content+)
@@ -388,6 +390,24 @@ abbreviatedBlock =
             name
           }
   }
+
+alias_replacement_text = 
+  first:Text* newline 
+  cont:(_"= " _ rest:Text+ _ newline {return rest })*  {return flattenDeep([...first, ...cont])}
+
+
+aliasDirective = 
+  vmargin:$(_) 
+  marker:'=alias' _  name:$(identifier) _ replacement:alias_replacement_text
+  {
+      return {
+          name,
+          type:'alias',
+          replacement,
+          margin:vmargin
+      }
+  }
+
 configDirective = 
   vmargin:$(_) 
   marker:'=config' _  name:$(identifier / [A-Z]'<>') _ config:pod_configuration
