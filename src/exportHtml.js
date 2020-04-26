@@ -40,7 +40,7 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
         // Formatting codes
         'A<>': ( writer, processor ) => ( node, ctx, interator ) => {
             //get replacement text
-            if (! ctx.alias.hasOwnProperty(node.content) ) {
+            if (! (ctx.alias && ctx.alias.hasOwnProperty(node.content)) ) {
                 writer.write(`A<${node.content}>`)
             } else {
                 const src = ctx.alias[ node.content ].join('\n')
