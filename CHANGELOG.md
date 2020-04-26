@@ -1,3 +1,6 @@
+# 0.0.20
+- quick fix use A<> without predefined =alias
+
 # 0.0.19
 - implement terminal output: T<>
 - implement keyboard input: K<>
