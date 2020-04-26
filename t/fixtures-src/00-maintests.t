@@ -114,3 +114,17 @@ A X<hash|hashes, definition of; associative arrays>
 is an unordered X<collection> of X<scalar|scalars> values indexed by their
 associated string X<|puns, deliberate> key. X<> empty
 #---
+
+# U<> formatting code
+#---
+=para
+The C<U<>> formatting code specifies that the contained text is
+U<unusual> or distinctive;
+#---
+
+# T<>  and K<> formatting codes
+#---
+=para
+Such content would typically be rendered in a K<fixed-width font>
+Such content would typically be rendered in a T<fixed-width font>
+#---

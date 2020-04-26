@@ -1,0 +1,37 @@
+=para
+Such content would typically be rendered in a K<fixed-width font>
+Such content would typically be rendered in a T<fixed-width font>
+~~~~~~~
+[
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "type": "para",
+        "text": "Such content would typically be rendered in a K<fixed-width font>\nSuch content would typically be rendered in a T<fixed-width font>\n",
+        "margin": "",
+        "content": [
+          "Such content would typically be rendered in a ",
+          {
+            "content": [
+              "fixed-width font"
+            ],
+            "type": "fcode",
+            "name": "K"
+          },
+          "\nSuch content would typically be rendered in a ",
+          {
+            "content": [
+              "fixed-width font"
+            ],
+            "type": "fcode",
+            "name": "T"
+          },
+          "\n"
+        ]
+      }
+    ],
+    "name": "para"
+  }
+]
