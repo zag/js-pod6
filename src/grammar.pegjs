@@ -102,7 +102,7 @@ array_sp = all:( _ i:item _ {return i})* { return all }/ res:item {return  [res]
 
 attributes =  allow_attribute / _ ':' isFalse:[!]? key:identifier value:(
   
-  '{' _  hash:array_pairs '}' { return { value:hash } } 
+  '{' _  hash:array_pairs _ '}' { return { value:hash } } 
   /
    '['  _ array:(  
               array:array_items  { return array }  
