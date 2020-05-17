@@ -12,3 +12,9 @@ A<TERMS_URLS>
 
 =end pod
 #---
+
+# A<>: wrap spaces around identifier #8
+#---
+=para
+A<  TERER >
+#---

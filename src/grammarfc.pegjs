@@ -11,6 +11,7 @@ Expression
 allowed_rules = code_A / code_S / code_C / code_V / code_L / code_X / code_Z 
 allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
 identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
+_ = [ \t\u000C]*
 allowed_code = 
             char:allpossible_codes 
             &{ return   !(options.allowed || [] ).length  //allow all formatting codes by default
@@ -19,10 +20,10 @@ allowed_code =
             }
 
 raw_text= $(.)
-
+content_A = ( !end_code _ id:$(identifier)? _ { return id } )?
 code_A = 
     name:start_code &{return name === "A"}
-    content: $(!end_code identifier)*
+    content: content_A
     end_code
      {
          return  { 
