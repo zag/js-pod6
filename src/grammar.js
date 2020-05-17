@@ -1830,17 +1830,23 @@ function peg$parse(input, options) {
                 if (s7 !== peg$FAILED) {
                   s8 = peg$parsearray_pairs();
                   if (s8 !== peg$FAILED) {
-                    if (input.charCodeAt(peg$currPos) === 125) {
-                      s9 = peg$c62;
-                      peg$currPos++;
-                    } else {
-                      s9 = peg$FAILED;
-                      if (peg$silentFails === 0) { peg$fail(peg$c63); }
-                    }
+                    s9 = peg$parse_();
                     if (s9 !== peg$FAILED) {
-                      peg$savedPos = s5;
-                      s6 = peg$c64(s3, s4, s8);
-                      s5 = s6;
+                      if (input.charCodeAt(peg$currPos) === 125) {
+                        s10 = peg$c62;
+                        peg$currPos++;
+                      } else {
+                        s10 = peg$FAILED;
+                        if (peg$silentFails === 0) { peg$fail(peg$c63); }
+                      }
+                      if (s10 !== peg$FAILED) {
+                        peg$savedPos = s5;
+                        s6 = peg$c64(s3, s4, s8);
+                        s5 = s6;
+                      } else {
+                        peg$currPos = s5;
+                        s5 = peg$FAILED;
+                      }
                     } else {
                       peg$currPos = s5;
                       s5 = peg$FAILED;
