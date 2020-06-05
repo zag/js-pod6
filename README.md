@@ -147,6 +147,24 @@ foo
 
 =end table
 ```
+
+```
+=table
+    X | O |
+   ---+---+---
+      | X | O
+   ---+---+---
+      |   | X
+```
+
+```
+=table
+    X   O
+   ===========
+        X   O
+   ===========
+            X
+```
 ## Macro aliases
 
 The `=alias` directive provides a way to define lexically scoped
