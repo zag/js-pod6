@@ -1,3 +1,8 @@
+# 0.0.21
+- spaces around identifier #8
+- fix trailing spaces #9
+- improve tables #11
+
 # 0.0.20
 - quick fix use A<> without predefined =alias
 
