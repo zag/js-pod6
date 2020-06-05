@@ -111,7 +111,7 @@ module.exports = () =>( tree )=>{
     // make columns
     const res = makeTransformer({
         'row:text'  : (row) => {
-            const res = extractColumnsByTemplate( row.value, columnTemplate)
+            const res = extractColumnsByTemplate( row.value, columnTemplate )
             return makeBlock(
                 'row',
                  res.map((col)=>makeBlock(
@@ -121,7 +121,7 @@ module.exports = () =>( tree )=>{
             )
         },
         'head:text' : (head) => {
-            const res = extractColumnsByTemplate( head.value, columnTemplate)
+            const res = extractColumnsByTemplate( head.value, columnTemplate )
             return makeBlock(
                 'head',
                  res.map((col)=>makeBlock(
@@ -133,10 +133,6 @@ module.exports = () =>( tree )=>{
     })(node)
     
     return res
-    const content = node.content[0].content
-    //content
-    // console.log(json2str(node))
-
 }})
 return transformer(tree)
 }

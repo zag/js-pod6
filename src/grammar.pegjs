@@ -11,6 +11,7 @@
   function flattenDeep(arr) {
    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
   }
+
 }
 
 Document = nodes:Element*  { return  nodes }
@@ -176,39 +177,55 @@ delimitedBlockRaw =
         isNamedBlock(name)
       )
      }
-content:$( 
-         !markers t:Text Endline? 
-          / !markerEnd $(.)
-          )+ 
-vmargin2:$(_) res:( 
-                    markerEnd ename:identifier &{ return name === ename } Endline? 
-                    { 
-                      const type = isNamedBlock(name) ? 'namedBlock' : 'block'
-                      return {
-                              type:type,
-                              content: content === "" ? [] : [{ type:'verbatim', value:content}],
-                              // content: content === "" ? [] : [content],
-                              name,
-                              margin:vmargin
-                             }
-                    } 
-              ) &{return  true || vmargin === vmargin2} 
-                { return {
-                          ...res,
-                          text:text(),
-                          config
-                          }}
+    content:$( 
+            !markers t:Text Endline? 
+              / !markerEnd $(.)
+              )+ 
+    vmargin2:$(_) res:( 
+                        markerEnd ename:identifier &{ return name === ename } Endline? 
+                        { 
+                          const type = isNamedBlock(name) ? 'namedBlock' : 'block'
+                          return {
+                                  type:type,
+                                  content: content === "" ? [] : [{ type:'verbatim', value:content}],
+                                  // content: content === "" ? [] : [content],
+                                  name,
+                                  margin:vmargin
+                                }
+                        } 
+                  ) &{return  true || vmargin === vmargin2} 
+                    { return {
+                              ...res,
+                              text:text(),
+                              config
+                              }}
 tableHeadSeparator = !( _ ( markers / markerAbbreviatedBlock ) / blankline ) hs* $([+-=_|] hs*)+ EOL
                     { return { type: 'separator', text:text() } }
-tableBodyRowSeparator  =  $( tableHeadSeparator / blankline ) { return { type:'separator', text:text() } }
-tableRow = t:text_content { return { name:'row', type:'text', value:t } }
-tableContents =
-    blankline*
+
+tableBodyRowSeparator  =  $( tableHeadSeparator / &{ return options.isDelimited } blankline ) 
+                          { return { 
+                                    type:'separator',
+                                    text:text()
+                                    }
+                          }
+
+tableRow = t:text_content { return { name:'row', type:'text', value:t } } 
+
+ tableContents =
+    &{  
+        // reset separator count and its accum
+        options.separators = []
+        return true 
+      }
     head:$( !tableHeadSeparator tableRow )+
-    separator:tableHeadSeparator
+    separator:( t:tableHeadSeparator { // save separator
+                    options.separators.push(t.text)
+                    return t})
     rest:(
-       rowtext:$( !tableBodyRowSeparator tableRow )+  
-       bseparator:tableBodyRowSeparator
+       rowtext:$( !tableBodyRowSeparator tableRow )+
+       bseparator:( t:tableBodyRowSeparator { // save separator
+                    options.separators.push(t.text)
+                    return t})
        {
           return [ 
                   { 
@@ -219,9 +236,19 @@ tableContents =
                   bseparator 
                 ] 
         }
-       / !tableBodyRowSeparator singleRow:tableRow { return [singleRow] }
-      )+
-      blankline*
+
+       /
+        !tableHeadSeparator !tableBodyRowSeparator singleRow:tableRow { return [singleRow] }
+
+         )+
+      &{   // check at this point if this table have header
+           //  if more then 1 separator and it equal - table doesn't have header
+          if ( options.separators.length  > 1 ) {
+              // check if separators equal (for table without header)
+              return !options.separators.every( val => val === options.separators[0] )
+          }
+          return true
+          }
       { return [
                   {
                     name:'head',
@@ -232,29 +259,49 @@ tableContents =
                   ...flattenDeep(rest) 
                 ]
       } 
+    / 
+      rest:(
+        rowtest: $( !tableBodyRowSeparator tableRow )
+        bseparator:tableBodyRowSeparator*
+        {
+          return [ 
+                  { 
+                    name:'row',
+                    type:'text',
+                    value:rowtest
+                  },
+                  bseparator 
+                ] 
+        }
+      )+
+      {
+          return [...flattenDeep(rest) ]
+      }
     / tableRow+
 
 delimitedBlockTable = 
     vmargin:$(_) 
     markerBegin name:identifier _ config:pod_configuration 
     &{ return name === 'table' }
-content:tableContents
-vmargin2:$(_) res:( 
-                    markerEnd ename:identifier &{ return name === ename } Endline? 
-                    { 
-                      return {
-                              type:'block',
-                              content:content,
-                              name,
-                              margin:vmargin
-                             }
-                    } 
-              ) &{return  true || vmargin === vmargin2} 
-                { return {
-                          ...res,
-                          text:text(),
-                          config
-                          }}
+    // set type of block
+    &{  options.isDelimited = true; return true }
+    content:(blankline*  t:tableContents  blankline* {return t} )
+    vmargin2:$(_) res:( 
+                        markerEnd ename:identifier &{ return name === ename } Endline? 
+                        { 
+                          return {
+                                  type:'block',
+                                  content:content,
+                                  name,
+                                  margin:vmargin
+                                }
+                        } 
+                  ) &{return  true || vmargin === vmargin2} 
+                    {return {
+                              ...res,
+                              text:text(),
+                              config
+                              }}
 
 delimitedBlock = 
   vmargin:$(_) markerBegin name:identifier  _ config:pod_configuration
@@ -271,7 +318,7 @@ delimitedBlock =
           / abbreviatedBlockRaw
           / abbreviatedBlockTable
           / abbreviatedBlock
-          ) & { return true || name == name.toUpperCase() } { return nodes} 
+          ) { return nodes} 
   / tvmargin:$( hs* ) 
     text:$(text_content+)
     {
@@ -353,6 +400,8 @@ abbreviatedBlockTable =
   vmargin:$(_) !markers
   name:markerAbbreviatedBlock _ emptyline* 
     &{ return name === 'table' }
+  // set type of block
+  &{  options.isDelimited = false; return true }
   content:tableContents
   { 
     return {
@@ -435,7 +484,6 @@ paragraphBlockRaw =
       return { 
               type: isNamedBlock(name) ? 'namedBlock' : 'block',
               content: content === "" ? [] : [{ type:'verbatim', value:content}],
-              //content: content === "" ? [] : [content],
               name,
               margin:vmargin,
               config
@@ -446,6 +494,8 @@ paragraphBlockTable =
   vmargin:$(_)
   marker:markerFor  name:identifier _ config:pod_configuration 
   &{ return name === 'table' }
+  // set type of block
+  &{  options.isDelimited = false; return true }
   content:tableContents
   { 
       return { 
@@ -491,6 +541,3 @@ ___ "whitespace"
 
 __ "space characters"
   = [\r\n \t\u000C]*
-
-
-
