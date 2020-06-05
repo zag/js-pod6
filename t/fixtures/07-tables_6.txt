@@ -11,7 +11,7 @@
     "type": "block",
     "content": [
       {
-        "name": "head",
+        "name": "row",
         "type": "block",
         "content": [
           {

@@ -5,4 +5,4 @@
    ---+---+---
       |   | X
 ~~~~~~~
-"<table><tr><th> X</th><th> O</th><th> </th></tr><tr><td>  </td><td> X</td><td> O</td></tr><tr><td>  </td><td>  </td><td> X</td></tr></table>"
+"<table><tr><td> X</td><td> O</td><td> </td></tr><tr><td>  </td><td> X</td><td> O</td></tr><tr><td>  </td><td>  </td><td> X</td></tr></table>"

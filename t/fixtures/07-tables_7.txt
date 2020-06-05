@@ -11,18 +11,34 @@ bar
     "type": "block",
     "content": [
       {
-        "type": "blankline"
-      },
-      {
-        "text": "foo\nbar\n",
-        "margin": "",
-        "type": "para",
+        "name": "row",
+        "type": "block",
         "content": [
-          "foo\nbar\n"
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              " foo"
+            ]
+          }
         ]
       },
       {
-        "type": "blankline"
+        "name": "row",
+        "type": "block",
+        "content": [
+          {
+            "name": "column",
+            "type": "block",
+            "content": [
+              " bar"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "separator",
+        "text": "\n"
       }
     ],
     "name": "table",
