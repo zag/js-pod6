@@ -44,7 +44,9 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
                 writer.write(`A<${node.content}>`)
             } else {
                 const src = ctx.alias[ node.content ].join('\n')
-                const tree = processor( src )
+            const tree_1 = processor( src )
+            // now clean locations
+            const tree = clean_plugin()(tree_1)
                 if ( tree[0].type === 'para') {
                     interator( tree[0].content, ctx )
                 } else {

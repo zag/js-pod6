@@ -197,7 +197,8 @@ delimitedBlockRaw =
                     { return {
                               ...res,
                               text:text(),
-                              config
+                              config,
+                              location:location()
                               }}
 tableHeadSeparator = !( _ ( markers / markerAbbreviatedBlock ) / blankline ) hs* $([+-=_|] hs*)+ EOL
                     { return { type: 'separator', text:text() } }
@@ -300,7 +301,8 @@ delimitedBlockTable =
                     {return {
                               ...res,
                               text:text(),
-                              config
+                              config,
+                              location:location()
                               }}
 
 delimitedBlock = 
@@ -345,7 +347,7 @@ delimitedBlock =
                     type:'block',
                     content,
                     name,
-                    margin:vmargin
+                    margin:vmargin,
                   }
           } 
           ) 
@@ -355,7 +357,8 @@ delimitedBlock =
             return { 
                     ...res,
                     text:text(),
-                    config
+                    config,
+                    location:location(),
                     }
           }
 
@@ -370,7 +373,8 @@ textBlock = ( text_content )+
                                   type:'text',
                                   value:text()
                                 }
-                              ] 
+                              ],
+                      location:location(),
                     }
             }
 ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { return { text: text(), type: "ambient1"}}
@@ -392,7 +396,8 @@ abbreviatedBlockRaw =
             type: isNamedBlock(name) ? 'namedBlock' : 'block',
             content: content === "" ? [] : [{ type:'verbatim', value:content}],
             name,
-            config:[]
+            config:[],
+            location:location()
           }
   }
 
@@ -410,7 +415,8 @@ abbreviatedBlockTable =
             content: content === "" ? [] 
                                     : content,
             name,
-            config:[]
+            config:[],
+            location:location()
           }
   }
 
@@ -436,7 +442,8 @@ abbreviatedBlock =
                                                   ],
                                         }
                                       ],
-            name
+            name,
+            location:location()
           }
   }
 
@@ -486,7 +493,8 @@ paragraphBlockRaw =
               content: content === "" ? [] : [{ type:'verbatim', value:content}],
               name,
               margin:vmargin,
-              config
+              config,
+              location:location()
             }
   } 
 
@@ -503,7 +511,8 @@ paragraphBlockTable =
               content: content === "" ? [] : content,
               name,
               margin:vmargin,
-              config
+              config,
+              location:location()
             }
   } 
 
@@ -530,7 +539,8 @@ paragraphBlock =
                                       ],
               name,
               margin:vmargin,
-              config
+              config,
+              location:location()
             }
   } 
 
