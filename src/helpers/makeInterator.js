@@ -1,6 +1,6 @@
 'use strict'
 
-module.exports  = ( rules ) => {
+module.exports  = function thisFunc( rules )  {
 
     function interator (node, context)  {
         if (node instanceof Array) {
@@ -15,7 +15,17 @@ module.exports  = ( rules ) => {
         reversed.reverse()
         const ruleIndex = reversed.findIndex( rule => rule.isFor(node) )
         if (ruleIndex !== -1 ){
-            reversed[ruleIndex].fn( node, context, interator )
+            // try to find next rule
+            const nextRuleSet = reversed.slice(ruleIndex+1)
+            const nextRuleIndex = nextRuleSet.findIndex( rule => rule.isFor(node) )
+            const defaultFn = ( n = node, ctx = context, localInterator = interator ) => {
+                if (nextRuleIndex !== -1 ){
+                    nextRuleSet[nextRuleIndex].fn( n, ctx, localInterator, ()=>{/* empty default action */})
+                } else {
+                    return
+                }
+            }
+            reversed[ruleIndex].fn( node, context, interator, defaultFn)
         } else {
             // not found rule
             const newNode = { ...node }
