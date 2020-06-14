@@ -1,3 +1,6 @@
+# 0.0.22
+- add positioning for source text
+
 # 0.0.21
 - spaces around identifier #8
 - fix trailing spaces #9
