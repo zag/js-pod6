@@ -293,7 +293,8 @@ function peg$parse(input, options) {
       peg$c116 = function(vmargin, name, config, content, vmargin2, res) { return {
                                     ...res,
                                     text:text(),
-                                    config
+                                    config,
+                                    location:location()
                                     }},
       peg$c117 = /^[+-=_|]/,
       peg$c118 = peg$classExpectation([["+", "="], "_", "|"], false, false),
@@ -372,7 +373,8 @@ function peg$parse(input, options) {
       peg$c136 = function(vmargin, name, config, content, vmargin2, res) {return {
                                     ...res,
                                     text:text(),
-                                    config
+                                    config,
+                                    location:location()
                                     }},
       peg$c137 = function(vmargin, name, config, nodes) { return nodes},
       peg$c138 = function(vmargin, name, config, tvmargin, text) {
@@ -396,14 +398,15 @@ function peg$parse(input, options) {
                           type:'block',
                           content,
                           name,
-                          margin:vmargin
+                          margin:vmargin,
                         }
                 },
       peg$c140 = function(vmargin, name, config, content, vmargin2, res) { 
                   return { 
                           ...res,
                           text:text(),
-                          config
+                          config,
+                          location:location(),
                           }
                 },
       peg$c141 = function() {
@@ -416,7 +419,8 @@ function peg$parse(input, options) {
                                         type:'text',
                                         value:text()
                                       }
-                                    ] 
+                                    ],
+                            location:location(),
                           }
                   },
       peg$c142 = function() { return  {empty:1}},
@@ -436,7 +440,8 @@ function peg$parse(input, options) {
                   type: isNamedBlock(name) ? 'namedBlock' : 'block',
                   content: content === "" ? [] : [{ type:'verbatim', value:content}],
                   name,
-                  config:[]
+                  config:[],
+                  location:location()
                 }
         },
       peg$c148 = function(vmargin, name) { return name === 'table' },
@@ -448,7 +453,8 @@ function peg$parse(input, options) {
                   content: content === "" ? [] 
                                           : content,
                   name,
-                  config:[]
+                  config:[],
+                  location:location()
                 }
         },
       peg$c151 = function(vmargin, name, content) { 
@@ -469,7 +475,8 @@ function peg$parse(input, options) {
                                                         ],
                                               }
                                             ],
-                  name
+                  name,
+                  location:location()
                 }
         },
       peg$c152 = "= ",
@@ -509,7 +516,8 @@ function peg$parse(input, options) {
                     content: content === "" ? [] : [{ type:'verbatim', value:content}],
                     name,
                     margin:vmargin,
-                    config
+                    config,
+                    location:location()
                   }
         },
       peg$c164 = function(vmargin, marker, name, config) { return name === 'table' },
@@ -520,7 +528,8 @@ function peg$parse(input, options) {
                     content: content === "" ? [] : content,
                     name,
                     margin:vmargin,
-                    config
+                    config,
+                    location:location()
                   }
         },
       peg$c167 = function(vmargin, marker, name, config, content) { 
@@ -542,7 +551,8 @@ function peg$parse(input, options) {
                                             ],
                     name,
                     margin:vmargin,
-                    config
+                    config,
+                    location:location()
                   }
         },
       peg$c168 = /^[a-zA-Z]/,
