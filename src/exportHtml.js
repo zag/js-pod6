@@ -118,7 +118,7 @@ const rules = {
         interator( node.value ) 
     },
     ':blankline': emptyContent,
-
+    ':ambient': emptyContent,
     // Directives 
     ':config': setFn(( node, ctx ) => {
         // setup context

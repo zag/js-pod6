@@ -128,3 +128,14 @@ U<unusual> or distinctive;
 Such content would typically be rendered in a K<fixed-width font>
 Such content would typically be rendered in a T<fixed-width font>
 #---
+
+# Ambient code
+#---
+=d
+Such content would typically be rendered in a K<fixed-width font>
+Such content would typically be rendered in a T<fixed-width font>
+=begin pod
+=head1 test
+=end pod
+#---
+

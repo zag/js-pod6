@@ -1,0 +1,58 @@
+=d
+Such content would typically be rendered in a K<fixed-width font>
+Such content would typically be rendered in a T<fixed-width font>
+=begin pod
+=head1 test
+=end pod
+~~~~~~~
+[
+  {
+    "text": "=d\nSuch content would typically be rendered in a K<fixed-width font>\nSuch content would typically be rendered in a T<fixed-width font>\n",
+    "type": "para",
+    "margin": "",
+    "content": [
+      "=d\nSuch content would typically be rendered in a ",
+      {
+        "content": [
+          "fixed-width font"
+        ],
+        "type": "fcode",
+        "name": "K"
+      },
+      "\nSuch content would typically be rendered in a ",
+      {
+        "content": [
+          "fixed-width font"
+        ],
+        "type": "fcode",
+        "name": "T"
+      },
+      "\n"
+    ]
+  },
+  {
+    "type": "block",
+    "content": [
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "test\n",
+            "margin": "",
+            "content": [
+              "test\n"
+            ]
+          }
+        ],
+        "name": "head",
+        "level": "1"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=head1 test\n=end pod\n",
+    "config": []
+  }
+]

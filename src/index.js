@@ -35,8 +35,8 @@ function makeTree () {
         return chain
     }
     
-    function parse ( src , opt = {skipChain:0} ) {
-        let tree = parser.parse( src )
+    function parse ( src , opt = {skipChain:0, podMode:1} ) {
+        let tree = parser.parse( src ,{podMode:opt.podMode})
         if ( !opt.skipChain ) {
             for ( let i = 0 ; i < plugins.length; i++ ) {
                 const plugin = plugins[i]

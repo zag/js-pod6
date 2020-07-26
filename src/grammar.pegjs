@@ -14,7 +14,70 @@
 
 }
 
-Document = nodes:Element*  { return  nodes }
+// Document = nodes:Ambient  { console.log(nodes); return  nodes }
+Document = &{ return options.podMode === 1 } nodes:Element*  {return nodes} / ambient_content
+
+ambient_content = node:( podblock / $( !podblock .)+ {return {text:text(), type:'ambient'}} )* 
+
+podblock = 
+    vmargin:$(_) 
+    markerBegin name:identifier _ config:pod_configuration 
+    &{ return name === 'pod' }
+    // set type of block
+      content:( nodes:(
+          blankline
+          / delimitedBlockRaw
+          / delimitedBlockTable
+          / delimitedBlock
+          / paragraphBlockRaw
+          / paragraphBlockTable 
+          / paragraphBlock
+          / aliasDirective
+          / configDirective
+          / abbreviatedBlockRaw
+          / abbreviatedBlockTable
+          / abbreviatedBlock
+          ) { return nodes} 
+  / tvmargin:$( hs* ) 
+    text:$(text_content+)
+    {
+      const type = name.match(/pod/) 
+                  && 
+                  (tvmargin.length - vmargin.length) > 0 ? 'code' : 'para'
+      return {
+              text, 
+              margin:tvmargin,
+              type,
+              content: [
+                        {
+                          type: type === 'code' ? 'verbatim' : 'text',
+                          value:text
+                        }
+                       ],
+              }
+    }
+  )* 
+  vmargin2:$(_) res:(
+          markerEnd ename:identifier &{ return name === ename } Endline? 
+          { 
+            return { 
+                    type:'block',
+                    content,
+                    name,
+                    margin:vmargin,
+                  }
+          } 
+          ) 
+          // TODO: fix this 
+          &{return  true || vmargin === vmargin2} 
+          { 
+            return { 
+                    ...res,
+                    text:text(),
+                    config,
+                    location:location(),
+                    }
+          }
 
 Element =  delimitedBlockRaw
          / delimitedBlockTable
