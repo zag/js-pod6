@@ -15,7 +15,7 @@
 }
 
 // Document = nodes:Ambient  { console.log(nodes); return  nodes }
-Document = &{ return options.podMode === 1 } nodes:Element*  {return nodes} / ambient_content
+Document = &{ return !!options.podMode === true } nodes:Element*  {return nodes} / ambient_content
 
 ambient_content = node:( podblock / $( !podblock .)+ {return {text:text(), type:'ambient'}} )* 
 
@@ -54,6 +54,7 @@ podblock =
                           value:text
                         }
                        ],
+              location:location(),
               }
     }
   )* 
@@ -400,6 +401,7 @@ delimitedBlock =
                           value:text
                         }
                        ],
+              location:location(),
               }
     }
   )* 
@@ -503,6 +505,7 @@ abbreviatedBlock =
                                                       value:content
                                                     }
                                                   ],
+                                          location:location(),
                                         }
                                       ],
             name,
@@ -597,7 +600,8 @@ paragraphBlock =
                                                     }
                                                   ],
                                           margin:vmargin,
-                                          text:content
+                                          text:content,
+                                          location:location(),
                                         }
                                       ],
               name,

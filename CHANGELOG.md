@@ -1,3 +1,7 @@
+# 0.0.23
+- add ambient block support
+- add location for para
+
 # 0.0.22
 - add positioning for source text
 
