@@ -1,5 +1,5 @@
 'use strict'
-exports.makeAttrs  = ( node, ctx) => {
+exports.makeAttrs  = ( node, ctx = {} ) => {
     const config = node.config instanceof Array ? node.config : []
     // add config's from ctx
     let configured = []
