@@ -20,10 +20,6 @@ Element =  delimitedBlockRaw
          / delimitedBlockTable
          / delimitedBlock
          / paragraphBlockRaw 
-          / paragraphBlockRaw
-         / paragraphBlockRaw 
-         / paragraphBlockTable
-          / paragraphBlockTable 
          / paragraphBlockTable
          / paragraphBlock
          / aliasDirective
@@ -66,12 +62,12 @@ char = [^\n\r]
 newline = '\n' / '\r' '\n'?
 EOL = newline / !.
 emptyline = $(hs* [\n\r])
-blankline = $( hs* [\n\r]) { return { type:'blankline'}}
+blankline = $( hs* [\n\r]) { return { type:'blankline' } }
 markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
 markerConfig = '=config'
-markerAbbreviatedBlock = '=' name:identifier  { return name }
+markerAbbreviatedBlock = '=' !( 'for' / 'begin' /  'end' / 'config' / 'alias' ) name:identifier  { return name }
 markers = markerBegin / markerEnd / markerFor / markerConfig
 Text "text" = $(c:char+)
 text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
@@ -137,8 +133,8 @@ attributes =  allow_attribute / _ ':' isFalse:[!]? key:identifier value:(
   '(' _ res:(array:array_items {
                                 // if one element (23) set type to 'value' 
                                  return  (array.length > 1)
-                                        ? { type:'array', value:array}
-                                        : { type:'value', value:array[0]};
+                                        ? { type:'array', value:array }
+                                        : { type:'value', value:array[0] };
                                } 
         / 
         $(!(')'/'(') .)+ {return { value:text() } }) _ ')' 
@@ -201,7 +197,7 @@ delimitedBlockRaw =
                           const type = isNamedBlock(name) ? 'namedBlock' : 'block'
                           return {
                                   type:type,
-                                  content: content === "" ? [] : [{ type:'verbatim', value:content}],
+                                  content: content === "" ? [] : [{ type:'verbatim', value:content }],
                                   // content: content === "" ? [] : [content],
                                   name,
                                   margin:vmargin
