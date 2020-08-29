@@ -1,3 +1,8 @@
+# 0.0.24
+- fix anchors in L<> #10,  
+- fix formating codes inside =item #06
+- improve ambient mode
+
 # 0.0.23
 - add ambient block support
 - add location for para
