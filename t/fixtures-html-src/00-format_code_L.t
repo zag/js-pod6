@@ -19,5 +19,9 @@ L<C<P5-X>|https://modules.raku.org/dist/P5-X>
 L<https://www.example.com>
 #---
 
+#---
+=for pod
+=item L<https://www.python.org/dev/peps/pep-0001/#what-is-a-pep>
+#---
 
 

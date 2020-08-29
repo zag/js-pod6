@@ -12,7 +12,7 @@ module.exports = () =>( tree )=>{
                     if( node.content[0] ) {
                         const startText = node.content[0]
                         if ( startText.text ) {
-                            let re = /(\s*#\s*)/
+                            let re = /^(\s*#\s*)/
                             const match = re.exec(startText.text)
                             if (match) {
                                 startText.text = startText.text.replace(re, '')

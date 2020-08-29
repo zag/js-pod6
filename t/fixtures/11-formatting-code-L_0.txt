@@ -1,0 +1,35 @@
+=item L<https://www.python.org/dev/peps/pep-0001/#what-is-a-pep>
+~~~~~~~
+[
+  {
+    "type": "list",
+    "level": 1,
+    "content": [
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "para",
+            "text": "L<https://www.python.org/dev/peps/pep-0001/#what-is-a-pep>\n",
+            "margin": "",
+            "content": [
+              {
+                "content": [
+                  "https://www.python.org/dev/peps/pep-0001/#what-is-a-pep"
+                ],
+                "type": "fcode",
+                "name": "L",
+                "meta": null
+              },
+              "\n"
+            ]
+          }
+        ],
+        "name": "item",
+        "level": 1
+      }
+    ],
+    "list": "itemized"
+  }
+]
