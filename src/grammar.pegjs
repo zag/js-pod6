@@ -67,7 +67,8 @@ markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
 markerConfig = '=config'
-markerAbbreviatedBlock = '=' !( 'for' / 'begin' /  'end' / 'config' / 'alias' ) name:identifier  { return name }
+//TODO: add more stricts ( 'for' / 'begin' /  'end' / 'config' / 'alias' )
+markerAbbreviatedBlock = '='  name:identifier  { return name }
 markers = markerBegin / markerEnd / markerFor / markerConfig
 Text "text" = $(c:char+)
 text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
