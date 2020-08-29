@@ -1,9 +1,16 @@
 =d
 Such content would typically be rendered in a K<fixed-width font>
 Such content would typically be rendered in a T<fixed-width font>
-=begin pod
 =head1 test
+=begin pod
+test
+e
+=head1 sd
+
 =end pod
+=head2 test 
+
+ambient again
 ~~~~~~~
 [
   {
@@ -31,28 +38,82 @@ Such content would typically be rendered in a T<fixed-width font>
     ]
   },
   {
+    "margin": "",
     "type": "block",
     "content": [
+      {
+        "type": "para",
+        "text": "test\n",
+        "margin": "",
+        "content": [
+          "test\n"
+        ]
+      }
+    ],
+    "name": "head",
+    "level": "1"
+  },
+  {
+    "type": "block",
+    "content": [
+      {
+        "text": "test\ne\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "test\ne\n"
+        ]
+      },
       {
         "margin": "",
         "type": "block",
         "content": [
           {
             "type": "para",
-            "text": "test\n",
+            "text": "sd\n",
             "margin": "",
             "content": [
-              "test\n"
+              "sd\n"
             ]
           }
         ],
         "name": "head",
         "level": "1"
+      },
+      {
+        "type": "blankline"
       }
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n=head1 test\n=end pod\n",
+    "text": "=begin pod\ntest\ne\n=head1 sd\n\n=end pod\n",
     "config": []
+  },
+  {
+    "margin": "",
+    "type": "block",
+    "content": [
+      {
+        "type": "para",
+        "text": "test \n",
+        "margin": "",
+        "content": [
+          "test \n"
+        ]
+      }
+    ],
+    "name": "head",
+    "level": "2"
+  },
+  {
+    "type": "blankline"
+  },
+  {
+    "text": "ambient again\n",
+    "type": "para",
+    "margin": "",
+    "content": [
+      "ambient again\n"
+    ]
   }
 ]
