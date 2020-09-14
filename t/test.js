@@ -1,5 +1,6 @@
-const clean_plugin = require('./../src/plugin-clean-location')
-var toTree = require('../src/').toTree
+
+const clean_plugin = require('./../built/plugin-clean-location').default
+var toTree = require('../built/').toTree
  const cleanTree = toTree().use(clean_plugin)
 const allFixtures  = require('./load-fextures').allFixures
 
