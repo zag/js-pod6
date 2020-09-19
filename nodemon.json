@@ -3,6 +3,6 @@
   "watch": ["./src"],
   "ignore": [ "README"],
   "ext": "pegjs",
-  "exec": "pegjs -o built/grammar.js src/grammar.pegjs && pegjs -o built/grammarfc.js src/grammarfc.pegjs",
+  "exec": "yarn build:pegjs",
   "restartable": "rs"
 }
