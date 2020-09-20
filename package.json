@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "postversion": "git commit package.json CHANGELOG.md -m \"v$npm_package_version\" && npm run tag && git push && git push --tags",
-    "clean" : "rm -rf built",
+    "clean": "rm -rf built",
     "test": "yarn build && jest",
     "build": "run-s build:ts build:pegjs",
     "build:ts": "tsc",
@@ -34,6 +34,7 @@
   "author": "Alexandr Zahatski",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^14.11.1",
     "deep-equal": "^2.0.1",
     "events": "^3.1.0",
     "glob": "^7.1.6",
