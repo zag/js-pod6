@@ -1,3 +1,7 @@
+# 0.0.25
+- move to TypeScript
+- remove namedBlock as type
+
 # 0.0.24
 - fix anchors in L<> #10,  
 - fix formating codes inside =item #06
