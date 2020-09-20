@@ -4,7 +4,7 @@ spaced   text
 ~~~~~~~
 [
   {
-    "type": "namedBlock",
+    "type": "block",
     "content": [
       {
         "type": "verbatim",

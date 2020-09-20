@@ -1,5 +1,14 @@
 
 const { makeRule, makePlug } = require('./makeQuery')
+      // the following names: MyBlock, myBlock are use for extending pod6
+export function isNamedBlock(name) {
+        return (
+            name !== name.toLowerCase() 
+                && 
+            name !== name.toUpperCase() 
+          )
+      }
+    
 function flattenDeep(arr) {
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }

@@ -1,7 +1,6 @@
 var fcparser = require("./grammarfc");
 import makeTransformer from './helpers/makeTransformer'
-// const makeTransformer:(par:MakeTransformerParams)=>( tree:AST | Node, {} ) => AST = require('./helpers/makeTransformer')
-// const makeAttrs = require('./helpers/config').makeAttrs
+import { isNamedBlock } from './helpers/makeTransformer'
 import makeAttrs from './helpers/config'
 import { Plugin, Node, nPara , AST, nText, nVerbatim } from './'
 
@@ -35,8 +34,13 @@ const middle:Plugin = () =>( tree )=>{
       // for code block not parse content by default
       if (isCodeBlock && allowValues.length == 0) return n
       const allowed = allowValues.sort()
+      
+      // this prevent from parsing content of named blocks
+      if ( isNamedBlock(n.name) ) {
+        return n
+      }
+      
       return makeTransformer({
-        ':namedBlock': ( n, ctx ) => n, // this prevent from parsing content of named blocks
         ':verbatim' : ( n:nVerbatim, ctx ) => { return fcparser.parse( n.value, { allowed } ) },
         ':text' : ( n:nText, ctx ) => { return fcparser.parse( n.value, { allowed } ) },
       })(n,{ ...ctx })

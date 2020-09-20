@@ -195,7 +195,7 @@ delimitedBlockRaw =
     vmargin2:$(_) res:( 
                         markerEnd ename:identifier &{ return name === ename } Endline? 
                         { 
-                          const type = isNamedBlock(name) ? 'namedBlock' : 'block'
+                          const type = 'block'
                           return {
                                   type:type,
                                   content: content === "" ? [] : [{ type:'verbatim', value:content }],
@@ -405,7 +405,7 @@ abbreviatedBlockRaw =
   { 
     return {
             margin:vmargin,
-            type: isNamedBlock(name) ? 'namedBlock' : 'block',
+            type: 'block',
             content: content === "" ? [] : [{ type:'verbatim', value:content}],
             name,
             config:[],
@@ -502,7 +502,7 @@ paragraphBlockRaw =
   content:$(!emptyline text_content)*
   { 
       return { 
-              type: isNamedBlock(name) ? 'namedBlock' : 'block',
+              type: 'block',
               content: content === "" ? [] : [{ type:'verbatim', value:content}],
               name,
               margin:vmargin,

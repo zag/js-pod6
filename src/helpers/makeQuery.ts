@@ -5,7 +5,6 @@ sample      |  type        | name
 'C:fcode'       fcode           C
 '<>'            fcode           any name, or /.+/
 'name'          block           'name'
-'Name'          namedBlock      'Name'
 ':blankline'    blankline       any name, or /.+/
 'C:fcode'       fcode           C
 '*:*', '*'      any type        any name

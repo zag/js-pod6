@@ -15,7 +15,7 @@ dd
     "type": "block",
     "content": [
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
@@ -27,7 +27,7 @@ dd
         "config": []
       },
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",

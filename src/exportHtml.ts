@@ -1,5 +1,6 @@
 import toAny from './exportAny'
 import { subUse, wrapContent, emptyContent, content, setFn, setContext } from './helpers/handlers'
+import { isNamedBlock } from './helpers/makeTransformer'
 import  makeAttrs  from './helpers/config'
 import htmlWriter from './writerHtml'
 import clean_plugin from './plugin-clean-location'
@@ -138,9 +139,6 @@ const rules = {
     // block =para
     'para': content,
     ':para':wrapContent('<p>', '</p>'),
-    //Named blocks for which no explicit class has been defined or loaded are
-    //usually not rendered by the standard renderers.
-    ':namedBlock':emptyContent,
     'head:block': subUse({
                        // inside head don't wrap into <p>
                             ':para' : content,
@@ -211,6 +209,12 @@ const rules = {
                 return isTypeBlock && name === name.toUpperCase()
             }
 
+            //Named blocks for which no explicit class has been defined or loaded are
+            //usually not rendered by the standard renderers.
+             if (isNamedBlock(node.name)) {
+                 return true
+             }
+
             if ( isSemanticBlock(node) ) { 
                 const name  = node.name
                 writer.writeRaw('<h1 class="')
@@ -219,8 +223,8 @@ const rules = {
                 writer.write (name )
                 writer.writeRaw('</h1>')
             } else {
-                 console.warn("Unhandled node" + JSON.stringify( node, null, 2))
-                }
+                console.warn("Unhandled node" + JSON.stringify( node, null, 2))
+            }
             if ( node.hasOwnProperty('content')) {
                 interator(node.content, ctx)
             }

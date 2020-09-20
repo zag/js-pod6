@@ -16,14 +16,6 @@ export interface nBlock {
      margin: string,
     // [name : string]:string,
 }
-export interface  NamedBlock  {
-    "type": "namedBlock",
-    "content": [],
-    "name": string,
-    "margin": string,
-    "config": []
-  }
-
 export interface  nCode   {
     "type": "code",
     "content": [],
@@ -51,7 +43,7 @@ export interface  nPara   {
 }
 
 export interface nVerbatim  { type:'verbatim', value:string }
-export type Node = NamedBlock | nBlock| nCode | nText| nPara | nVerbatim;
+export type Node = nBlock| nCode | nText| nPara | nVerbatim;
 export type AST = Array<Node>
 export type Plugin = ( opt : {
     skipChain: number;

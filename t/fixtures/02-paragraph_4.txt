@@ -17,7 +17,7 @@ Four, another delimited one
     "type": "block",
     "content": [
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
@@ -30,7 +30,7 @@ Four, another delimited one
         "config": []
       },
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
@@ -42,7 +42,7 @@ Four, another delimited one
         "config": []
       },
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
@@ -57,7 +57,7 @@ Four, another delimited one
         "type": "blankline"
       },
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
