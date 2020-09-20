@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "postversion": "git commit package.json CHANGELOG.md -m \"v$npm_package_version\" && npm run tag && git push && git push --tags",
+    "clean" : "rm -rf built",
     "test": "yarn build && jest",
-    "build": "run-p -r build:*",
+    "build": "run-s build:ts build:pegjs",
     "build:ts": "tsc",
     "build:pegjs": "pegjs -o built/grammar.js src/grammar.pegjs && pegjs -o built/grammarfc.js src/grammarfc.pegjs",
     "watch": "run-p -r watch:*",
     "watch:ts": "tsc -w --pretty",
     "watch:tests": "jest --watch -t \"test\"",
-    "watch:pegsj": "nodemon"
-
+    "watch:pegjs": "nodemon"
   },
   "bin": {
     "pod6html": "bin/pod6html"
