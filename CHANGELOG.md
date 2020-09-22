@@ -1,4 +1,5 @@
 # 0.0.25
+- fix delimited blocks inside code blocks interpreted as blocks rather than raw text #14
 - moved to TypeScript
 - removed namedBlock as type
 
