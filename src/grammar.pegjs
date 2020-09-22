@@ -190,7 +190,7 @@ delimitedBlockRaw =
      }
     content:$( 
             !markers t:Text Endline? 
-              / !markerEnd $(.)
+              / !(markerEnd ename:identifier &{ return name === ename } ) $(.)
               )+ 
     vmargin2:$(_) res:( 
                         markerEnd ename:identifier &{ return name === ename } Endline? 

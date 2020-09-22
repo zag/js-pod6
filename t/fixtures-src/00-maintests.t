@@ -154,3 +154,12 @@ test
 
 =end pod
 #---
+
+# Empty fcode #14
+#---
+=begin code
+=begin item1
+First
+=end item1
+=end code
+#---
