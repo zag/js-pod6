@@ -146,3 +146,11 @@ e
 ambient again
 #---
 
+#---
+=begin pod
+=item
+
+test
+
+=end pod
+#---

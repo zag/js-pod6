@@ -393,7 +393,7 @@ ambientBlock = line:(emptyline { return  {empty:1}}/ [\s]+ / text_content )+ { r
 
 abbreviatedBlockRaw = 
   vmargin:$(_) !markers
-  name:markerAbbreviatedBlock _ emptyline* 
+  name:markerAbbreviatedBlock _ emptyline? 
     &{  
      return ( 
        (name.match(/code|comment|output|input/))
@@ -415,7 +415,7 @@ abbreviatedBlockRaw =
 
 abbreviatedBlockTable = 
   vmargin:$(_) !markers
-  name:markerAbbreviatedBlock _ emptyline* 
+  name:markerAbbreviatedBlock _ emptyline? 
     &{ return name === 'table' }
   // set type of block
   &{  options.isDelimited = false; return true }
@@ -434,7 +434,7 @@ abbreviatedBlockTable =
 
 abbreviatedBlock = 
   vmargin:$(_) !markers
-  name:markerAbbreviatedBlock _ emptyline* 
+  name:markerAbbreviatedBlock _ emptyline?
   content:$(!emptyline text:text_content )*
   { 
     return {
