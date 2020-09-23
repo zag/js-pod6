@@ -1,7 +1,6 @@
-'use strict'
-const makeAttrs = require('./helpers/config').makeAttrs
 
-module.exports = () =>( tree )=>{
+import makeAttrs from './helpers/config'
+export default () =>( tree )=>{
   const isNodesEqual = ( n1, n2 ) => (
       // if nodes items 
       ( n1.name === 'item' ||  n1.name === 'defn' )&&  
@@ -10,7 +9,7 @@ module.exports = () =>( tree )=>{
       isNumbered(n1) === isNumbered(n2)
    ) 
 
-const isNumbered = ( node ) => Boolean(makeAttrs(node,{}).exists('numbered'))
+const isNumbered = ( node ) => Boolean(makeAttrs(node, {}).exists('numbered'))
 
 const group = ( a, level = 1 ) => {
   const isInListMode = ( a ) => { return  a.length > 0 && a[a.length-1].type === 'list' }

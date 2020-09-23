@@ -1,12 +1,11 @@
-'use strict'
-const { makeRule, makeRulesArray } = require('./makeQuery')
-const makeInterator = require('./makeInterator')
+import { makeRule, makeRulesArray, RuleObject,RuleHandler } from './makeQuery'
+import makeInterator from './makeInterator'
 
 /**
  * wrap content by open and closed tags
  */
-exports.wrapContent = 
-    ( pre, post ) => 
+export const wrapContent = 
+    ( pre, post ):RuleHandler => 
         ( writer, processor ) => 
             ( node, ctx, interator )=>
                 {
@@ -17,11 +16,11 @@ exports.wrapContent =
 /**
  * emptyContent - skip any child node
  */
-exports.emptyContent = () => () => ()=>{}
+export const emptyContent = ():RuleHandler => () => ()=>{}
 /**
  * content - process childs as regular content 
  */
-exports.content = ( writer, processor )=>( node,ctx, interator )=>{ node.content && interator(node.content, ctx) }
+export const content:RuleHandler = ( writer, processor )=>( node,ctx, interator )=>{ node.content && interator(node.content, ctx) }
 
 /** 
 
@@ -30,7 +29,7 @@ Set hander after call with node
 ':para':setFn((node,ctx) => (ctx.parents || [] ).includes('head') ? content : wrapContent('<p>','</p>'),
 
 */
-exports.setFn = ( check ) => ( writer, processor ) => {
+export const setFn = ( check ):RuleHandler => ( writer, processor ) => {
     return ( node, ctx, interator ) =>{
         check( node, ctx )( writer, processor )( node, ctx, interator )
     }
@@ -47,7 +46,7 @@ Set new context for handler
 
 */
 
-exports.setContext = ( ctx, fn ) => ( writer, processor ) => {
+export const setContext = ( ctx, fn ):RuleHandler => ( writer, processor ) => {
     return ( node, _, interator ) => {
         return fn( writer, processor )( node, ctx, interator )
        }
@@ -59,7 +58,7 @@ exports.setContext = ( ctx, fn ) => ( writer, processor ) => {
  * @param {*} check 
  * @param  {...any} fns 
  */
-const IfNode = ( check, ...fns ) => ( writer, processor ) => {
+const IfNode = ( check, ...fns ):RuleHandler => ( writer, processor ) => {
     return ( node, ctx, interator ) =>{
         check( node, ctx, ...fns.map( i => i( writer, processor ) ) )( node, ctx, interator )
     }
@@ -71,7 +70,7 @@ const IfNode = ( check, ...fns ) => ( writer, processor ) => {
  * @param {*} rules 
  * @param {*} processNode 
  */
-exports.subUse = ( rules, processNode ) => {
+export const subUse = ( rules: RuleObject, processNode ):RuleHandler => {
     const newFns = makeRulesArray(rules).reverse()
     return ( writer, processor ) => {
         // init new rules

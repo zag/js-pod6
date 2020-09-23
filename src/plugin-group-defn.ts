@@ -1,6 +1,5 @@
-'use strict'
 
-module.exports = () =>( tree )=>{
+export default () =>( tree )=>{
     const isNodesEqual = (n1, n2) => (
         // if nodes items 
         ( n1.name === 'item' ||  n1.name === 'defn' )&&  
@@ -54,7 +53,7 @@ const group = ( a ) => {
             }
         }
         if (item.content && item.type !== 'fcode') {
-          item.content = group( item.content, item.level + 1 )
+          item.content = group( item.content )
         }
         return item
     })

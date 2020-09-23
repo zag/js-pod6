@@ -17,7 +17,7 @@ Which, as we all know...
 ~~~~~~~
 [
   {
-    "type": "namedBlock",
+    "type": "block",
     "content": [
       {
         "type": "verbatim",

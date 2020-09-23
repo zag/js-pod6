@@ -1,9 +1,10 @@
-'use strict'
-const toAny = require('./exportAny')
-const { subUse, wrapContent, emptyContent, content, setFn, setContext } = require('../src/helpers/handlers')
-const makeAttrs = require('./helpers/config').makeAttrs
-const htmlWriter = require('./writerHtml')
-const clean_plugin = require('./plugin-clean-location')
+import toAny from './exportAny'
+import { subUse, wrapContent, emptyContent, content, setFn, setContext } from './helpers/handlers'
+import { isNamedBlock } from './helpers/makeTransformer'
+import  makeAttrs  from './helpers/config'
+import htmlWriter from './writerHtml'
+import clean_plugin from './plugin-clean-location'
+
 const rules = {
     ':text': ( writer, processor )=>( node, ctx, interator )=>{
         // handle text with content
@@ -55,6 +56,7 @@ const rules = {
     }
      */
     'N<>' : ( writer, processor ) => {
+        // console.log({writer})
         writer.addListener('end', ()=>{
             if ( !writer.hasOwnProperty('FOOTNOTES') ) { return }
             const footnotes = writer.FOOTNOTES
@@ -99,6 +101,7 @@ const rules = {
         interator(node.content, ctx)
         let entry = { node }
         if ( entry === null && node.content.length > 0) {
+            //@ts-ignore
              entry = [node.content[0]]
         } else { return }
         if ( !writer.hasOwnProperty('INDEXTERMS') ) { writer.INDEXTERMS = []}
@@ -136,9 +139,6 @@ const rules = {
     // block =para
     'para': content,
     ':para':wrapContent('<p>', '</p>'),
-    //Named blocks for which no explicit class has been defined or loaded are
-    //usually not rendered by the standard renderers.
-    ':namedBlock':emptyContent,
     'head:block': subUse({
                        // inside head don't wrap into <p>
                             ':para' : content,
@@ -197,9 +197,10 @@ const rules = {
      'row':wrapContent('<tr>','</tr>'),
      'column':wrapContent('<td>','</td>'),
 
-    }    
-const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
-    '*', ( writer, processor ) => ( node, ctx, interator ) => {
+    } 
+
+    const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
+    '*', ( writer, processor ) => {  return  ( node, ctx, interator ) => {
             const nodeName = node.name || ''
             // skip warnings for semantic blocks
             const isSemanticBlock = ( node ) => { 
@@ -208,21 +209,28 @@ const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
                 return isTypeBlock && name === name.toUpperCase()
             }
 
-            if ( isSemanticBlock(node) ) {
+            //Named blocks for which no explicit class has been defined or loaded are
+            //usually not rendered by the standard renderers.
+             if (isNamedBlock(node.name)) {
+                 return true
+             }
+
+            if ( isSemanticBlock(node) ) { 
                 const name  = node.name
-                const { write : w, writeRaw : raw } = writer
-                raw('<h1 class="')
-                       w( name )
-                raw('">')
-                       w( name )
-                raw('</h1>')
+                writer.writeRaw('<h1 class="')
+                writer.write( name )
+                writer.writeRaw('">')
+                writer.write (name )
+                writer.writeRaw('</h1>')
             } else {
-                 console.warn("Unhandled node" + JSON.stringify( node, null, 2))
-                }
+                console.warn("Unhandled node" + JSON.stringify( node, null, 2))
+            }
             if ( node.hasOwnProperty('content')) {
                 interator(node.content, ctx)
             }
         }
+    }
     ).use(rules)
 
-module.exports = toHtml
+export default toHtml
+//module.exports.default = toHtml

@@ -1,5 +1,4 @@
-'use strict'
-module.exports = () =>( tree )=>{
+export default () =>( tree )=>{
         const visit = (node)=>{
             if ( Array.isArray(node) ) {
                 node.forEach( i => { visit(i)})

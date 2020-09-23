@@ -1,0 +1,21 @@
+=begin code
+=begin item1
+First
+=end item1
+=end code
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "verbatim",
+        "value": "=begin item1\nFirst\n=end item1\n"
+      }
+    ],
+    "name": "code",
+    "margin": "",
+    "text": "=begin code\n=begin item1\nFirst\n=end item1\n=end code\n",
+    "config": []
+  }
+]

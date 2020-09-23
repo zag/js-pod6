@@ -1,11 +1,14 @@
-'use strict'
-const Events = require('events')
 const parse = require('.').parse
-const { makeRule, makePlug } = require('./helpers/makeQuery')
-const makeInterator = require('./helpers/makeInterator')
-const Writer = require('./writer')
+import { makeRule, makePlug, } from './helpers/makeQuery'
+import makeInterator from './helpers/makeInterator'
+import Writer from './writer'
 
-const toAny = ( options = {}, plugins = [] ) => {
+export type Options = {
+        processor?: any,
+        writer?:any
+}
+
+const toAny = ( options:Options = {}, plugins = [] ) => {
     let fns = plugins
     // setup pod6 processor
     const processor = options.processor || parse
@@ -18,7 +21,7 @@ const toAny = ( options = {}, plugins = [] ) => {
 
     }
     
-    function use( key, fn ) {
+    function use( key, fn? ) {
       if ( key instanceof Array ) {
          return toAny( options, [...fns, ...fn] )
       }
@@ -66,4 +69,4 @@ const toAny = ( options = {}, plugins = [] ) => {
     }
 }
 
-module.exports = toAny
+export default toAny

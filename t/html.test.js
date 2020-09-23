@@ -1,5 +1,5 @@
 
-var toHtml = require('../src').toHtml
+var toHtml = require('../built').toHtml
 const allFixtures  = require('./load-fextures').allHtmlFixures
 const cleanS = (str) => { return str}
 const toStr = (tree) =>  JSON.stringify(tree ,null, 2)

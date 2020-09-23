@@ -3,8 +3,7 @@
  * The first non-blank line of content is treated as a term being defined,
  * and the remaining content is treated as the definition for the term.
  */
-'use strict'
-const makeTransformer = require('./helpers/makeTransformer')
+import makeTransformer from './helpers/makeTransformer'
 function flattenDeep(arr) {
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
@@ -84,7 +83,7 @@ function flattenDeep(arr) {
    *  Main transforms
    */
 
-module.exports = () =>( tree )=>{
+  export default () =>( tree )=>{
   const transformer = makeTransformer({'table' : (node) => {
     let rows = []
     const collectValues = (row) => { rows.push(row.value) }
@@ -134,6 +133,6 @@ module.exports = () =>( tree )=>{
     
     return res
 }})
-return transformer(tree)
+return transformer(tree, {})
 }
 

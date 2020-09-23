@@ -1,6 +1,5 @@
-'use strict'
 
-module.exports  = function thisFunc( rules )  {
+function thisFunc ( rules )  {
 
     function interator (node, context)  {
         if (node instanceof Array) {
@@ -37,3 +36,4 @@ module.exports  = function thisFunc( rules )  {
     interator.rules = rules
     return interator
 }
+export default  thisFunc

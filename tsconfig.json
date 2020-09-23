@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "outDir": "./built",
+      "allowJs": true,
+      "target": "es5",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports":false,
+      // "resolveJsonModule":true,
+      "moduleResolution": "node",
+      // "alwaysStrict":true
+    },
+
+    "include": ["./src/**/*", "./package.json"]
+  }

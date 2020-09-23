@@ -1,0 +1,46 @@
+=begin pod
+=item
+
+test
+
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "list",
+        "level": 1,
+        "content": [
+          {
+            "margin": "",
+            "type": "block",
+            "content": [],
+            "name": "item",
+            "level": 1
+          },
+          {
+            "type": "blankline"
+          }
+        ],
+        "list": "itemized"
+      },
+      {
+        "text": "test\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "test\n"
+        ]
+      },
+      {
+        "type": "blankline"
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=item\n\ntest\n\n=end pod\n",
+    "config": []
+  }
+]

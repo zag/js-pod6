@@ -38,7 +38,7 @@
         "type": "blankline"
       },
       {
-        "type": "namedBlock",
+        "type": "block",
         "content": [
           {
             "type": "verbatim",
@@ -55,12 +55,9 @@
       {
         "text": "this is not code either\n",
         "margin": "    ",
-        "type": "code",
+        "type": "para",
         "content": [
-          {
-            "type": "verbatim",
-            "value": "this is not code either\n"
-          }
+          "this is not code either\n"
         ]
       },
       {
@@ -74,7 +71,10 @@
             "margin": "        ",
             "type": "para",
             "content": [
-              "this is not\n"
+              {
+                "type": "text",
+                "value": "this is not\n"
+              }
             ]
           }
         ],
@@ -94,7 +94,10 @@
             "margin": "        ",
             "type": "code",
             "content": [
-              "and this is not\n"
+              {
+                "type": "verbatim",
+                "value": "and this is not\n"
+              }
             ]
           }
         ],

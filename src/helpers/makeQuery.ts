@@ -5,14 +5,25 @@ sample      |  type        | name
 'C:fcode'       fcode           C
 '<>'            fcode           any name, or /.+/
 'name'          block           'name'
-'Name'          namedBlock      'Name'
 ':blankline'    blankline       any name, or /.+/
 'C:fcode'       fcode           C
 '*:*', '*'      any type        any name
 
 */
 
-const getQuery = function(k) {
+export interface  RuleHandler {
+    (writer, processor) : (node, ctx, interator) =>void
+}
+export type RuleObject = {
+    [name:string]:RuleHandler
+}
+export type Filter = { name:string, type?:string}  | { name?:any, type: 'block' | any } | {}
+
+export interface GetQuery {
+    (k:string) : Filter
+}
+
+const getQuery:GetQuery = function(k) {
     if (k === '*:*' || k === '*') {
         return {}
     }
@@ -20,7 +31,7 @@ const getQuery = function(k) {
        return { type:'fcode' }
    }
    // try to split 'name:type'
-   [name,type] = k.split(':')
+   let [name,type] = k.split(':')
    if ( name && type) { return { name, type } }
    if ( !name ) { 
        return { type }
@@ -33,19 +44,20 @@ const getQuery = function(k) {
        }
        return { name , type: 'block'}
    }
-   return [ name, type ]
+   return { name, type }
 }
 
-const  makePlug = (k) => {
+export const  makePlug = (k:string) => {
    const res = getQuery(k)
-   const { name, type } = res
+   // @ts-ignores
+   let { name , type } = res
    if ( type && type === '*') { return { name } }
    if ( name && name === '*') { return { type } }
    return res
 }
 
 // is - check if node have handler
-function is( query, node ) {
+export function is( query, node ) {
     function isEmpty( obj ) {
         for( var prop in obj ) {
             if( obj.hasOwnProperty(prop) )
@@ -73,7 +85,12 @@ function is( query, node ) {
     return true
 }
 
-const makeRule = ( query, fn ) => {
+export interface Rule {
+    ():{},
+    isFor(): void,
+    fn():void,
+}
+export const makeRule = ( query, fn ) => {
     rule.rule = query
     rule.isFor = isFor
     rule.fn = fn
@@ -87,8 +104,12 @@ const makeRule = ( query, fn ) => {
     }
 }
 
-
-function makeRulesArray( key, fn ) {
+interface makeRulesArray {
+     (key:Array<any>, fn?:Function):Array<any>
+    (key:RuleObject, fn?:Function):Array<any>
+    // (key:any, fn:Function):Array<any>
+}
+export const makeRulesArray:makeRulesArray = ( key, fn ) => {
     if ( key instanceof Array ) {
        // TODO handle arrays
     }
@@ -105,8 +126,3 @@ function makeRulesArray( key, fn ) {
     return [ makeRule( makePlug(key), fn ) ]
   }
 
-
-module.exports.makePlug = makePlug
-module.exports.is = is
-module.exports.makeRule = makeRule
-module.exports.makeRulesArray = makeRulesArray

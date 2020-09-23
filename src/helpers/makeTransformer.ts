@@ -1,11 +1,24 @@
-'use strict'
+
 const { makeRule, makePlug } = require('./makeQuery')
+      // the following names: MyBlock, myBlock are use for extending pod6
+export function isNamedBlock(name) {
+        return (
+            name !== name.toLowerCase() 
+                && 
+            name !== name.toUpperCase() 
+          )
+      }
+    
 function flattenDeep(arr) {
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
-module.exports  = ( rule ) => {
+
+interface UseFunc {
+    (key:any, fn?:any): boolean;
+  }
+const makeTransformer  = ( rule ) => {
     let rules = []
-    function use( key, fn ) {
+    function use( key, fn?:any )  {
         if ( key instanceof Array ) {
            console.log('unsupported param')
         }
@@ -21,7 +34,7 @@ module.exports  = ( rule ) => {
         rules.push( makeRule( makePlug(key), fn ) )
       }
 
-    function visiter (node, context)  {
+    function visiter (node, context:any = {} )  {
         if (node instanceof Array) {
             return flattenDeep(node.map( item => visiter(item, context) ))
         }
@@ -49,3 +62,4 @@ module.exports  = ( rule ) => {
     visiter.rules = rules
     return visiter
 }
+export default makeTransformer

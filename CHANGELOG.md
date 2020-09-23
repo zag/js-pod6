@@ -1,3 +1,8 @@
+# 0.0.25
+- fix delimited blocks inside code blocks interpreted as blocks rather than raw text #14
+- moved to TypeScript
+- removed namedBlock as type
+
 # 0.0.24
 - fix anchors in L<> #10,  
 - fix formating codes inside =item #06

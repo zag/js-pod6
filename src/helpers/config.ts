@@ -1,5 +1,15 @@
-'use strict'
-exports.makeAttrs  = ( node, ctx = {} ) => {
+export type Context = {
+    config?:any,
+}
+export interface Attr  {
+    getAllValues: (name: any) => any
+    getFirstValue: (name: any) => any
+    asHash: () => {}
+    (): {},
+    exists(name:string): boolean,
+}
+
+const makeAttrs  = ( node, ctx:Context = {} ):Attr => {
     const config = node.config instanceof Array ? node.config : []
     // add config's from ctx
     let configured = []
@@ -17,7 +27,7 @@ exports.makeAttrs  = ( node, ctx = {} ) => {
             result[a.name].push(a.value)
         }
     })
-    let resfn = function () {}
+    let resfn = function () {} as Attr;
     /**
      * check if prop exists
      * 
@@ -48,3 +58,4 @@ exports.makeAttrs  = ( node, ctx = {} ) => {
     
     return resfn
 }
+export default makeAttrs

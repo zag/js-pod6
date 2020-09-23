@@ -3,9 +3,8 @@
  * The first non-blank line of content is treated as a term being defined,
  * and the remaining content is treated as the definition for the term.
  */
-'use strict'
-const makeTransformer = require('./helpers/makeTransformer')
-module.exports = () =>( tree )=>{
+import makeTransformer from './helpers/makeTransformer'
+export default () =>( tree )=>{
   const transformer = makeTransformer({'defn' : (node) => {
 
     // get first non blank block
@@ -45,6 +44,6 @@ module.exports = () =>( tree )=>{
     node.content = newContent
     return node
   }})
-  return transformer(tree)
+  return transformer(tree, {})
 }
 

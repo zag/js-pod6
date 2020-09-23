@@ -1,11 +1,19 @@
 {
   "name": "pod6",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "Pod6 is an easy-to-use markup language",
   "main": "index.js",
   "scripts": {
     "postversion": "git commit package.json CHANGELOG.md -m \"v$npm_package_version\" && npm run tag && git push && git push --tags",
-    "test": "jest"
+    "clean": "rm -rf built",
+    "test": "yarn build && jest",
+    "build": "run-s build:ts build:pegjs",
+    "build:ts": "tsc",
+    "build:pegjs": "pegjs -o built/grammar.js src/grammar.pegjs && pegjs -o built/grammarfc.js src/grammarfc.pegjs",
+    "watch": "run-p -r watch:*",
+    "watch:ts": "tsc -w --pretty",
+    "watch:tests": "jest --watch -t \"test\"",
+    "watch:pegjs": "nodemon"
   },
   "bin": {
     "pod6html": "bin/pod6html"
@@ -26,12 +34,14 @@
   "author": "Alexandr Zahatski",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^14.11.1",
     "deep-equal": "^2.0.1",
     "events": "^3.1.0",
     "glob": "^7.1.6",
     "jest": "^24.9.0",
     "jest-extended": "^0.11.2",
     "nodemon": "^2.0.2",
+    "npm-run-all": "^4.1.5",
     "pegjs": "^0.10.0"
   }
 }
