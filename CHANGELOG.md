@@ -1,3 +1,6 @@
+# 0.0.26
+- fix package.json
+
 # 0.0.25
 - fix delimited blocks inside code blocks interpreted as blocks rather than raw text #14
 - moved to TypeScript
