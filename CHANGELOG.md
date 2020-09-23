@@ -1,3 +1,6 @@
+# 0.0.28
+- fix gitflow
+
 # 0.0.27
 - fix bin/pod6html
 
