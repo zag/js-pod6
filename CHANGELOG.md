@@ -1,3 +1,6 @@
+# 0.0.27
+- fix bin/pod6html
+
 # 0.0.26
 - fix package.json
 
