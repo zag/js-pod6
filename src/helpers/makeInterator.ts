@@ -24,12 +24,12 @@ function thisFunc ( rules )  {
                     return
                 }
             }
-            reversed[ruleIndex].fn( node, context, interator, defaultFn)
+            return reversed[ruleIndex].fn( node, context, interator, defaultFn)
         } else {
             // not found rule
             const newNode = { ...node }
             if ( newNode.hasOwnProperty('content') ) {
-                interator( newNode.content, context )
+                return interator( newNode.content, context )
             }
         }
     }

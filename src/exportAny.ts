@@ -1,7 +1,9 @@
-const parse = require('.').parse
+
 import { makeRule, makePlug, } from './helpers/makeQuery'
 import makeInterator from './helpers/makeInterator'
 import Writer from './writer'
+import { parse } from './'
+// const parse = require('.').parse
 
 export type Options = {
         processor?: any,
@@ -57,7 +59,7 @@ const toAny = ( options:Options = {}, plugins = [] ) => {
         const tree = ( "string" === typeof src ) ? processor(src) : src 
         const context = {}
         writer.startWrite()
-        interator( tree, context )
+        const result = interator( tree, context )
         writer.endWrite()
         return {
            errors : writer.errors,
@@ -65,6 +67,7 @@ const toAny = ( options:Options = {}, plugins = [] ) => {
            valueOf: () => res,
            indexingTerms: writer.INDEXTERMS,
            annotations: writer.FOOTNOTES,
+           interator: result
         }
     }
 }
