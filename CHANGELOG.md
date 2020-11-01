@@ -1,5 +1,8 @@
 # Upcoming
 
+- implement =data block
+- add support for :nested() config param
+
 # 0.0.29
 - improve internal AST processing api
 
