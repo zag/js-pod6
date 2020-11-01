@@ -1,3 +1,5 @@
+import Writer from '../writer'
+
 /**
 sample      |  type        | name
 ----------------------------------
@@ -12,7 +14,7 @@ sample      |  type        | name
 */
 
 export interface  RuleHandler {
-    (writer, processor) : (node, ctx, interator) =>void
+    (writer:Writer, processor) : (node, ctx, interator) =>void
 }
 export type RuleObject = {
     [name:string]:RuleHandler

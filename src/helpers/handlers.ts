@@ -1,5 +1,6 @@
 import { makeRule, makeRulesArray, RuleObject,RuleHandler } from './makeQuery'
 import makeInterator from './makeInterator'
+import  makeAttrs  from './config'
 
 /**
  * wrap content by open and closed tags
@@ -82,6 +83,39 @@ export const subUse = ( rules: RuleObject, processNode ):RuleHandler => {
         return ( node, ctx, interator ) => {
             if ( !subInterator ) subInterator = makeInterator([ ...interator.rules, ...inited ])
             processNodeInited( node, ctx, subInterator )
+        }
+     }
+}
+
+/**
+ * Add support nesting 
+ * 
+ * @param {*} rules 
+ * @param {*} implicitLevel - default level of nesting 
+ *  
+ */
+
+export const handleNested = ( defaultHandler:RuleHandler, implicitLevel?:number ):RuleHandler => {
+    return ( writer, processor ) => {
+
+        const defaultHandlerInited = defaultHandler( writer, processor )
+        
+        return ( node, ctx, interator ) => {
+
+                const nesting = makeAttrs(node, ctx).getFirstValue('nested') || implicitLevel
+                
+                // add nesting level
+                if ( nesting !== undefined ) {
+                    writer.addLevel(nesting)
+                }
+
+                defaultHandlerInited( node, ctx, interator )
+
+                // remove nesting level
+                if ( nesting !== undefined ) {
+                    writer.removeLevel(nesting)
+                }
+
         }
      }
 }

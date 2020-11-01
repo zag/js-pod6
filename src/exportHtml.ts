@@ -1,5 +1,5 @@
 import toAny from './exportAny'
-import { subUse, wrapContent, emptyContent, content, setFn, setContext } from './helpers/handlers'
+import { subUse, wrapContent, emptyContent, content, setFn, handleNested } from './helpers/handlers'
 import { isNamedBlock } from './helpers/makeTransformer'
 import  makeAttrs  from './helpers/config'
 import htmlWriter from './writerHtml'
@@ -113,7 +113,7 @@ const rules = {
 
     'pod': content,
     ':code': wrapContent('<pre><code>', '</code></pre>'),
-    'code': wrapContent('<pre><code>', '</code></pre>'),
+    'code': handleNested( wrapContent('<pre><code>', '</code></pre>') ),
     'data': emptyContent,
     ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
         if (node.error) {
@@ -139,7 +139,7 @@ const rules = {
         return emptyContent}),
     
     // block =para
-    'para': content,
+    'para': handleNested( content ),
     ':para':wrapContent('<p>', '</p>'),
     'head:block': subUse({
                        // inside head don't wrap into <p>
@@ -170,31 +170,33 @@ const rules = {
     'comment:block': emptyContent,
     'defn':wrapContent('','</dd>'),
     'term:para': wrapContent('<dt>','</dt><dd>'),
-    // TODO: handle levels of nesting
-    'nested': wrapContent('<blockquote>', '</blockquote>'),
-    'output': wrapContent('<blockquote><pre><samp>', '</samp></pre></blockquote>'),
-    'input': wrapContent('<blockquote><pre><kbd>', '</kbd></pre></blockquote>'),
+    'nested': handleNested( content, 1 ),
+    'output': handleNested( wrapContent('<pre><samp>', '</samp></pre>'), 1),
+    'input':  handleNested( wrapContent('<pre><kbd>', '</kbd></pre>'), 1),
     // table section
-    'table:block' : 
-          subUse({
-                    // TODO: rename table's 'head' to table-head
-                    'head': subUse({
-                                        'column': wrapContent('<th>','</th>')
-                                    },
-                                    wrapContent('<tr>','</tr>')
-                                    )},
-                     ( writer, processor ) => ( node, ctx, interator ) => {
-                            const conf = makeAttrs(node, ctx)
-                            writer.writeRaw('<table>')
-                            if ( conf.exists('caption') ) {
-                                writer.writeRaw('<caption>')
-                                writer.write(conf.getFirstValue('caption'))
-                                writer.writeRaw('</caption>')
-                            }
-                            interator(node.content, ctx)
-                            writer.writeRaw('</table>')
-                    }
-                ),
+    'table:block' : handleNested(
+                        subUse(
+                                {
+                                    // TODO: rename table's 'head' to table-head
+                                    'head': subUse({
+                                                        'column': wrapContent('<th>','</th>')
+                                                    },
+                                                    wrapContent('<tr>','</tr>')
+                                                    )
+                                },
+                                ( writer, processor ) => ( node, ctx, interator ) => {
+                                            const conf = makeAttrs(node, ctx)
+                                            writer.writeRaw('<table>')
+                                            if ( conf.exists('caption') ) {
+                                                writer.writeRaw('<caption>')
+                                                writer.write(conf.getFirstValue('caption'))
+                                                writer.writeRaw('</caption>')
+                                            }
+                                            interator(node.content, ctx)
+                                            writer.writeRaw('</table>')
+                                    }
+                            )
+                    ),
     ':separator' : emptyContent,
      'row':wrapContent('<tr>','</tr>'),
      'column':wrapContent('<td>','</td>'),
@@ -235,4 +237,3 @@ const rules = {
     ).use(rules)
 
 export default toHtml
-//module.exports.default = toHtml
