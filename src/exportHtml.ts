@@ -110,9 +110,11 @@ const rules = {
          })
      },
     'Z<>': emptyContent,
+
     'pod': content,
     ':code': wrapContent('<pre><code>', '</code></pre>'),
     'code': wrapContent('<pre><code>', '</code></pre>'),
+    'data': emptyContent,
     ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
         if (node.error) {
             console.error('err')

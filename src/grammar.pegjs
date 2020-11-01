@@ -183,7 +183,7 @@ delimitedBlockRaw =
     markerBegin name:identifier _ config:pod_configuration 
     &{ 
      return ( 
-       (name.match(/code|comment|output|input/))
+       (name.match(/code|comment|output|input|data/))
         || 
         isNamedBlock(name)
       )
@@ -199,7 +199,6 @@ delimitedBlockRaw =
                           return {
                                   type:type,
                                   content: content === "" ? [] : [{ type:'verbatim', value:content }],
-                                  // content: content === "" ? [] : [content],
                                   name,
                                   margin:vmargin
                                 }
@@ -396,7 +395,7 @@ abbreviatedBlockRaw =
   name:markerAbbreviatedBlock _ emptyline? 
     &{  
      return ( 
-       (name.match(/code|comment|output|input/))
+       (name.match(/code|comment|output|input|data/))
         || 
         isNamedBlock(name)
       )
@@ -494,7 +493,7 @@ paragraphBlockRaw =
   marker:markerFor  name:identifier _ config:pod_configuration 
       &{  
      return ( 
-       (name.match(/code|comment|output|input/))
+       (name.match(/code|comment|output|input|data/))
         || 
         isNamedBlock(name)
       )

@@ -1,0 +1,92 @@
+=begin pod
+=begin data :key<Virtues>
+Laziness
+
+Impatience
+Hubris
+=end data
+=data Industry
+=data Patience
+=data Humility
+
+say 'The three virtues are:';
+say $=data<Virtues>;
+=end pod
+~~~~~~~
+[
+  {
+    "type": "block",
+    "content": [
+      {
+        "type": "block",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "Laziness\n\nImpatience\nHubris\n"
+          }
+        ],
+        "name": "data",
+        "margin": "",
+        "text": "=begin data :key<Virtues>\nLaziness\n\nImpatience\nHubris\n=end data\n",
+        "config": [
+          {
+            "name": "key",
+            "value": "Virtues",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "Industry\n"
+          }
+        ],
+        "name": "data",
+        "config": []
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "Patience\n"
+          }
+        ],
+        "name": "data",
+        "config": []
+      },
+      {
+        "margin": "",
+        "type": "block",
+        "content": [
+          {
+            "type": "verbatim",
+            "value": "Humility\n"
+          }
+        ],
+        "name": "data",
+        "config": []
+      },
+      {
+        "type": "blankline"
+      },
+      {
+        "text": "say 'The three virtues are:';\nsay $=data<Virtues>;\n",
+        "margin": "",
+        "type": "para",
+        "content": [
+          "say 'The three virtues are:';\nsay $=data<Virtues>;\n"
+        ]
+      }
+    ],
+    "name": "pod",
+    "margin": "",
+    "text": "=begin pod\n=begin data :key<Virtues>\nLaziness\n\nImpatience\nHubris\n=end data\n=data Industry\n=data Patience\n=data Humility\n\nsay 'The three virtues are:';\nsay $=data<Virtues>;\n=end pod\n",
+    "config": []
+  }
+]
