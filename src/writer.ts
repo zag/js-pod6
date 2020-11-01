@@ -68,7 +68,20 @@ class Writer extends Events.EventEmitter {
         }
         endWrite = () => {
             this.emit('end')
-        }        
+        }
+
+        // nesting methods
+        
+        _add_nesting (n:number) {}
+        _remove_nesting (n:number) {}
+
+        addLevel(n:number) {
+            this._add_nesting(n)
+        }
+
+        removeLevel(n:number) {
+            this._remove_nesting(n)
+        }
 
 }
 

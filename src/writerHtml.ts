@@ -20,5 +20,12 @@ class WriterHTML extends Writer {
         return ( string + '' ).replace( /[&<>"'\/`]/g, ( match ) => HTML_CHARS[match] );
     }
     
+    _add_nesting(n) {
+        this.writeRaw('<blockquote>'.repeat(n))
+    }
+    _remove_nesting(n) {
+        this.writeRaw('</blockquote>'.repeat(n))
+    }
+    
 }
 export default WriterHTML
