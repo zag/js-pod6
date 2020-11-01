@@ -30,9 +30,10 @@ const middle:Plugin = () =>( tree )=>{
         }
       const conf = makeAttrs(n, ctx)
       const isCodeBlock = "name" in n && n.name === 'code'
+      const isDataBlock = "name" in n && n.name === 'data'
       const allowValues = conf.getAllValues('allow')
       // for code block not parse content by default
-      if (isCodeBlock && allowValues.length == 0) return n
+      if ((isCodeBlock || isDataBlock ) && allowValues.length == 0) return n
       const allowed = allowValues.sort()
       
       // this prevent from parsing content of named blocks
