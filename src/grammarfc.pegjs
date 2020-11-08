@@ -8,8 +8,8 @@ Expression
 = ( allowed_rules / code / text / raw_text )*
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
-allowed_rules = code_A / code_S / code_C / code_V / code_L / code_X / code_Z 
-allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
+allowed_rules = code_A / code_S / code_C / code_E / code_V / code_L / code_X / code_Z 
+allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'E' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
 identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
 _ = [ \t\u000C]*
 allowed_code = 
@@ -131,6 +131,54 @@ code_Z =
              }
     }
 
+/*
+    E<0b10101011> and E<0b10111011>.
+    Perl 6 makes considerable use of E<171> and E<187>
+    Perl 6 makes considerable use of E<0o253> and E<0o273>.
+    Perl 6 makes considerable use of E<0d171> and E<0d187>.
+    Perl 6 makes considerable use of E<0xAB> and E<0xBB>
+    
+    # HTML named &raquo;
+    Perl 6 makes considerable use of E<laquo> and E<raquo>
+    
+    # Unicode character name
+    Perl 6 makes considerable use of E<LEFT DOUBLE ANGLE BRACKET>
+    and E<RIGHT DOUBLE ANGLE BRACKET>.
+
+    Perl 6 makes considerable use of E<LEFT DOUBLE ANGLE BRACKET;hellip;0xBB>.
+    
+*/
+
+// binary, octal, decimal, or hexadecimal numbers
+number = $([0-9]+)
+decimalNumber ='0d' number:number { return parseInt(number,10) }
+octalNumber = '0o' number:number { return parseInt(number,8) }
+binaryNumber = '0b' number:number { return parseInt(number,2) }
+hexadecimalNumber = $('0x' ([0-9A-Fa-f])+){ return parseInt(text()) }
+
+
+// Only numbers is supported at this time
+//TODO: add Unicode character name
+item_E =  _ number: ( octalNumber / decimalNumber / binaryNumber / hexadecimalNumber / number  ) { return { type: 'number', value:parseInt(number,10)}}
+            
+
+
+array_E_items = 
+          code:item_E hs*  ';' hs* codes:array_E_items 
+                            { return flattenDeep([ code, codes ]) }
+          / code:item_E { return [code] }
+
+code_E = 
+    name:start_code &{return name === "E"}
+    content:  ( t:array_E_items { return flattenDeep(t) } )?
+    end_code
+     {
+         return  { 
+                content: content ? content : [],
+                'type':"fcode",
+                name
+             }
+    }
 
 start_code = name:$(allowed_code) '<' { return name }
 end_code = '>'
