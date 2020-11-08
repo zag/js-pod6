@@ -190,6 +190,18 @@ For example:
 You can test pod6 at [pod6.in](https://pod6.in) site.
 I'd appreciate it if you'd report any mistakes to the tracker[4]
 
+
+## Authors
+
+{js-pod6} was written by [Alexandr Zahatski](https://github.com/zag)
+
+## Copyright
+
+Copyright (C) 2019-2020 [Alexander Zahatski](https://zahatski.com).
+Free use of this software is granted under the terms of the MIT License.
+
+For the full text of the license, see the [LICENSE](https://github.com/zag/js-pod6/blob/master/LICENSE) file. 
+
 ## Links 
 
 [1] Specification of pod6: [Synopsis 26](https://github.com/perl6/specs/blob/master/S26-documentation.pod) 
