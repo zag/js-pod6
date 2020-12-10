@@ -175,32 +175,29 @@ const rules = {
     'input':  handleNested( wrapContent('<pre><kbd>', '</kbd></pre>'), 1),
     // table section
     'table:block' : handleNested(
-                        subUse(
-                                {
-                                    // TODO: rename table's 'head' to table-head
-                                    'head': subUse({
-                                                        'column': wrapContent('<th>','</th>')
-                                                    },
-                                                    wrapContent('<tr>','</tr>')
-                                                    )
-                                },
-                                ( writer, processor ) => ( node, ctx, interator ) => {
-                                            const conf = makeAttrs(node, ctx)
-                                            writer.writeRaw('<table>')
-                                            if ( conf.exists('caption') ) {
-                                                writer.writeRaw('<caption>')
-                                                writer.write(conf.getFirstValue('caption'))
-                                                writer.writeRaw('</caption>')
+                                ( writer, processor ) => 
+                                        ( node, ctx, interator ) => 
+                                            {
+                                                const conf = makeAttrs(node, ctx)
+                                                writer.writeRaw('<table>')
+                                                if ( conf.exists('caption') ) {
+                                                    writer.writeRaw('<caption>')
+                                                    writer.write(conf.getFirstValue('caption'))
+                                                    writer.writeRaw('</caption>')
+                                                }
+                                                interator(node.content, ctx)
+                                                writer.writeRaw('</table>')
                                             }
-                                            interator(node.content, ctx)
-                                            writer.writeRaw('</table>')
-                                    }
-                            )
                     ),
-    ':separator' : emptyContent,
-     'row':wrapContent('<tr>','</tr>'),
-     'column':wrapContent('<td>','</td>'),
-
+    ':separator' :   emptyContent,
+     'table_row' :   wrapContent('<tr>','</tr>'),
+     'table_cell': wrapContent('<td>','</td>'),
+     'table_head' :  subUse(
+                              { 
+                                'table_cell': wrapContent('<th>','</th>')
+                              },
+                              wrapContent('<tr>','</tr>')
+                            )
     } 
 
     const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(

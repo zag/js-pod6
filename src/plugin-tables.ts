@@ -98,12 +98,12 @@ function flattenDeep(arr) {
     // if table empty return node as is
     if (!rows.length) return node
 
-    const splinToLines = (row)=>row.split(/\n/)  // split each row by eol
+    const splitToLines = (row)=>row.split(/\n/)  // split each row by eol
                          .filter((str)=>str.length > 0 ) // filter empty strings ( after slit )
                          
     // split each row into lines
-    const lines = flattenDeep( rows.map(splinToLines) )
-    const separators = flattenDeep( seps.map(splinToLines) )
+    const lines = flattenDeep( rows.map(splitToLines) )
+    const separators = flattenDeep( seps.map(splitToLines) )
 
     const columnTemplate = makeMask(lines, separators)
     const makeBlock = (name, content, ...attr) => { return { ...attr, name, type: 'block', content: Array.isArray(content) ? content : [content] } }
@@ -112,9 +112,9 @@ function flattenDeep(arr) {
         'row:text'  : (row) => {
             const res = extractColumnsByTemplate( row.value, columnTemplate )
             return makeBlock(
-                'row',
+                'table_row',
                  res.map((col)=>makeBlock(
-                     'column',
+                     'table_cell',
                      {type:'text',value:col}
                     )),
             )
@@ -122,9 +122,9 @@ function flattenDeep(arr) {
         'head:text' : (head) => {
             const res = extractColumnsByTemplate( head.value, columnTemplate )
             return makeBlock(
-                'head',
+                'table_head',
                  res.map((col)=>makeBlock(
-                     'column',
+                     'table_cell',
                      {type:'text',value:col}
                     )),
             )
