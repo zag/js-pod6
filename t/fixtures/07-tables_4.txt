@@ -10,25 +10,25 @@
     "type": "block",
     "content": [
       {
-        "name": "head",
+        "name": "table_head",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Superhero                  "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Secret        Identity     "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "  Superpower"
@@ -41,25 +41,25 @@
         "text": "        ==============|=================|================================\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " The Shoveller"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Eddie Stevens"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " King Arthur's singing shovel"

@@ -11,25 +11,25 @@
     "type": "block",
     "content": [
       {
-        "name": "head",
+        "name": "table_head",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Animal"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Legs"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "    Eats"
@@ -42,25 +42,25 @@
         "text": "    =======================\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Zebra "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "   4 "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Cookies"
@@ -69,25 +69,25 @@
         ]
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Human "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "   2 "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "   Pizza"
@@ -96,25 +96,25 @@
         ]
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Shark "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "   0 "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "    Fish"

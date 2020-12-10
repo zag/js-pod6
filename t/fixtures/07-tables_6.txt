@@ -11,25 +11,25 @@
     "type": "block",
     "content": [
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " X"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " O"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " "
@@ -42,25 +42,25 @@
         "text": "   ---+---+---\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "  "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " X"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " O"
@@ -73,25 +73,25 @@
         "text": "   ---+---+---\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "  "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "  "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " X"

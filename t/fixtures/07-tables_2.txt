@@ -8,18 +8,18 @@
     "type": "block",
     "content": [
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " mouse   "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " mice"
@@ -28,18 +28,18 @@
         ]
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " horse   "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " horses"
@@ -48,18 +48,18 @@
         ]
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " elephant"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " elephants"

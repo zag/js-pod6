@@ -20,25 +20,25 @@
     "type": "block",
     "content": [
       {
-        "name": "head",
+        "name": "table_head",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "               Superhero    "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Secret Identity      "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               "  Superpower"
@@ -51,25 +51,25 @@
         "text": "        =============   ===============   ===================\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " The Shoveller              "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Eddie Stevens                "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " King Arthur's singing shovel"
@@ -82,25 +82,25 @@
         "text": "\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Blue Raja    "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Geoffrey Smith"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Master of cutlery"
@@ -113,25 +113,25 @@
         "text": "\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Mr Furious                 "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Roy Orson                    "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Ticking time bomb of fury"
@@ -144,25 +144,25 @@
         "text": "\n"
       },
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " The Bowler   "
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Carol Pinnsler"
             ]
           },
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " Haunted bowling ball"

@@ -7,11 +7,11 @@ foo
     "type": "block",
     "content": [
       {
-        "name": "row",
+        "name": "table_row",
         "type": "block",
         "content": [
           {
-            "name": "column",
+            "name": "table_cell",
             "type": "block",
             "content": [
               " foo"
