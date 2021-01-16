@@ -36,15 +36,15 @@ const middle:Plugin = () =>( tree )=>{
       if ((isCodeBlock || isDataBlock ) && allowValues.length == 0) return n
       const allowed = allowValues.sort()
       
-      // this prevent from parsing content of named blocks
-      if ( isNamedBlock(n.name) ) {
-        return n
-      }
-      
-      return makeTransformer({
+      const transformer =  makeTransformer({
         ':verbatim' : ( n:nVerbatim, ctx ) => { return fcparser.parse( n.value, { allowed } ) },
         ':text' : ( n:nText, ctx ) => { return fcparser.parse( n.value, { allowed } ) },
-      })(n,{ ...ctx })
+        ':block': (n, ctx)=> {
+            if ( isNamedBlock(n.name) ) return n;
+            return { ...n, content:transformer(n.content, { ...ctx } )}
+         }
+      })
+      return transformer(n,{ ...ctx })
     },
   })
   return transformerBlocks(tree,{})
