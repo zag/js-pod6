@@ -1,7 +1,10 @@
 # Upcoming
 
+# 0.0.30
+- add E<> support
 - implement =data block
 - add support for :nested() config param
+- handle child's for any block while process formatting codes
 
 # 0.0.29
 - improve internal AST processing api
