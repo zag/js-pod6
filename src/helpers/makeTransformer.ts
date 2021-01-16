@@ -1,8 +1,10 @@
 
 const { makeRule, makePlug } = require('./makeQuery')
-      // the following names: MyBlock, myBlock are use for extending pod6
+// the following names: MyBlock, myBlock are use for extending pod6
 export function isNamedBlock(name) {
         return (
+            name 
+                &&
             name !== name.toLowerCase() 
                 && 
             name !== name.toUpperCase() 

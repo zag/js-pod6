@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.31
+- fix unhandled error
+
 # 0.0.30
 - add E<> support
 - implement =data block
