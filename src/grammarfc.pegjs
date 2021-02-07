@@ -8,8 +8,8 @@ Expression
 = ( allowed_rules / code / text / raw_text )*
 // = ( allowed_rules / code / (text / raw_text)+ {return {type:'text', value:text()}} )*
 
-allowed_rules = code_A / code_S / code_C / code_E / code_V / code_L / code_X / code_Z 
-allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'E' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
+allowed_rules = code_A / code_S / code_C / code_D / code_E / code_V / code_L / code_X / code_Z 
+allpossible_codes = ( 'A' / 'V' / 'R' / 'B' / 'I' / 'C' / 'D' / 'E' / 'K' / 'L' / 'S' / 'T' / 'U' / 'Z' / 'N' / 'X' )
 identifier = $([a-zA-Z][a-zA-Z0-9_-]+)
 _ = [ \t\u000C]*
 allowed_code = 
@@ -30,6 +30,24 @@ code_A =
                 content,
                 'type':"fcode",
                 name,
+             }
+    }
+
+code_D = 
+    name:start_code &{return name === "D"}
+            
+    content: ( text_L )+
+     
+     synonyms:(
+           separator t:array_items*  { return flattenDeep(t) }
+           )?
+     end_code
+     {
+         return  { 
+                content,
+                'type':"fcode",
+                name,
+                synonyms  
              }
     }
 
@@ -106,6 +124,7 @@ code_X =
                 entry
              }
     }
+
 code_S = 
     name:start_code &{return name === "S"}
     content: $(!end_code .)*

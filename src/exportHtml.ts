@@ -31,6 +31,23 @@ const rules = {
         }
     },
     'C<>': wrapContent('<code>','</code>'),
+    'D<>':  ( writer, processor ) => ( node, ctx, interator ) => {
+        
+        // @ts-ignore
+        let synonyms:Array<any> = { node }
+        let definition:string[] = [node.content[0]]
+        if ( synonyms ) {
+            definition = synonyms
+        }
+
+        if ( !writer.hasOwnProperty('DEFINITIONS') ) { writer.DEFINITIONS = []}
+        writer.DEFINITIONS.push({ definition })
+
+        writer.writeRaw('<dfn>')
+        interator(node.content, ctx)
+        writer.writeRaw('</dfn>')
+
+     },
     'B<>': wrapContent('<strong>','</strong>'),
     'I<>': wrapContent('<em>','</em>'),
     'R<>': wrapContent('<var>','</var>'),

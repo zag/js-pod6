@@ -67,6 +67,7 @@ const toAny = ( options:Options = {}, plugins = [] ) => {
            valueOf: () => res,
            indexingTerms: writer.INDEXTERMS,
            annotations: writer.FOOTNOTES,
+           defenitions: writer.DEFINITIONS,
            interator: result
         }
     }
