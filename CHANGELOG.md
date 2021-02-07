@@ -1,5 +1,9 @@
 # Upcoming
 
+# 0.0.32
+- implement formatting code D<> - definition
+- generate d.ts files
+
 # 0.0.31
 - fix unhandled error
 
