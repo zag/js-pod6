@@ -3,6 +3,7 @@
   "version": "0.0.31",
   "description": "Pod6 is an easy-to-use markup language",
   "main": "index.js",
+  "types": "./built/index.d.ts",
   "scripts": {
     "postversion": "git commit package.json CHANGELOG.md -m \"v$npm_package_version\" && npm run tag && git push && git push --tags",
     "clean": "rm -rf built",

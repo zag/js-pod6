@@ -8,6 +8,8 @@
       // "resolveJsonModule":true,
       "moduleResolution": "node",
       // "alwaysStrict":true
+      // Generate d.ts files
+      "declaration": true,
     },
 
     "include": ["./src/**/*", "./package.json"]
