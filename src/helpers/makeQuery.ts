@@ -71,13 +71,13 @@ export function is( query, node ) {
     if ( isEmpty(query) ) return true
     for( var prop in query ) { 
         if (query === undefined) {
-            console.log('key!!!')
+            console.log('[pod6] undefined key!!!')
         }
         if( query.hasOwnProperty(prop) ) {
             if (node === undefined) {
-                console.log('node!!!')
+                console.log('[pod6] undefined node!!!')
             }
-            if ( node.hasOwnProperty(prop) ) {
+            if ( node && node.hasOwnProperty(prop) ) {
                 if ( query[prop] !== node[prop] ) {
                     return false
                 }

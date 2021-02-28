@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.33
+- handle undefined node in queries
+
 # 0.0.32
 - implement formatting code D<> - definition
 - generate d.ts files
