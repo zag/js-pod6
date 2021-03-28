@@ -338,7 +338,7 @@ delimitedBlock =
                   && 
                   (tvmargin.length - vmargin.length) > 0 ? 'code' : 'para'
       return {
-              text, 
+              text,
               margin:tvmargin,
               type,
               content: [
