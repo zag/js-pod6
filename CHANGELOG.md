@@ -1,5 +1,9 @@
 # Upcoming
 
+# 0.0.34
+- remove 'text' from tree
+- fix typing for default writer
+
 # 0.0.33
 - handle undefined node in queries
 
