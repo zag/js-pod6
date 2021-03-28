@@ -19,7 +19,19 @@ foo
         "type": "para",
         "content": [
           "= DESCRIPTION\nbla bla\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 13,
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "offset": 35,
+            "line": 5,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -30,12 +42,35 @@ foo
         "type": "para",
         "content": [
           "foo\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 36,
+            "line": 6,
+            "column": 1
+          },
+          "end": {
+            "offset": 40,
+            "line": 7,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "kwid",
     "margin": "",
-    "text": "=begin kwid\n\n= DESCRIPTION\nbla bla\n\nfoo\n=end kwid\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 50,
+        "line": 8,
+        "column": 1
+      }
+    }
   }
 ]

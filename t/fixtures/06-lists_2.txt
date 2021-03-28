@@ -19,7 +19,19 @@ The choices are:
           "CORRECT...\n"
         ],
         "name": "comment",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 31,
+            "line": 3,
+            "column": 1
+          }
+        }
       },
       {
         "type": "list",
@@ -34,13 +46,36 @@ The choices are:
                 "type": "para",
                 "content": [
                   "The choices are:\n"
-                ]
+                ],
+                "location": {
+                  "start": {
+                    "offset": 44,
+                    "line": 4,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 61,
+                    "line": 5,
+                    "column": 1
+                  }
+                }
               }
             ],
             "name": "item",
             "margin": "",
-            "text": "=begin item1\nThe choices are:\n=end item1\n",
             "config": [],
+            "location": {
+              "start": {
+                "offset": 31,
+                "line": 3,
+                "column": 1
+              },
+              "end": {
+                "offset": 72,
+                "line": 6,
+                "column": 1
+              }
+            },
             "level": "1"
           },
           {
@@ -57,10 +92,34 @@ The choices are:
                     "margin": "",
                     "content": [
                       "Liberty\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 72,
+                        "line": 6,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 87,
+                        "line": 7,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 72,
+                    "line": 6,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 87,
+                    "line": 7,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -73,10 +132,34 @@ The choices are:
                     "margin": "",
                     "content": [
                       "Death\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 87,
+                        "line": 7,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 100,
+                        "line": 8,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 87,
+                    "line": 7,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 100,
+                    "line": 8,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -89,10 +172,34 @@ The choices are:
                     "margin": "",
                     "content": [
                       "Beer\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 100,
+                        "line": 8,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 112,
+                        "line": 9,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 100,
+                    "line": 8,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 112,
+                    "line": 9,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               }
             ],
@@ -104,7 +211,18 @@ The choices are:
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n=comment CORRECT...\n=begin item1\nThe choices are:\n=end item1\n=item2 Liberty\n=item2 Death\n=item2 Beer\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 121,
+        "line": 10,
+        "column": 1
+      }
+    }
   }
 ]

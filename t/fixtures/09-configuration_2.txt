@@ -37,12 +37,35 @@
             ],
             "type": "array"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 68,
+            "line": 3,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n    =for pod :number(42) :zebras :!sheep :feist<1 2 3 4>\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 77,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

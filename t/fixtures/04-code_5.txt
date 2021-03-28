@@ -32,7 +32,19 @@
             "type": "verbatim",
             "value": "this is code\n"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 28,
+            "line": 3,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -47,7 +59,19 @@
         ],
         "name": "Podcast",
         "margin": "    ",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 29,
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "offset": 66,
+            "line": 6,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -58,7 +82,19 @@
         "type": "para",
         "content": [
           "this is not code either\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 67,
+            "line": 7,
+            "column": 1
+          },
+          "end": {
+            "offset": 95,
+            "line": 8,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -75,13 +111,36 @@
                 "type": "text",
                 "value": "this is not\n"
               }
-            ]
+            ],
+            "location": {
+              "start": {
+                "offset": 119,
+                "line": 10,
+                "column": 1
+              },
+              "end": {
+                "offset": 139,
+                "line": 11,
+                "column": 1
+              }
+            }
           }
         ],
         "name": "Itemization",
         "margin": "    ",
-        "text": "    =begin Itemization\n        this is not\n    =end Itemization\n",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 96,
+            "line": 9,
+            "column": 1
+          },
+          "end": {
+            "offset": 160,
+            "line": 12,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -98,13 +157,36 @@
                 "type": "verbatim",
                 "value": "and this is not\n"
               }
-            ]
+            ],
+            "location": {
+              "start": {
+                "offset": 179,
+                "line": 14,
+                "column": 1
+              },
+              "end": {
+                "offset": 203,
+                "line": 15,
+                "column": 1
+              }
+            }
           }
         ],
         "name": "Quitem",
         "margin": "    ",
-        "text": "    =begin Quitem\n        and this is not\n    =end Quitem\n",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 161,
+            "line": 13,
+            "column": 1
+          },
+          "end": {
+            "offset": 219,
+            "line": 16,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -122,13 +204,36 @@
                 "type": "code",
                 "content": [
                   "and this is!\n"
-                ]
+                ],
+                "location": {
+                  "start": {
+                    "offset": 236,
+                    "line": 18,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 257,
+                    "line": 19,
+                    "column": 1
+                  }
+                }
               }
             ],
             "name": "item",
             "margin": "    ",
-            "text": "    =begin item\n        and this is!\n    =end item\n",
             "config": [],
+            "location": {
+              "start": {
+                "offset": 220,
+                "line": 17,
+                "column": 1
+              },
+              "end": {
+                "offset": 271,
+                "line": 20,
+                "column": 1
+              }
+            },
             "level": 1
           }
         ],
@@ -137,7 +242,18 @@
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n    this is code\n\n    =for Podcast\n        this is not\n\n    this is not code either\n\n    =begin Itemization\n        this is not\n    =end Itemization\n\n    =begin Quitem\n        and this is not\n    =end Quitem\n\n    =begin item\n        and this is!\n    =end item\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 280,
+        "line": 21,
+        "column": 1
+      }
+    }
   }
 ]

@@ -55,6 +55,18 @@ foo
         ],
         "type": "array"
       }
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 84,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

@@ -51,6 +51,18 @@ foo
         "type": "value",
         "value": "Q[str]"
       }
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 82,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

@@ -12,7 +12,6 @@
         "content": [],
         "name": "code",
         "margin": "    ",
-        "text": "    =begin code :allow<B>\n    =end code\n",
         "config": [
           {
             "name": "allow",
@@ -21,12 +20,35 @@
             ],
             "type": "array"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 51,
+            "line": 4,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n    =begin code :allow<B>\n    =end code\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 60,
+        "line": 5,
+        "column": 1
+      }
+    }
   }
 ]

@@ -59,7 +59,19 @@ A<TERMS_URLS>
             "name": "A"
           },
           ", as specified at:\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 279,
+            "line": 7,
+            "column": 1
+          },
+          "end": {
+            "offset": 381,
+            "line": 9,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -75,7 +87,19 @@ A<TERMS_URLS>
             "name": "A"
           },
           "\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 382,
+            "line": 10,
+            "column": 1
+          },
+          "end": {
+            "offset": 396,
+            "line": 11,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -83,7 +107,18 @@ A<TERMS_URLS>
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n    =alias PROGNAME    Earl Irradiatem Evermore\n    =alias VENDOR      4D Kingdoms\n    =alias TERMS_URLS  =item L<http://www.4dk.com/eie>\n    =                  =item L<http://www.4dk.co.uk/eie.io/>\n    =                  =item L<http://www.fordecay.ch/canttouchthis>\nThe use of A<PROGNAME> is subject to the terms and conditions\nlaid out by A<VENDOR>, as specified at:\n\nA<TERMS_URLS>\n\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 406,
+        "line": 13,
+        "column": 1
+      }
+    }
   }
 ]

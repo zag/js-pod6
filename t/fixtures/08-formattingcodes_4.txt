@@ -16,9 +16,33 @@
             "name": "V"
           },
           "\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 0,
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "offset": 26,
+            "line": 2,
+            "column": 1
+          }
+        }
       }
     ],
-    "name": "pod"
+    "name": "pod",
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 26,
+        "line": 2,
+        "column": 1
+      }
+    }
   }
 ]

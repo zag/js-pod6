@@ -124,6 +124,18 @@
       }
     ],
     "name": "table",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 147,
+        "line": 7,
+        "column": 1
+      }
+    }
   }
 ]

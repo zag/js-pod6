@@ -35,7 +35,19 @@ ambient again
         "name": "T"
       },
       "\n"
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 135,
+        "line": 4,
+        "column": 1
+      }
+    }
   },
   {
     "margin": "",
@@ -47,10 +59,34 @@ ambient again
         "margin": "",
         "content": [
           "test\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 135,
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "offset": 147,
+            "line": 5,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "head",
+    "location": {
+      "start": {
+        "offset": 135,
+        "line": 4,
+        "column": 1
+      },
+      "end": {
+        "offset": 147,
+        "line": 5,
+        "column": 1
+      }
+    },
     "level": "1"
   },
   {
@@ -62,7 +98,19 @@ ambient again
         "type": "para",
         "content": [
           "test\ne\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 158,
+            "line": 6,
+            "column": 1
+          },
+          "end": {
+            "offset": 165,
+            "line": 8,
+            "column": 1
+          }
+        }
       },
       {
         "margin": "",
@@ -74,10 +122,34 @@ ambient again
             "margin": "",
             "content": [
               "sd\n"
-            ]
+            ],
+            "location": {
+              "start": {
+                "offset": 165,
+                "line": 8,
+                "column": 1
+              },
+              "end": {
+                "offset": 175,
+                "line": 9,
+                "column": 1
+              }
+            }
           }
         ],
         "name": "head",
+        "location": {
+          "start": {
+            "offset": 165,
+            "line": 8,
+            "column": 1
+          },
+          "end": {
+            "offset": 175,
+            "line": 9,
+            "column": 1
+          }
+        },
         "level": "1"
       },
       {
@@ -86,8 +158,19 @@ ambient again
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\ntest\ne\n=head1 sd\n\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 147,
+        "line": 5,
+        "column": 1
+      },
+      "end": {
+        "offset": 185,
+        "line": 11,
+        "column": 1
+      }
+    }
   },
   {
     "margin": "",
@@ -99,10 +182,34 @@ ambient again
         "margin": "",
         "content": [
           "test \n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 185,
+            "line": 11,
+            "column": 1
+          },
+          "end": {
+            "offset": 198,
+            "line": 12,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "head",
+    "location": {
+      "start": {
+        "offset": 185,
+        "line": 11,
+        "column": 1
+      },
+      "end": {
+        "offset": 198,
+        "line": 12,
+        "column": 1
+      }
+    },
     "level": "2"
   },
   {
@@ -114,6 +221,18 @@ ambient again
     "margin": "",
     "content": [
       "ambient again\n"
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 199,
+        "line": 13,
+        "column": 1
+      },
+      "end": {
+        "offset": 213,
+        "line": 14,
+        "column": 1
+      }
+    }
   }
 ]

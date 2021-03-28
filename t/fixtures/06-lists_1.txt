@@ -28,10 +28,34 @@
                 "margin": "",
                 "content": [
                   "Animal\n"
-                ]
+                ],
+                "location": {
+                  "start": {
+                    "offset": 11,
+                    "line": 2,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 26,
+                    "line": 3,
+                    "column": 1
+                  }
+                }
               }
             ],
             "name": "item",
+            "location": {
+              "start": {
+                "offset": 11,
+                "line": 2,
+                "column": 1
+              },
+              "end": {
+                "offset": 26,
+                "line": 3,
+                "column": 1
+              }
+            },
             "level": "1"
           },
           {
@@ -48,10 +72,34 @@
                     "margin": "",
                     "content": [
                       "Vertebrate\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 26,
+                        "line": 3,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 48,
+                        "line": 4,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 26,
+                    "line": 3,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 48,
+                    "line": 4,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -64,10 +112,34 @@
                     "margin": "",
                     "content": [
                       "Invertebrate\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 48,
+                        "line": 4,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 72,
+                        "line": 5,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 48,
+                    "line": 4,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 72,
+                    "line": 5,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -86,10 +158,34 @@
                 "margin": "",
                 "content": [
                   "Phase\n"
-                ]
+                ],
+                "location": {
+                  "start": {
+                    "offset": 73,
+                    "line": 6,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 87,
+                    "line": 7,
+                    "column": 1
+                  }
+                }
               }
             ],
             "name": "item",
+            "location": {
+              "start": {
+                "offset": 73,
+                "line": 6,
+                "column": 1
+              },
+              "end": {
+                "offset": 87,
+                "line": 7,
+                "column": 1
+              }
+            },
             "level": "1"
           },
           {
@@ -106,10 +202,34 @@
                     "margin": "",
                     "content": [
                       "Solid\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 87,
+                        "line": 7,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 104,
+                        "line": 8,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 87,
+                    "line": 7,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 104,
+                    "line": 8,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -122,10 +242,34 @@
                     "margin": "",
                     "content": [
                       "Liquid\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 104,
+                        "line": 8,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 122,
+                        "line": 9,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 104,
+                    "line": 8,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 122,
+                    "line": 9,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -138,10 +282,34 @@
                     "margin": "",
                     "content": [
                       "Gas\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 122,
+                        "line": 9,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 137,
+                        "line": 10,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 122,
+                    "line": 9,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 137,
+                    "line": 10,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               },
               {
@@ -154,10 +322,34 @@
                     "margin": "",
                     "content": [
                       "Chocolate\n"
-                    ]
+                    ],
+                    "location": {
+                      "start": {
+                        "offset": 137,
+                        "line": 10,
+                        "column": 1
+                      },
+                      "end": {
+                        "offset": 158,
+                        "line": 11,
+                        "column": 1
+                      }
+                    }
                   }
                 ],
                 "name": "item",
+                "location": {
+                  "start": {
+                    "offset": 137,
+                    "line": 10,
+                    "column": 1
+                  },
+                  "end": {
+                    "offset": 158,
+                    "line": 11,
+                    "column": 1
+                  }
+                },
                 "level": "2"
               }
             ],
@@ -169,7 +361,18 @@
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n=item1  Animal\n=item2     Vertebrate\n=item2     Invertebrate\n\n=item1  Phase\n=item2     Solid\n=item2     Liquid\n=item2     Gas\n=item2     Chocolate\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 167,
+        "line": 12,
+        "column": 1
+      }
+    }
   }
 ]

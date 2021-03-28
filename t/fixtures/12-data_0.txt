@@ -34,7 +34,19 @@ say $=data<Virtues>;
             "value": "Virtues",
             "type": "string"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 75,
+            "line": 8,
+            "column": 1
+          }
+        }
       },
       {
         "margin": "",
@@ -46,7 +58,19 @@ say $=data<Virtues>;
           }
         ],
         "name": "data",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 75,
+            "line": 8,
+            "column": 1
+          },
+          "end": {
+            "offset": 90,
+            "line": 9,
+            "column": 1
+          }
+        }
       },
       {
         "margin": "",
@@ -58,7 +82,19 @@ say $=data<Virtues>;
           }
         ],
         "name": "data",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 90,
+            "line": 9,
+            "column": 1
+          },
+          "end": {
+            "offset": 105,
+            "line": 10,
+            "column": 1
+          }
+        }
       },
       {
         "margin": "",
@@ -70,7 +106,19 @@ say $=data<Virtues>;
           }
         ],
         "name": "data",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 105,
+            "line": 10,
+            "column": 1
+          },
+          "end": {
+            "offset": 120,
+            "line": 11,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -81,12 +129,35 @@ say $=data<Virtues>;
         "type": "para",
         "content": [
           "say 'The three virtues are:';\nsay $=data<Virtues>;\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 121,
+            "line": 12,
+            "column": 1
+          },
+          "end": {
+            "offset": 172,
+            "line": 14,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n=begin data :key<Virtues>\nLaziness\n\nImpatience\nHubris\n=end data\n=data Industry\n=data Patience\n=data Humility\n\nsay 'The three virtues are:';\nsay $=data<Virtues>;\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 181,
+        "line": 15,
+        "column": 1
+      }
+    }
   }
 ]

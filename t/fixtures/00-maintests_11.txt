@@ -62,9 +62,33 @@ associated string X<|puns, deliberate> key. X<> empty
             "entry": null
           },
           " empty\n#---"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 0,
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "offset": 191,
+            "line": 5,
+            "column": 5
+          }
+        }
       }
     ],
-    "name": "para"
+    "name": "para",
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 191,
+        "line": 5,
+        "column": 5
+      }
+    }
   }
 ]

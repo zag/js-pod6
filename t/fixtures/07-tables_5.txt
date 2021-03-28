@@ -178,6 +178,18 @@
     "name": "table",
     "margin": "",
     "text": "=begin table\n\n                        Secret\n        Superhero       Identity          Superpower\n        =============   ===============   ===================\n        The Shoveller   Eddie Stevens     King Arthur's\n                                          singing shovel\n\n        Blue Raja       Geoffrey Smith    Master of cutlery\n\n        Mr Furious      Roy Orson         Ticking time bomb\n                                          of fury\n\n        The Bowler      Carol Pinnsler    Haunted bowling ball\n\n=end table\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 521,
+        "line": 17,
+        "column": 1
+      }
+    }
   }
 ]

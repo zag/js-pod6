@@ -32,12 +32,35 @@
             "value": "Table of contents",
             "type": "string"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 62,
+            "line": 4,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n=for table :caption<Table of contents>\n    foo bar\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 71,
+        "line": 5,
+        "column": 1
+      }
+    }
   }
 ]

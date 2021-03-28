@@ -17,18 +17,52 @@
             "type": "para",
             "content": [
               "toot tooot!\n"
-            ]
+            ],
+            "location": {
+              "start": {
+                "offset": 42,
+                "line": 3,
+                "column": 1
+              },
+              "end": {
+                "offset": 58,
+                "line": 4,
+                "column": 1
+              }
+            }
           }
         ],
         "name": "somethingelse",
         "margin": "    ",
-        "text": "    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n",
-        "config": []
+        "config": [],
+        "location": {
+          "start": {
+            "offset": 17,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 81,
+            "line": 5,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "something",
     "margin": "",
-    "text": "=begin something\n    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n=end something\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 96,
+        "line": 6,
+        "column": 1
+      }
+    }
   }
 ]

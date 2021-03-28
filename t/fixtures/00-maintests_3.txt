@@ -19,10 +19,34 @@ test
         "margin": "",
         "content": [
           "Test\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 0,
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "offset": 12,
+            "line": 2,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "head",
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 12,
+        "line": 2,
+        "column": 1
+      }
+    },
     "level": "1"
   },
   {
@@ -34,7 +58,19 @@ test
     "margin": "",
     "content": [
       "text\n"
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 13,
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "offset": 18,
+        "line": 4,
+        "column": 1
+      }
+    }
   },
   {
     "type": "blankline"
@@ -49,10 +85,34 @@ test
         "margin": "",
         "content": [
           "Testing\ncontinue\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 19,
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "offset": 43,
+            "line": 7,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "head",
+    "location": {
+      "start": {
+        "offset": 19,
+        "line": 5,
+        "column": 1
+      },
+      "end": {
+        "offset": 43,
+        "line": 7,
+        "column": 1
+      }
+    },
     "level": "2"
   },
   {
@@ -64,7 +124,19 @@ test
     "margin": "",
     "content": [
       "test\n"
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 44,
+        "line": 8,
+        "column": 1
+      },
+      "end": {
+        "offset": 49,
+        "line": 9,
+        "column": 1
+      }
+    }
   },
   {
     "type": "blankline"

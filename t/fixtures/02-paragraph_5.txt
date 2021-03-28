@@ -27,6 +27,18 @@ Which, as we all know...
     "name": "Foo",
     "margin": "",
     "text": "=begin Foo\nand so,  all  of  the  villages chased\nAlbi,   The   Racist  Dragon, into the\nvery   cold   and  very  scary    cave\n\nand it was so cold and so scary in\nthere,  that  Albi  began  to  cry\n\n    =for Bar\n    Dragon Tears!\n\nWhich, as we all know...\n\n    =for Bar\n    Turn into Jelly Beans!\n=end Foo\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 307,
+        "line": 17,
+        "column": 1
+      }
+    }
   }
 ]

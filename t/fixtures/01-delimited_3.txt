@@ -15,7 +15,19 @@ two
         "type": "para",
         "content": [
           "paragraph one\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 11,
+            "line": 2,
+            "column": 1
+          },
+          "end": {
+            "offset": 25,
+            "line": 3,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -26,12 +38,35 @@ two
         "type": "para",
         "content": [
           "paragraph\ntwo\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 26,
+            "line": 4,
+            "column": 1
+          },
+          "end": {
+            "offset": 40,
+            "line": 6,
+            "column": 1
+          }
+        }
       }
     ],
     "name": "foo",
     "margin": "",
-    "text": "=begin foo\nparagraph one\n\nparagraph\ntwo\n=end foo\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 49,
+        "line": 7,
+        "column": 1
+      }
+    }
   }
 ]

@@ -101,6 +101,18 @@
       }
     ],
     "name": "table",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 77,
+        "line": 7,
+        "column": 1
+      }
+    }
   }
 ]

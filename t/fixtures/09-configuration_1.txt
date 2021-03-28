@@ -26,7 +26,18 @@
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n    =config head2  :like<head1> :formatted<I>\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 66,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

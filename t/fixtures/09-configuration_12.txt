@@ -32,6 +32,18 @@ foo
           "d": 2.3
         }
       }
-    ]
+    ],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 67,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

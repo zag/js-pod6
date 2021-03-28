@@ -25,10 +25,34 @@ This is Pod too. Specifically, this is a simple C<para> block
             "margin": "",
             "content": [
               "A heading\n"
-            ]
+            ],
+            "location": {
+              "start": {
+                "offset": 12,
+                "line": 3,
+                "column": 1
+              },
+              "end": {
+                "offset": 29,
+                "line": 4,
+                "column": 1
+              }
+            }
           }
         ],
         "name": "head",
+        "location": {
+          "start": {
+            "offset": 12,
+            "line": 3,
+            "column": 1
+          },
+          "end": {
+            "offset": 29,
+            "line": 4,
+            "column": 1
+          }
+        },
         "level": "1"
       },
       {
@@ -48,7 +72,19 @@ This is Pod too. Specifically, this is a simple C<para> block
             "name": "C"
           },
           " block\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 30,
+            "line": 5,
+            "column": 1
+          },
+          "end": {
+            "offset": 92,
+            "line": 6,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -62,7 +98,19 @@ This is Pod too. Specifically, this is a simple C<para> block
             "type": "verbatim",
             "value": "$this = pod('also');  # Specifically, a code block\n"
           }
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 93,
+            "line": 7,
+            "column": 1
+          },
+          "end": {
+            "offset": 148,
+            "line": 8,
+            "column": 1
+          }
+        }
       },
       {
         "type": "blankline"
@@ -70,7 +118,18 @@ This is Pod too. Specifically, this is a simple C<para> block
     ],
     "name": "pod",
     "margin": "",
-    "text": "=begin pod\n\n=head1 A heading\n\nThis is Pod too. Specifically, this is a simple C<para> block\n\n    $this = pod('also');  # Specifically, a code block\n\n=end pod\n",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 158,
+        "line": 10,
+        "column": 1
+      }
+    }
   }
 ]

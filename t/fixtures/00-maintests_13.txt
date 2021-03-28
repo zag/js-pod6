@@ -29,9 +29,33 @@ Such content would typically be rendered in a T<fixed-width font>
             "name": "T"
           },
           "\n"
-        ]
+        ],
+        "location": {
+          "start": {
+            "offset": 0,
+            "line": 1,
+            "column": 1
+          },
+          "end": {
+            "offset": 138,
+            "line": 4,
+            "column": 1
+          }
+        }
       }
     ],
-    "name": "para"
+    "name": "para",
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 138,
+        "line": 4,
+        "column": 1
+      }
+    }
   }
 ]

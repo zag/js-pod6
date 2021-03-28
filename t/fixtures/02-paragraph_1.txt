@@ -12,6 +12,18 @@ some text
     ],
     "name": "Foo",
     "margin": "",
-    "config": []
+    "config": [],
+    "location": {
+      "start": {
+        "offset": 0,
+        "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 19,
+        "line": 3,
+        "column": 1
+      }
+    }
   }
 ]
