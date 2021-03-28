@@ -367,7 +367,6 @@ delimitedBlock =
           { 
             return { 
                     ...res,
-                    text:text(),
                     config,
                     location:location(),
                     }
