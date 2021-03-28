@@ -60,11 +60,11 @@ class Writer extends Events.EventEmitter {
             this.emit('start')
             this.addListener('errors', (err)=>{ this.errors = this.errors || []; this.errors.push(err) })
         }
-        //@ts-ignore
         on(...params) {
             // overload 'on' method for reverse setup handlers
             this.ons = this.ons || []
             this.ons.unshift( [ ...params ] )
+            return this
         }
         endWrite = () => {
             this.emit('end')
