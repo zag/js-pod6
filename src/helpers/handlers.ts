@@ -21,7 +21,11 @@ export const emptyContent = ():RuleHandler => () => ()=>{}
 /**
  * content - process childs as regular content 
  */
-export const content:RuleHandler = ( writer, processor )=>( node,ctx, interator )=>{ node.content && interator(node.content, ctx) }
+export const content:RuleHandler = ( writer, processor )=>( node,ctx, interator )=>{ 
+    if ( node.content ) {
+        return interator(node.content, ctx) 
+    }
+}
 
 /** 
 
@@ -32,7 +36,7 @@ Set hander after call with node
 */
 export const setFn = ( check ):RuleHandler => ( writer, processor ) => {
     return ( node, ctx, interator ) =>{
-        check( node, ctx )( writer, processor )( node, ctx, interator )
+        return check( node, ctx )( writer, processor )( node, ctx, interator )
     }
 }
 
@@ -82,7 +86,7 @@ export const subUse = ( rules: RuleObject, processNode ):RuleHandler => {
         let subInterator ;
         return ( node, ctx, interator ) => {
             if ( !subInterator ) subInterator = makeInterator([ ...interator.rules, ...inited ])
-            processNodeInited( node, ctx, subInterator )
+            return processNodeInited( node, ctx, subInterator )
         }
      }
 }
