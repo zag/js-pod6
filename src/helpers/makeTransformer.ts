@@ -10,7 +10,14 @@ export function isNamedBlock(name) {
             name !== name.toUpperCase() 
           )
       }
-    
+
+// skip warnings for semantic blocks
+export function isSemanticBlock ( node ) { 
+    const name = node.name || ''
+    const isTypeBlock = ( node.type || '') === 'block'
+    return isTypeBlock && name === name.toUpperCase()
+}
+
 function flattenDeep(arr) {
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
