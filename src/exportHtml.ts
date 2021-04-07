@@ -73,7 +73,6 @@ const rules = {
     }
      */
     'N<>' : ( writer, processor ) => {
-        // console.log({writer})
         writer.addListener('end', ()=>{
             if ( !writer.hasOwnProperty('FOOTNOTES') ) { return }
             const footnotes = writer.FOOTNOTES
@@ -134,7 +133,6 @@ const rules = {
     'data': emptyContent,
     ':verbatim': ( writer, processor ) => ( node, ctx, interator ) => { 
         if (node.error) {
-            console.error('err')
             writer.emit("errors", node.location )
         }
         interator( node.value ) 
@@ -175,7 +173,7 @@ const rules = {
     'item:block':  ( writer, processor ) => ( node, ctx, interator ) => {
         // make text from first para
         if (! (node.content instanceof Array)) {
-            console.error(node)
+            console.error('[pod6] item:block : Error in content of ' + JSON.stringify(node))
         }
         const [ firstPara, ...other ] = node.content
         writer.writeRaw('<li>')
@@ -241,7 +239,7 @@ const rules = {
                 writer.write (name )
                 writer.writeRaw('</h1>')
             } else {
-                console.warn("Unhandled node" + JSON.stringify( node, null, 2))
+                console.warn("[pod6] Unhandled node" + JSON.stringify( node, null, 2))
             }
             if ( node.hasOwnProperty('content')) {
                 interator(node.content, ctx)

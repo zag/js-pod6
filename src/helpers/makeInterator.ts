@@ -24,6 +24,10 @@ function thisFunc ( rules )  {
                     return
                 }
             }
+
+            if (typeof reversed[ruleIndex].fn !== 'function') {
+                console.warn('[pod6] bad fn for ' + JSON.stringify(node,null,2))
+            }
             return reversed[ruleIndex].fn( node, context, interator, defaultFn)
         } else {
             // not found rule

@@ -22,7 +22,7 @@ const makeTransformer  = ( rule ) => {
     let rules = []
     function use( key, fn?:any )  {
         if ( key instanceof Array ) {
-           console.log('unsupported param')
+           console.warn(`[pod] Unsupported param for ${key}`)
         }
       
         if ( key instanceof Object ) {
