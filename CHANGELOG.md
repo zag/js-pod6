@@ -1,5 +1,9 @@
 # Upcoming
 
+# 0.0.35
+- unify debug reporting
+- optimize internal api
+
 # 0.0.34
 - remove 'text' from tree
 - fix typing for default writer
