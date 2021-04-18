@@ -13,8 +13,8 @@ sample      |  type        | name
 
 */
 
-export interface  RuleHandler {
-    (writer:Writer, processor) : (node, ctx, interator) =>void
+export interface  RuleHandler<T = any> {
+    (writer:Writer, processor) : (node:T, ctx, interator) =>void
 }
 export type RuleObject = {
     [name:string]:RuleHandler

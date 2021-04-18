@@ -22,9 +22,6 @@ function flattenDeep(arr) {
     return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
 }
 
-interface UseFunc {
-    (key:any, fn?:any): boolean;
-  }
 const makeTransformer  = ( rule ) => {
     let rules = []
     function use( key, fn?:any )  {
