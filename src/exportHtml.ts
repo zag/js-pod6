@@ -115,7 +115,7 @@ const rules = {
     'V<>': content,
     'X<>' : ( writer, processor ) => ( node, ctx, interator ) => {
         interator(node.content, ctx)
-        let entry = { node }
+        let { entry } =  node 
         if ( entry === null && node.content.length > 0) {
             //@ts-ignore
              entry = [node.content[0]]
