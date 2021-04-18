@@ -63,7 +63,7 @@ Element =  delimitedBlockRaw
                 / blankline
                 / error_para 
                 ) { return n }
-         / (  $(!( markers / markerAbbreviatedBlock ) .)+)
+         / (  $(!( markers strictIdentifier / markerAbbreviatedBlock ) .)+)
              { return {
                         text:text(),
                         type:'ambient',
@@ -97,13 +97,13 @@ markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
 markerConfig = '=config'
-//TODO: add more stricts ( 'for' / 'begin' /  'end' / 'config' / 'alias' )
-markerAbbreviatedBlock = '='  name:identifier  { return name }
+strictIdentifier =  name:identifier &{ return isSupportedBlockName(name)} { return name }
+markerAbbreviatedBlock = '='  name:strictIdentifier { return name }
 markers = markerBegin / markerEnd / markerFor / markerConfig
 Text "text" = $(c:char+)
-text_content =  !( _ ( markers / markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
+text_content =  !( _ ( markers strictIdentifier/ markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
 error_para = $(!EOL .)+ EOL
-            { return { type:"verbatim", value:text(), error:true, location:location()}}
+            { return { type:"para", value:text(), error:true, location:location()}}
 /** 
 #  Value is...       Specify with...           Or with...            Or with...
 #  ===============   =======================   =================   ===========
@@ -210,7 +210,7 @@ item =  // quoted strings
 
 delimitedBlockRaw = 
     vmargin:$(_) 
-    markerBegin name:identifier _ config:pod_configuration 
+    markerBegin name:strictIdentifier _ config:pod_configuration 
     &{ 
      return ( 
        (name.match(/code|comment|output|input|data/))
@@ -220,10 +220,10 @@ delimitedBlockRaw =
      }
     content:$( 
             !markers t:Text Endline? 
-              / !(markerEnd ename:identifier &{ return name === ename } ) $(.)
+              / !(markerEnd ename:strictIdentifier &{ return name === ename } ) $(.)
               )+ 
     vmargin2:$(_) res:( 
-                        markerEnd ename:identifier &{ return name === ename } Endline? 
+                        markerEnd ename:strictIdentifier &{ return name === ename } Endline? 
                         { 
                           const type = 'block'
                           return {
@@ -322,13 +322,13 @@ tableRow = t:text_content { return { name:'row', type:'text', value:t } }
 
 delimitedBlockTable = 
     vmargin:$(_) 
-    markerBegin name:identifier _ config:pod_configuration 
+    markerBegin name:strictIdentifier _ config:pod_configuration 
     &{ return name === 'table' }
     // set type of block
     &{  options.isDelimited = true; return true }
     content:(blankline*  t:tableContents  blankline* {return t} )
     vmargin2:$(_) res:( 
-                        markerEnd ename:identifier &{ return name === ename } Endline? 
+                        markerEnd ename:strictIdentifier &{ return name === ename } Endline? 
                         { 
                           return {
                                   type:'block',
@@ -346,7 +346,7 @@ delimitedBlockTable =
                               }}
 
 delimitedBlock = 
-  vmargin:$(_) markerBegin name:identifier  _ config:pod_configuration
+  vmargin:$(_) markerBegin name:strictIdentifier  _ config:pod_configuration
   content:( nodes:(
           blankline
           / delimitedBlockRaw
@@ -360,6 +360,7 @@ delimitedBlock =
           / abbreviatedBlockRaw
           / abbreviatedBlockTable
           / abbreviatedBlock
+          //TODO::handle errors
           ) { return nodes} 
   / tvmargin:$( hs* ) 
     text:$(text_content+)
@@ -382,7 +383,7 @@ delimitedBlock =
     }
   )* 
   vmargin2:$(_) res:(
-          markerEnd ename:identifier &{ return name === ename } Endline? 
+          markerEnd ename:strictIdentifier &{ return name === ename } Endline? 
           { 
             return { 
                     type:'block',
@@ -495,7 +496,7 @@ alias_replacement_text =
 
 aliasDirective = 
   vmargin:$(_) 
-  marker:'=alias' _  name:$(identifier) _ replacement:alias_replacement_text
+  marker:'=alias' _  name:$(strictIdentifier) _ replacement:alias_replacement_text
   {
       return {
           name,
@@ -507,7 +508,7 @@ aliasDirective =
 
 configDirective = 
   vmargin:$(_) 
-  marker:'=config' _  name:$(identifier / [A-Z]'<>') _ config:pod_configuration
+  marker:'=config' _  name:$(strictIdentifier / [A-Z]'<>') _ config:pod_configuration
   {
       return {
           name,
@@ -519,7 +520,7 @@ configDirective =
 
 paragraphBlockRaw = 
   vmargin:$(_)
-  marker:markerFor  name:identifier _ config:pod_configuration 
+  marker:markerFor  name:strictIdentifier _ config:pod_configuration 
       &{  
      return ( 
        (name.match(/code|comment|output|input|data/))
@@ -541,7 +542,7 @@ paragraphBlockRaw =
 
 paragraphBlockTable = 
   vmargin:$(_)
-  marker:markerFor  name:identifier _ config:pod_configuration 
+  marker:markerFor  name:strictIdentifier _ config:pod_configuration 
   &{ return name === 'table' }
   // set type of block
   &{  options.isDelimited = false; return true }
@@ -559,7 +560,7 @@ paragraphBlockTable =
 
 paragraphBlock = 
   vmargin:$(_) 
-  marker:markerFor  name:identifier _ config:pod_configuration
+  marker:markerFor  name:strictIdentifier _ config:pod_configuration
   content:$(!emptyline text_content)*
   { 
       return { 
