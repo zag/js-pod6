@@ -7,42 +7,62 @@ XXX: chop(%has)   should return a  hash  of chopped strings?
 ~~~~~~~
 [
   {
-    "type": "block",
-    "content": [
-      {
-        "type": "blankline"
-      },
-      {
-        "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n",
-        "margin": "",
-        "type": "para",
-        "content": [
-          "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
-        ],
-        "location": {
-          "start": {
-            "offset": 31,
-            "line": 3,
-            "column": 1
-          },
-          "end": {
-            "offset": 153,
-            "line": 5,
-            "column": 1
-          }
-        }
-      },
-      {
-        "type": "blankline"
-      }
-    ],
-    "name": "more-discussion-needed",
+    "text": "=begin more-discussion-needed\n",
+    "type": "para",
     "margin": "",
-    "config": [],
+    "content": [
+      "=begin more-discussion-needed\n"
+    ],
     "location": {
       "start": {
         "offset": 0,
         "line": 1,
+        "column": 1
+      },
+      "end": {
+        "offset": 30,
+        "line": 2,
+        "column": 1
+      }
+    }
+  },
+  {
+    "type": "blankline"
+  },
+  {
+    "text": "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n",
+    "type": "para",
+    "margin": "",
+    "content": [
+      "XXX: chop(@array) should return an array of chopped strings?\nXXX: chop(%has)   should return a  hash  of chopped strings?\n"
+    ],
+    "location": {
+      "start": {
+        "offset": 31,
+        "line": 3,
+        "column": 1
+      },
+      "end": {
+        "offset": 153,
+        "line": 5,
+        "column": 1
+      }
+    }
+  },
+  {
+    "type": "blankline"
+  },
+  {
+    "text": "=end more-discussion-needed\n",
+    "type": "para",
+    "margin": "",
+    "content": [
+      "=end more-discussion-needed\n"
+    ],
+    "location": {
+      "start": {
+        "offset": 154,
+        "line": 6,
         "column": 1
       },
       "end": {

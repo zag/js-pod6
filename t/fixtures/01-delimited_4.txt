@@ -6,52 +6,12 @@
 ~~~~~~~
 [
   {
-    "type": "block",
-    "content": [
-      {
-        "type": "block",
-        "content": [
-          {
-            "text": "toot tooot!\n",
-            "margin": "    ",
-            "type": "para",
-            "content": [
-              "toot tooot!\n"
-            ],
-            "location": {
-              "start": {
-                "offset": 42,
-                "line": 3,
-                "column": 1
-              },
-              "end": {
-                "offset": 58,
-                "line": 4,
-                "column": 1
-              }
-            }
-          }
-        ],
-        "name": "somethingelse",
-        "margin": "    ",
-        "config": [],
-        "location": {
-          "start": {
-            "offset": 17,
-            "line": 2,
-            "column": 1
-          },
-          "end": {
-            "offset": 81,
-            "line": 5,
-            "column": 1
-          }
-        }
-      }
-    ],
-    "name": "something",
+    "text": "=begin something\n    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n=end something\n",
+    "type": "para",
     "margin": "",
-    "config": [],
+    "content": [
+      "=begin something\n    =begin somethingelse\n    toot tooot!\n    =end somethingelse\n=end something\n"
+    ],
     "location": {
       "start": {
         "offset": 0,

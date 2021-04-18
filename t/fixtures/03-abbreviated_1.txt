@@ -2,31 +2,12 @@
 ~~~~~~~
 [
   {
+    "text": "=foo some text\n",
+    "type": "para",
     "margin": "",
-    "type": "block",
     "content": [
-      {
-        "type": "para",
-        "text": "some text\n",
-        "margin": "",
-        "content": [
-          "some text\n"
-        ],
-        "location": {
-          "start": {
-            "offset": 0,
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "offset": 15,
-            "line": 2,
-            "column": 1
-          }
-        }
-      }
+      "=foo some text\n"
     ],
-    "name": "foo",
     "location": {
       "start": {
         "offset": 0,

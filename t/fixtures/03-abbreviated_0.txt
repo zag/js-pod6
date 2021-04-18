@@ -2,10 +2,12 @@
 ~~~~~~~
 [
   {
+    "text": "=foo\n",
+    "type": "para",
     "margin": "",
-    "type": "block",
-    "content": [],
-    "name": "foo",
+    "content": [
+      "=foo\n"
+    ],
     "location": {
       "start": {
         "offset": 0,

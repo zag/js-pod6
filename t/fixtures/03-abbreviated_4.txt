@@ -18,115 +18,19 @@
     "type": "block",
     "content": [
       {
-        "type": "block",
+        "text": "=begin one\none, delimited block\n=end one\n=two two,\nparagraph block\n=for three\nthree, still a parablock\n",
+        "margin": "    ",
+        "type": "code",
         "content": [
           {
-            "text": "one, delimited block\n",
-            "margin": "    ",
-            "type": "para",
-            "content": [
-              "one, delimited block\n"
-            ],
-            "location": {
-              "start": {
-                "offset": 26,
-                "line": 3,
-                "column": 1
-              },
-              "end": {
-                "offset": 51,
-                "line": 4,
-                "column": 1
-              }
-            }
+            "type": "verbatim",
+            "value": "=begin one\n    one, delimited block\n    =end one\n    =two two,\n    paragraph block\n    =for three\n    three, still a parablock\n"
           }
         ],
-        "name": "one",
-        "margin": "    ",
-        "config": [],
         "location": {
           "start": {
             "offset": 11,
             "line": 2,
-            "column": 1
-          },
-          "end": {
-            "offset": 64,
-            "line": 5,
-            "column": 1
-          }
-        }
-      },
-      {
-        "margin": "    ",
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "text": "two,\n    paragraph block\n",
-            "margin": "",
-            "content": [
-              "two,\n    paragraph block\n"
-            ],
-            "location": {
-              "start": {
-                "offset": 64,
-                "line": 5,
-                "column": 1
-              },
-              "end": {
-                "offset": 98,
-                "line": 7,
-                "column": 1
-              }
-            }
-          }
-        ],
-        "name": "two",
-        "location": {
-          "start": {
-            "offset": 64,
-            "line": 5,
-            "column": 1
-          },
-          "end": {
-            "offset": 98,
-            "line": 7,
-            "column": 1
-          }
-        }
-      },
-      {
-        "type": "block",
-        "content": [
-          {
-            "type": "para",
-            "content": [
-              "    three, still a parablock\n"
-            ],
-            "margin": "    ",
-            "text": "    three, still a parablock\n",
-            "location": {
-              "start": {
-                "offset": 98,
-                "line": 7,
-                "column": 1
-              },
-              "end": {
-                "offset": 142,
-                "line": 9,
-                "column": 1
-              }
-            }
-          }
-        ],
-        "name": "three",
-        "margin": "    ",
-        "config": [],
-        "location": {
-          "start": {
-            "offset": 98,
-            "line": 7,
             "column": 1
           },
           "end": {
@@ -140,32 +44,15 @@
         "type": "blankline"
       },
       {
-        "type": "block",
+        "text": "=begin four\nfour, another delimited one\n=end four\n",
+        "margin": "    ",
+        "type": "code",
         "content": [
           {
-            "text": "four, another delimited one\n",
-            "margin": "    ",
-            "type": "para",
-            "content": [
-              "four, another delimited one\n"
-            ],
-            "location": {
-              "start": {
-                "offset": 159,
-                "line": 11,
-                "column": 1
-              },
-              "end": {
-                "offset": 191,
-                "line": 12,
-                "column": 1
-              }
-            }
+            "type": "verbatim",
+            "value": "=begin four\n    four, another delimited one\n    =end four\n"
           }
         ],
-        "name": "four",
-        "margin": "    ",
-        "config": [],
         "location": {
           "start": {
             "offset": 143,

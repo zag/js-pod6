@@ -3,11 +3,12 @@
 ~~~~~~~
 [
   {
-    "type": "block",
-    "content": [],
-    "name": "foo",
+    "text": "=begin foo\n=end foo\n",
+    "type": "para",
     "margin": "",
-    "config": [],
+    "content": [
+      "=begin foo\n=end foo\n"
+    ],
     "location": {
       "start": {
         "offset": 0,

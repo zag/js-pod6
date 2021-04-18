@@ -3,31 +3,12 @@ and some more
 ~~~~~~~
 [
   {
+    "text": "=foo some text\nand some more\n",
+    "type": "para",
     "margin": "",
-    "type": "block",
     "content": [
-      {
-        "type": "para",
-        "text": "some text\nand some more\n",
-        "margin": "",
-        "content": [
-          "some text\nand some more\n"
-        ],
-        "location": {
-          "start": {
-            "offset": 0,
-            "line": 1,
-            "column": 1
-          },
-          "end": {
-            "offset": 29,
-            "line": 3,
-            "column": 1
-          }
-        }
-      }
+      "=foo some text\nand some more\n"
     ],
-    "name": "foo",
     "location": {
       "start": {
         "offset": 0,
