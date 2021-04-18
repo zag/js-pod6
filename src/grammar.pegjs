@@ -8,6 +8,12 @@
         name !== name.toUpperCase() 
       )
   }
+
+  // the following names: =AUTHOR  =DESCRIPTION are reserved
+  function isSemanticBlock(name) {
+    return name === name.toUpperCase()
+  }
+
   function flattenDeep(arr) {
    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
   }
