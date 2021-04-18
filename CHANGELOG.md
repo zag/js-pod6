@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.36
+- use strict parsing ( only allowed block names are recognized )
+
 # 0.0.35
 - unify debug reporting
 - optimize internal api
