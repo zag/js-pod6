@@ -18,6 +18,30 @@
    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
   }
 
+  function isSupportedBlockName(name) {
+      return [
+        'code', 
+        'comment',
+        'data',
+        'defn',
+        'head',
+        'input',
+        'item', 
+        'nested',
+        'output',
+        'para', 
+        'pod',
+        'table',
+          ].includes(name) 
+          || 
+          isSemanticBlock(name) 
+          ||
+          // TODO: move detect headers/items level to parser
+          name.match(/^(head|item)\d+$/)
+          ||
+          isNamedBlock(name)
+  }
+
 }
 
 Document = nodes:Element*  { return nodes }
