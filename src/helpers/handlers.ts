@@ -75,7 +75,7 @@ const IfNode = ( check, ...fns ):RuleHandler => ( writer, processor ) => {
  * @param {*} rules 
  * @param {*} processNode 
  */
-export const subUse = ( rules: RuleObject, processNode ):RuleHandler => {
+export const subUse = ( rules:RuleObject|Array<RuleObject>, processNode ):RuleHandler => {
     const newFns = makeRulesArray(rules).reverse()
     return ( writer, processor ) => {
         // init new rules

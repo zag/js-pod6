@@ -106,14 +106,12 @@ export const makeRule = ( query, fn ) => {
     }
 }
 
-interface makeRulesArray {
-     (key:Array<any>, fn?:Function):Array<any>
-    (key:RuleObject, fn?:Function):Array<any>
-    // (key:any, fn:Function):Array<any>
+interface MakeRulesArray {
+     (key:RuleObject|Array<RuleObject>, fn?:Function):Array<any>
 }
-export const makeRulesArray:makeRulesArray = ( key, fn ) => {
+export const makeRulesArray:MakeRulesArray = ( key:RuleObject|Array<RuleObject>, fn ) => {
     if ( key instanceof Array ) {
-       // TODO handle arrays
+        return  key.reduce( (acc, item)=>{ acc.push( ...makeRulesArray(item) ); return acc }, [] )
     }
   
     if ( key instanceof Object ) {
