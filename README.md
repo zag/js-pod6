@@ -190,14 +190,18 @@ For example:
 You can test pod6 at [pod6.in](https://pod6.in) site.
 I'd appreciate it if you'd report any mistakes to the tracker[4]
 
+## Desktop version
+
+Desktop version of pod6 editor - [Podlite](https://github.com/zag/podlite-desktop) is available also [5].
+Its free.
 
 ## Authors
 
-{js-pod6} was written by [Alexandr Zahatski](https://github.com/zag)
+js-pod6 was written by [Alexandr Zahatski](https://github.com/zag)
 
 ## Copyright
 
-Copyright (C) 2019-2020 [Alexander Zahatski](https://zahatski.com).
+Copyright (C) 2019-2021 [Alexandr Zahatski](https://zahatski.com).
 Free use of this software is granted under the terms of the MIT License.
 
 For the full text of the license, see the [LICENSE](https://github.com/zag/js-pod6/blob/master/LICENSE) file. 
@@ -208,10 +212,11 @@ For the full text of the license, see the [LICENSE](https://github.com/zag/js-po
 
 [2] Synopsis 2: [Bits and Pieces](https://github.com/Raku/old-design-docs/blob/master/S02-bits.pod)
 
-[3] Pod6 online editor: [Pod6 to HTML online](https://pod6.in)
+[3] Pod6 online editor: [pod6 online editor](https://pod6.in)
 
 [4] pod6 issues tracker: [https://github.com/zag/js-pod6/issues](https://github.com/zag/js-pod6/issues) 
 
+[5] Free and open-sourced desktop pod6 editor: [Podlite](https://github.com/zag/podlite-desktop)
 
 ```
 

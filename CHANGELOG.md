@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.37
+- internal API changes ( subUse helper ) 
+
 # 0.0.36
 - use strict parsing ( only allowed block names are recognized )
 
