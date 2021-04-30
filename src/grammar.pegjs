@@ -496,7 +496,7 @@ alias_replacement_text =
 
 aliasDirective = 
   vmargin:$(_) 
-  marker:'=alias' _  name:$(strictIdentifier) _ replacement:alias_replacement_text
+  marker:'=alias' _  name:$(identifier) _ replacement:alias_replacement_text
   {
       return {
           name,

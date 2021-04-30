@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.38
+- switch off strict identifier for =alias
+
 # 0.0.37
 - internal API changes ( subUse helper ) 
 
