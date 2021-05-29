@@ -1,6 +1,6 @@
 {
   "name": "pod6",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "description": "Pod6 is an easy-to-use markup language",
   "main": "index.js",
   "types": "./built/index.d.ts",
@@ -21,6 +21,7 @@
   },
   "files": [
     "built/**/*.js",
+    "built/**/*.d.ts",
     "README.md",
     "CHANGELOG.md"
   ],
@@ -44,6 +45,7 @@
     "nodemon": "^2.0.2",
     "npm-run-all": "^4.1.5",
     "pegjs": "^0.10.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.6"
   }
 }

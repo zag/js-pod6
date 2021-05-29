@@ -1,5 +1,9 @@
 # Upcoming
 
+# 0.0.39
+- add types defs into npm
+- improve testing
+
 # 0.0.38
 - switch off strict identifier for =alias
 
