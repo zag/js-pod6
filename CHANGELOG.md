@@ -1,5 +1,9 @@
 # Upcoming
 
+# 0.0.40
+- correct markers list ( add =alias)
+- fix interator ( clean tree from null and undefined nodes)
+
 # 0.0.39
 - add types defs into npm
 - improve testing
