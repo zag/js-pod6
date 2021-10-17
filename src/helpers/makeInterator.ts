@@ -3,7 +3,8 @@ function thisFunc ( rules )  {
 
     function interator (node, context)  {
         if (node instanceof Array) {
-            return node.map( item => interator(item, context) )
+            // filter null and undefined nodes
+            return node.map( item => interator(item, context) ).filter(Boolean)
         }
         if ( 'string' === typeof node ) {
             // convert string to lex node with type 
