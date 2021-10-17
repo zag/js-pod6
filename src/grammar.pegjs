@@ -97,9 +97,10 @@ markerBegin = '=begin '
 markerEnd = '=end '
 markerFor = '=for '
 markerConfig = '=config'
+markerAlias = '=alias'
 strictIdentifier =  name:identifier &{ return isSupportedBlockName(name)} { return name }
 markerAbbreviatedBlock = '='  name:strictIdentifier { return name }
-markers = markerBegin / markerEnd / markerFor / markerConfig
+markers = markerBegin / markerEnd / markerFor / markerConfig / markerAlias
 Text "text" = $(c:char+)
 text_content =  !( _ ( markers strictIdentifier/ markerAbbreviatedBlock ) / blankline ) $(Text)+ EOL {return text()}
 error_para = $(!EOL .)+ EOL
