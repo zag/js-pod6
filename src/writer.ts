@@ -2,7 +2,6 @@
  * Default writer 
  */
 
-const util = require('util')
 import Events = require('events')
 
 class Writer extends Events.EventEmitter {
@@ -49,15 +48,13 @@ class Writer extends Events.EventEmitter {
             valueOf: () => this.out
             }
         }
-        startWrite () {
+        startWrite (tree:any) {
             // setup events
-            // ( this.ons || [] ).map( a=>Events.prototype.on.call( this, ...a ) )
             ( this.ons || [] ).map( a=> 
-                // Events.EventEmitter.on.call( this, ...a ) 
                 //@ts-ignore
                 super.on(...a)
                 )
-            this.emit('start')
+            this.emit('start', tree)
             this.addListener('errors', (err)=>{ this.errors = this.errors || []; this.errors.push(err) })
         }
         on(...params) {
