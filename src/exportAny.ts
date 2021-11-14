@@ -58,7 +58,7 @@ const toAny = ( options:Options = {}, plugins = [] ) => {
         // src may be preparsed tree
         const tree = ( "string" === typeof src ) ? processor(src) : src 
         const context = {}
-        writer.startWrite()
+        writer.startWrite(tree)
         const result = interator( tree, context )
         writer.endWrite()
         return {
