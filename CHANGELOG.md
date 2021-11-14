@@ -1,5 +1,7 @@
 # Upcoming
 
+# 0.0.41
+- improve api for preprocess AST tree
 # 0.0.40
 - correct markers list ( add =alias)
 - fix interator ( clean tree from null and undefined nodes)
