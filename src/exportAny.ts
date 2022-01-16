@@ -46,17 +46,18 @@ const toAny = ( options:Options = {}, plugins = [] ) => {
         const _tmp_writer = opt_writer || _writer || new Writer((s)=>{ res = res + s})
         const writer = ('function' === typeof _tmp_writer ) ? new _tmp_writer((s)=>{ res = res + s}) : _tmp_writer
 
+        // src may be preparsed tree
+        const tree = ( "string" === typeof src ) ? processor(src) : src 
+
         // make new instance of HTML with initialized plugins
         // reverse init
         let newFns = fns.slice()
         newFns.reverse()
         const interator = makeInterator(
             newFns.map(
-                rule=>makeRule( rule.rule, rule.fn( writer, processor ) ) 
+                rule=>makeRule( rule.rule, rule.fn( writer, processor, tree ) ) 
             ).reverse()
         )
-        // src may be preparsed tree
-        const tree = ( "string" === typeof src ) ? processor(src) : src 
         const context = {}
         writer.startWrite(tree)
         const result = interator( tree, context )
