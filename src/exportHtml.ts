@@ -4,7 +4,7 @@ import { isNamedBlock } from './helpers/makeTransformer'
 import  makeAttrs  from './helpers/config'
 import htmlWriter from './writerHtml'
 import clean_plugin from './plugin-clean-location'
-
+import {getNodeId} from './helpers/config'
 const rules = {
     ':text': ( writer, processor )=>( node, ctx, interator )=>{
         // handle text with content
@@ -162,7 +162,8 @@ const rules = {
                         },
                         setFn(( node, ctx ) => {
                             const {level} = node
-                            return wrapContent( `<h${level}>`, `</h${level}>` )
+                            const id = getNodeId(node, ctx)
+                            return wrapContent( `<h${level}${ id ? ` id="${id}"` : ''}>`, `</h${level}>` )
                         })
                     ),
     ':list': setFn(( node, ctx ) => 
