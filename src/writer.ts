@@ -2,7 +2,7 @@
  * Default writer 
  */
 
-import Events = require('events')
+import * as Events from 'events'
 
 class Writer extends Events.EventEmitter {
     INDEXTERMS: any[];

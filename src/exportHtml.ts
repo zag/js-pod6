@@ -213,8 +213,24 @@ const rules = {
                                 'table_cell': wrapContent('<th>','</th>')
                               },
                               wrapContent('<tr>','</tr>')
-                            )
-    } 
+                            ),
+    // Toc
+    ':toc' : ( writer, processor ) => ( node, ctx, interator ) => {
+        writer.writeRaw('<div className="toc">')
+        // get toc title
+        const conf = makeAttrs(node, ctx)
+        if ( conf.exists('title') ) {
+            const title = conf.getFirstValue('title');
+            writer.writeRaw('<div className="toctitle">')
+            writer.write(title)
+            writer.writeRaw('</div>')
+        }
+        interator(node.content, ctx)
+        writer.writeRaw('</div>')
+    },
+    ':toc-list' : setFn(( node, ctx ) => wrapContent(`<ul class="toc-list listlevel${node.level}">`,'</ul>')),
+    ':toc-item' : setFn(( node, ctx ) => wrapContent('<li class="toc-item">','</li>')),
+}
 
     const toHtml = ( opt ) => toAny( { writer:htmlWriter, ...opt } ).use(
     '*', ( writer, processor ) => {  return  ( node, ctx, interator ) => {
