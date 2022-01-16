@@ -1,5 +1,8 @@
 # Upcoming
 
+# 0.0.42
+- add toc support
+- filter null and undefined nodes in Ast interator
 # 0.0.41
 - improve api for preprocess AST tree
 # 0.0.40
