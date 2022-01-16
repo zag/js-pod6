@@ -1,10 +1,15 @@
-
+function flattenDeep(arr) {
+    if (!Array.isArray(arr)) {
+        return arr
+    }
+    return arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenDeep(val)) : acc.concat(val), []);
+   }
 function thisFunc ( rules )  {
 
     function interator (node, context)  {
         if (node instanceof Array) {
             // filter null and undefined nodes
-            return node.map( item => interator(item, context) ).filter(Boolean)
+            return  flattenDeep(node.map( item =>interator(item, context))).filter(Boolean)
         }
         if ( 'string' === typeof node ) {
             // convert string to lex node with type 
