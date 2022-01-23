@@ -1,5 +1,7 @@
 # Upcoming
 
+# 0.0.43
+- add image support while export to html
 # 0.0.42
 - add toc support
 - filter null and undefined nodes in Ast interator
