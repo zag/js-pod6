@@ -1,5 +1,7 @@
 # Upcoming
 
+# 0.0.44
+- fix npm build
 # 0.0.43
 - add image support while export to html
 # 0.0.42

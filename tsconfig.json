@@ -3,6 +3,7 @@
       "outDir": "./built",
       "allowJs": true,
       "target": "es5",
+      "module": "commonjs",
       "esModuleInterop": true,
       "allowSyntheticDefaultImports":false,
       // "resolveJsonModule":true,
