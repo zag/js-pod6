@@ -42,7 +42,7 @@ export interface  nPara   {
     "config": []
 }
 
-export interface nVerbatim  { type:'verbatim', value:string }
+export interface nVerbatim  { type:'verbatim', value:string, "margin": string, "text": string}
 export type Node = nBlock| nCode | nText| nPara | nVerbatim;
 export type AST = Array<Node>
 export type Plugin = ( opt : {
