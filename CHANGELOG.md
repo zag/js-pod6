@@ -1,5 +1,8 @@
 # Upcoming
-
+# 0.0.45
+- handle vmargin for delimited type of NamedBlock,
+=code,=comment,=output,=input,=data
+- tests: switch to jest snapshots
 # 0.0.44
 - fix npm build
 # 0.0.43
