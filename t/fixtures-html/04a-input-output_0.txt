@@ -11,4 +11,4 @@
     =end output
 =end pod
 ~~~~~~~
-"<blockquote><pre><samp><p>Name:    Baracus, B.A.\n        Age:     49\n        Print? <strong><kbd>n</kbd></strong>\n</p></samp></pre></blockquote><blockquote><pre><samp><p>Name:    Baracus, B.A.\n        Age:     49\n        Print? <strong><kbd>n</kbd></strong>\n</p></samp></pre></blockquote>"
+"<blockquote><pre><samp>    Name:    Baracus, B.A.\n    Age:     49\n    Print? <strong><kbd>n</kbd></strong>\n</samp></pre></blockquote><blockquote><pre><samp>    Name:    Baracus, B.A.\n    Age:     49\n    Print? <strong><kbd>n</kbd></strong>\n</samp></pre></blockquote>"
