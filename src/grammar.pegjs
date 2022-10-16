@@ -227,10 +227,19 @@ delimitedBlockRaw =
         isNamedBlock(name)
       )
      }
-    content:$( 
-            !markers t:Text Endline? 
-              / !(markerEnd ename:strictIdentifier &{ return name === ename } ) $(.)
+    content:(
+        margins:$(_) 
+        line:$( Endline /  //Empty line in Named block 
+                ( 
+                    !markers  /
+                    // close marker should have the same vmargin
+                    !(markerEnd ename:strictIdentifier &{ return vmargin.length === margins.length &&  name === ename } )
+                )
+                    Text  Endline?
+              ) { return exludeVMargin(vmargin, `${margins}${line}`) }
+            )+ 
               )+ 
+            )+ 
     vmargin2:$(_) res:( 
                         markerEnd ename:strictIdentifier &{ return name === ename } Endline? 
                         { 
