@@ -238,15 +238,13 @@ delimitedBlockRaw =
                     Text  Endline?
               ) { return exludeVMargin(vmargin, `${margins}${line}`) }
             )+ 
-              )+ 
-            )+ 
     vmargin2:$(_) res:( 
                         markerEnd ename:strictIdentifier &{ return name === ename } Endline? 
                         { 
-                          const type = 'block'
+                          const type = 'block';
                           return {
                                   type:type,
-                                  content: content === "" ? [] : [{ type:'verbatim', value:content }],
+                                  content: content === "" ? [] : [{ type:'verbatim', value:content.join('') }],
                                   name,
                                   margin:vmargin
                                 }
