@@ -1,4 +1,6 @@
 # Upcoming
+# 0.0.46
+- fix deps
 # 0.0.45
 - handle vmargin for delimited type of NamedBlock,
 =code,=comment,=output,=input,=data
