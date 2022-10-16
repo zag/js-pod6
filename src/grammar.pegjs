@@ -42,6 +42,14 @@
           isNamedBlock(name)
   }
 
+  function exludeVMargin( vmargin, string) {
+      if (vmargin.length == 0 ) return string
+      if (string.indexOf(vmargin) == 0 ) {
+          return string.replace(vmargin, '')
+      }
+      return string.replace(/^\s+/, '')
+  }
+
 }
 
 Document = nodes:Element*  { return nodes }
