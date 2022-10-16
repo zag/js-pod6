@@ -4,7 +4,7 @@ const middle:Plugin = () => ( tree ) =>{
     const visit_node = ( node:Node, context: { margin?: string, nest?: any } = {} ) => {
 
            // if( (node.type || "").match(/(code|text)/) ) {
-        if( node.type == 'code' ||  node.type == 'text' ) {
+        if( node.type == 'code' ||  node.type == 'text') {
             if ( node.margin && context.margin && context.margin.length > 0 && context.margin.length == node.margin.length ) {
                 (node as any).type='para'
             }
