@@ -1,5 +1,6 @@
 # Upcoming
-
+# 0.0.48
+- fix deps
 # 0.0.47
 - allow non-Single letter inline elements
 # 0.0.46
