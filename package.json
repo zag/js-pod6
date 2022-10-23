@@ -1,6 +1,6 @@
 {
   "name": "pod6",
-  "version": "0.0.46",
+  "version": "0.0.47",
   "description": "Pod6 is an easy-to-use markup language",
   "main": "built/index.js",
   "types": "./built/index.d.ts",
