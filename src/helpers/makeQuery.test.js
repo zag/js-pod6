@@ -25,6 +25,10 @@ const fixtures = [
         'name':'name',
         'type': 'block'
     },
+    'Special<>', {
+        'name':'Special',
+        'type': 'fcode'
+    },
 ]
 
 const pairs =  fixtures.reduce( function( result, value, index, array ) {

@@ -40,7 +40,7 @@ const getQuery:GetQuery = function(k) {
    }
    if ( !type ) {
        // check C<>
-       const re = name.match(/(.)\<\>/)
+       const re = name.match(/(.+)\<\>/)
        if (re) {
            return { type:'fcode', name:re[1] }
        }
