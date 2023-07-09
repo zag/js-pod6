@@ -1100,3 +1100,197 @@ bar
     ]
   `);
 });
+
+it("spec: extra", () => {
+  const pod = `
+    =begin table :nested
+
+    Block typename      Specifies
+    ______________      ___________________________________________________
+    code                Verbatim pre-formatted sample source code
+    comment             Content to be ignored by all renderers
+    defn                Definition of a term
+    Typename            User-defined block
+
+=end table
+  
+  `;
+  const tree = toTree().parse(pod, { podMode: 1, skipChain: 0 });
+  expect(tree).toMatchInlineSnapshot(`
+    Array [
+      Object {
+        "type": "blankline",
+      },
+      Object {
+        "config": Array [
+          Object {
+            "name": "nested",
+            "type": "boolean",
+            "value": true,
+          },
+        ],
+        "content": Array [
+          Object {
+            "content": Array [
+              Object {
+                "content": Array [
+                  " Block typename",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+              Object {
+                "content": Array [
+                  " Specifies",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+            ],
+            "name": "table_head",
+            "type": "block",
+          },
+          Object {
+            "text": "    ______________      ___________________________________________________
+    ",
+            "type": "separator",
+          },
+          Object {
+            "content": Array [
+              Object {
+                "content": Array [
+                  " code          ",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+              Object {
+                "content": Array [
+                  " Verbatim pre-formatted sample source code",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+            ],
+            "name": "table_row",
+            "type": "block",
+          },
+          Object {
+            "content": Array [
+              Object {
+                "content": Array [
+                  " comment       ",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+              Object {
+                "content": Array [
+                  " Content to be ignored by all renderers",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+            ],
+            "name": "table_row",
+            "type": "block",
+          },
+          Object {
+            "content": Array [
+              Object {
+                "content": Array [
+                  " defn          ",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+              Object {
+                "content": Array [
+                  " Definition of a term",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+            ],
+            "name": "table_row",
+            "type": "block",
+          },
+          Object {
+            "content": Array [
+              Object {
+                "content": Array [
+                  " Typename      ",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+              Object {
+                "content": Array [
+                  " User-defined block",
+                ],
+                "name": "table_cell",
+                "type": "block",
+              },
+            ],
+            "name": "table_row",
+            "type": "block",
+          },
+          Object {
+            "text": "
+    ",
+            "type": "separator",
+          },
+        ],
+        "location": Object {
+          "end": Object {
+            "column": 1,
+            "line": 12,
+            "offset": 366,
+          },
+          "start": Object {
+            "column": 1,
+            "line": 2,
+            "offset": 1,
+          },
+        },
+        "margin": "    ",
+        "name": "table",
+        "text": "    =begin table :nested
+
+        Block typename      Specifies
+        ______________      ___________________________________________________
+        code                Verbatim pre-formatted sample source code
+        comment             Content to be ignored by all renderers
+        defn                Definition of a term
+        Typename            User-defined block
+
+    =end table
+    ",
+        "type": "block",
+      },
+      Object {
+        "type": "blankline",
+      },
+      Object {
+        "content": Array [
+          "  ",
+        ],
+        "location": Object {
+          "end": Object {
+            "column": 3,
+            "line": 13,
+            "offset": 371,
+          },
+          "start": Object {
+            "column": 1,
+            "line": 13,
+            "offset": 369,
+          },
+        },
+        "margin": "",
+        "text": "  ",
+        "type": "para",
+      },
+    ]
+  `);
+});

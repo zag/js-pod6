@@ -105,11 +105,33 @@ function flattenDeep(arr) {
     const lines = flattenDeep( rows.map(splitToLines) )
     const separators = flattenDeep( seps.map(splitToLines) )
 
+    // collect text rows
+    let textRows = []
+    makeTransformer({
+                'row:text'  : (row) => { textRows.push(row.value)}
+    })(node)
+
     const columnTemplate = makeMask(lines, separators)
     const makeBlock = (name, content, ...attr) => { return { ...attr, name, type: 'block', content: Array.isArray(content) ? content : [content] } }
     // make columns
     const res = makeTransformer({
         'row:text'  : (row) => {
+            
+            if (textRows.length ==1 ) {
+                // split each text row into lines
+                const textRowsLines = flattenDeep( [row.value].map(splitToLines))
+                return textRowsLines.map( (rowValue)=>{
+                    const res = extractColumnsByTemplate( rowValue, columnTemplate )
+                    return makeBlock(
+                        'table_row',
+                         res.map((col)=>makeBlock(
+                             'table_cell',
+                             {type:'text',value:col}
+                            )),
+                    )
+                })
+    
+            }
             const res = extractColumnsByTemplate( row.value, columnTemplate )
             return makeBlock(
                 'table_row',
