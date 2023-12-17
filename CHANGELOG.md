@@ -1,4 +1,6 @@
 # Upcoming
+# 0.0.49
+- fix tables case
 # 0.0.48
 - fix deps
 # 0.0.47
