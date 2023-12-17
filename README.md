@@ -201,7 +201,7 @@ js-pod6 was written by [Alexandr Zahatski](https://github.com/zag)
 
 ## Copyright
 
-Copyright (C) 2019-2021 [Alexandr Zahatski](https://zahatski.com).
+Copyright (C) 2019-2023 [Alexandr Zahatski](https://zahatski.com).
 Free use of this software is granted under the terms of the MIT License.
 
 For the full text of the license, see the [LICENSE](https://github.com/zag/js-pod6/blob/master/LICENSE) file. 
